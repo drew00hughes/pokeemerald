@@ -1138,6 +1138,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zoroark;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zorua;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zweilous;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zygarde;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rattata_Alolan;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -2214,6 +2215,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZORUA] =                    &gObjectEventGraphicsInfo_Zorua,
     [OBJ_EVENT_GFX_ZWEILOUS] =                 &gObjectEventGraphicsInfo_Zweilous,
     [OBJ_EVENT_GFX_ZYGARDE] =                  &gObjectEventGraphicsInfo_Zygarde,
+    [OBJ_EVENT_GFX_RATTATA_ALOLAN] =           &gObjectEventGraphicsInfo_Rattata_Alolan,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -3024,6 +3024,9 @@ $(OBJEVENTGFXDIR)/pokemon/followers/zweilous.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon/followers/zygarde.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
 
+$(OBJEVENTGFXDIR)/pokemon/followers/rattata_alolan.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 
 $(OBJEVENTGFXDIR)/berry_trees/aguav.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

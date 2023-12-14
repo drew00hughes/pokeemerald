@@ -9685,3 +9685,11 @@ const struct SpriteFrameImage gObjectEventPicTable_Zygarde[] = {
     overworld_frame(gObjectEventPic_Zygarde, 8, 8, 4),
     overworld_frame(gObjectEventPic_Zygarde, 8, 8, 5),
 };
+const struct SpriteFrameImage gObjectEventPicTable_Rattata_Alolan[] = {
+    overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 5),
+};

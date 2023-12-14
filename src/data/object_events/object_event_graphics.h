@@ -2129,3 +2129,5 @@ const u16 gObjectEventPal_Zoroark[] = INCBIN_U16("graphics/object_events/palette
 const u16 gObjectEventPal_Zorua[] = INCBIN_U16("graphics/object_events/palettes/followers/zorua.gbapal");
 const u16 gObjectEventPal_Zweilous[] = INCBIN_U16("graphics/object_events/palettes/followers/zweilous.gbapal");
 const u16 gObjectEventPal_Zygarde[] = INCBIN_U16("graphics/object_events/palettes/followers/zygarde.gbapal");
+const u32 gObjectEventPic_Rattata_Alolan[] = INCBIN_U32("graphics/object_events/pics/pokemon/followers/rattata_alolan.4bpp");
+const u16 gObjectEventPal_Rattata_Alolan[] = INCBIN_U16("graphics/object_events/palettes/followers/rattata_alolan.gbapal");
