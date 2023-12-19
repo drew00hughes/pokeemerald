@@ -9693,3 +9693,156 @@ const struct SpriteFrameImage gObjectEventPicTable_Rattata_Alolan[] = {
     overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 4),
     overworld_frame(gObjectEventPic_Rattata_Alolan, 4, 4, 5),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Raticate_Alolan[] = {
+    overworld_frame(gObjectEventPic_Raticate_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Raticate_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Raticate_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Raticate_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Raticate_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Raticate_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Raichu_Alolan[] = {
+    overworld_frame(gObjectEventPic_Raichu_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Raichu_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Raichu_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Raichu_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Raichu_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Raichu_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Sandshrew_Alolan[] = {
+    overworld_frame(gObjectEventPic_Sandshrew_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sandshrew_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sandshrew_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sandshrew_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Sandshrew_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Sandshrew_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Sandslash_Alolan[] = {
+    overworld_frame(gObjectEventPic_Sandslash_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sandslash_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sandslash_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sandslash_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Sandslash_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Sandslash_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Vulpix_Alolan[] = {
+    overworld_frame(gObjectEventPic_Vulpix_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Vulpix_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Vulpix_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Vulpix_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Vulpix_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Vulpix_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Ninetales_Alolan[] = {
+    overworld_frame(gObjectEventPic_Ninetales_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Ninetales_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Ninetales_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Ninetales_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Ninetales_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Ninetales_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Diglett_Alolan[] = {
+    overworld_frame(gObjectEventPic_Diglett_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Diglett_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Diglett_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Diglett_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Diglett_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Diglett_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Dugtrio_Alolan[] = {
+    overworld_frame(gObjectEventPic_Dugtrio_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Dugtrio_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Dugtrio_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Dugtrio_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Dugtrio_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Dugtrio_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Meowth_Alolan[] = {
+    overworld_frame(gObjectEventPic_Meowth_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Meowth_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Meowth_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Meowth_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Meowth_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Meowth_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Persian_Alolan[] = {
+    overworld_frame(gObjectEventPic_Persian_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Persian_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Persian_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Persian_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Persian_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Persian_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Geodude_Alolan[] = {
+    overworld_frame(gObjectEventPic_Geodude_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Geodude_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Geodude_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Geodude_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Geodude_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Geodude_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Graveler_Alolan[] = {
+    overworld_frame(gObjectEventPic_Graveler_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Graveler_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Graveler_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Graveler_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Graveler_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Graveler_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Golem_Alolan[] = {
+    overworld_frame(gObjectEventPic_Golem_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Golem_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Golem_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Golem_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Golem_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Golem_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Grimer_Alolan[] = {
+    overworld_frame(gObjectEventPic_Grimer_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Grimer_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Grimer_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Grimer_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Grimer_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Grimer_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Muk_Alolan[] = {
+    overworld_frame(gObjectEventPic_Muk_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Muk_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Muk_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Muk_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Muk_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Muk_Alolan, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Exeggutor_Alolan[] = {
+    overworld_frame(gObjectEventPic_Exeggutor_Alolan, 8, 8, 0),
+    overworld_frame(gObjectEventPic_Exeggutor_Alolan, 8, 8, 1),
+    overworld_frame(gObjectEventPic_Exeggutor_Alolan, 8, 8, 2),
+    overworld_frame(gObjectEventPic_Exeggutor_Alolan, 8, 8, 3),
+    overworld_frame(gObjectEventPic_Exeggutor_Alolan, 8, 8, 4),
+    overworld_frame(gObjectEventPic_Exeggutor_Alolan, 8, 8, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Marowak_Alolan[] = {
+    overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 5),
+};

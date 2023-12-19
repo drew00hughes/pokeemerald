@@ -1139,6 +1139,23 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zorua;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zweilous;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zygarde;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rattata_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raticate_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raichu_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sandshrew_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sandslash_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vulpix_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ninetales_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diglett_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dugtrio_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Persian_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Geodude_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Graveler_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Golem_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grimer_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Muk_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Exeggutor_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Marowak_Alolan;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -2216,6 +2233,23 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZWEILOUS] =                 &gObjectEventGraphicsInfo_Zweilous,
     [OBJ_EVENT_GFX_ZYGARDE] =                  &gObjectEventGraphicsInfo_Zygarde,
     [OBJ_EVENT_GFX_RATTATA_ALOLAN] =           &gObjectEventGraphicsInfo_Rattata_Alolan,
+    [OBJ_EVENT_GFX_RATICATE_ALOLAN] =           &gObjectEventGraphicsInfo_Raticate_Alolan,
+    [OBJ_EVENT_GFX_RAICHU_ALOLAN] =           &gObjectEventGraphicsInfo_Raichu_Alolan,
+    [OBJ_EVENT_GFX_SANDSHREW_ALOLAN] =           &gObjectEventGraphicsInfo_Sandshrew_Alolan,
+    [OBJ_EVENT_GFX_SANDSLASH_ALOLAN] =           &gObjectEventGraphicsInfo_Sandslash_Alolan,
+    [OBJ_EVENT_GFX_VULPIX_ALOLAN] =           &gObjectEventGraphicsInfo_Vulpix_Alolan,
+    [OBJ_EVENT_GFX_NINETALES_ALOLAN] =           &gObjectEventGraphicsInfo_Ninetales_Alolan,
+    [OBJ_EVENT_GFX_DIGLETT_ALOLAN] =           &gObjectEventGraphicsInfo_Diglett_Alolan,
+    [OBJ_EVENT_GFX_DUGTRIO_ALOLAN] =           &gObjectEventGraphicsInfo_Dugtrio_Alolan,
+    [OBJ_EVENT_GFX_MEOWTH_ALOLAN] =           &gObjectEventGraphicsInfo_Meowth_Alolan,
+    [OBJ_EVENT_GFX_PERSIAN_ALOLAN] =           &gObjectEventGraphicsInfo_Persian_Alolan,
+    [OBJ_EVENT_GFX_GEODUDE_ALOLAN] =           &gObjectEventGraphicsInfo_Geodude_Alolan,
+    [OBJ_EVENT_GFX_GRAVELER_ALOLAN] =           &gObjectEventGraphicsInfo_Graveler_Alolan,
+    [OBJ_EVENT_GFX_GOLEM_ALOLAN] =           &gObjectEventGraphicsInfo_Golem_Alolan,
+    [OBJ_EVENT_GFX_GRIMER_ALOLAN] =           &gObjectEventGraphicsInfo_Grimer_Alolan,
+    [OBJ_EVENT_GFX_MUK_ALOLAN] =           &gObjectEventGraphicsInfo_Muk_Alolan,
+    [OBJ_EVENT_GFX_EXEGGUTOR_ALOLAN] =           &gObjectEventGraphicsInfo_Exeggutor_Alolan,
+    [OBJ_EVENT_GFX_MAROWAK_ALOLAN] =           &gObjectEventGraphicsInfo_Marowak_Alolan,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
