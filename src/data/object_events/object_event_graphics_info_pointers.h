@@ -2258,6 +2258,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ROTOM_FROST] =           &gObjectEventGraphicsInfo_Rotom_Frost,
     [OBJ_EVENT_GFX_ROTOM_FAN] =           &gObjectEventGraphicsInfo_Rotom_Fan,
     [OBJ_EVENT_GFX_ROTOM_MOW] =           &gObjectEventGraphicsInfo_Rotom_Mow,
+    [OBJ_EVENT_GFX_SHAYMIN_SKY] =             &gObjectEventGraphicsInfo_Shaymin_Sky,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
