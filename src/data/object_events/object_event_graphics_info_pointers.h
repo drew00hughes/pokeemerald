@@ -2250,6 +2250,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MUK_ALOLAN] =           &gObjectEventGraphicsInfo_Muk_Alolan,
     [OBJ_EVENT_GFX_EXEGGUTOR_ALOLAN] =           &gObjectEventGraphicsInfo_Exeggutor_Alolan,
     [OBJ_EVENT_GFX_MAROWAK_ALOLAN] =           &gObjectEventGraphicsInfo_Marowak_Alolan,
+    [OBJ_EVENT_GFX_DEOXYS_ATTACK] =           &gObjectEventGraphicsInfo_Deoxys_Attack,
+    [OBJ_EVENT_GFX_DEOXYS_SPEED] =           &gObjectEventGraphicsInfo_Deoxys_Speed,
+    [OBJ_EVENT_GFX_DEOXYS_DEFENSE] =           &gObjectEventGraphicsInfo_Deoxys_Defense,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
