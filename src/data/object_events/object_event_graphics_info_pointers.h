@@ -2253,6 +2253,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_ATTACK] =           &gObjectEventGraphicsInfo_Deoxys_Attack,
     [OBJ_EVENT_GFX_DEOXYS_SPEED] =           &gObjectEventGraphicsInfo_Deoxys_Speed,
     [OBJ_EVENT_GFX_DEOXYS_DEFENSE] =           &gObjectEventGraphicsInfo_Deoxys_Defense,
+    [OBJ_EVENT_GFX_ROTOM_HEAT] =           &gObjectEventGraphicsInfo_Rotom_Heat,
+    [OBJ_EVENT_GFX_ROTOM_WASH] =           &gObjectEventGraphicsInfo_Rotom_Wash,
+    [OBJ_EVENT_GFX_ROTOM_FROST] =           &gObjectEventGraphicsInfo_Rotom_Frost,
+    [OBJ_EVENT_GFX_ROTOM_FAN] =           &gObjectEventGraphicsInfo_Rotom_Fan,
+    [OBJ_EVENT_GFX_ROTOM_MOW] =           &gObjectEventGraphicsInfo_Rotom_Mow,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
