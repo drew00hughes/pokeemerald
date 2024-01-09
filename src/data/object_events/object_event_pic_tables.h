@@ -9846,3 +9846,57 @@ const struct SpriteFrameImage gObjectEventPicTable_Marowak_Alolan[] = {
     overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 4),
     overworld_frame(gObjectEventPic_Marowak_Alolan, 4, 4, 5),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Deerling_Summer[] = {
+    overworld_frame(gObjectEventPic_Deerling_Summer, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Deerling_Summer, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Deerling_Summer, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Deerling_Summer, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Deerling_Summer, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Deerling_Summer, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Deerling_Autumn[] = {
+    overworld_frame(gObjectEventPic_Deerling_Autumn, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Deerling_Autumn, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Deerling_Autumn, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Deerling_Autumn, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Deerling_Autumn, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Deerling_Autumn, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Deerling_Winter[] = {
+    overworld_frame(gObjectEventPic_Deerling_Winter, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Deerling_Winter, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Deerling_Winter, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Deerling_Winter, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Deerling_Winter, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Deerling_Winter, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Sawsbuck_Summer[] = {
+    overworld_frame(gObjectEventPic_Sawsbuck_Summer, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sawsbuck_Summer, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sawsbuck_Summer, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sawsbuck_Summer, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Sawsbuck_Summer, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Sawsbuck_Summer, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Sawsbuck_Autumn[] = {
+    overworld_frame(gObjectEventPic_Sawsbuck_Autumn, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sawsbuck_Autumn, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sawsbuck_Autumn, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sawsbuck_Autumn, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Sawsbuck_Autumn, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Sawsbuck_Autumn, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Sawsbuck_Winter[] = {
+    overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 5),
+};

@@ -1156,6 +1156,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grimer_Alol
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Muk_Alolan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Exeggutor_Alolan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Marowak_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Summer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Autumn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Winter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Summer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Autumn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Winter;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -2259,6 +2265,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ROTOM_FAN] =           &gObjectEventGraphicsInfo_Rotom_Fan,
     [OBJ_EVENT_GFX_ROTOM_MOW] =           &gObjectEventGraphicsInfo_Rotom_Mow,
     [OBJ_EVENT_GFX_SHAYMIN_SKY] =             &gObjectEventGraphicsInfo_Shaymin_Sky,
+    [OBJ_EVENT_GFX_DEERLING_SUMMER] =             &gObjectEventGraphicsInfo_Deerling_Summer,
+    [OBJ_EVENT_GFX_DEERLING_AUTUMN] =             &gObjectEventGraphicsInfo_Deerling_Autumn,
+    [OBJ_EVENT_GFX_DEERLING_WINTER] =             &gObjectEventGraphicsInfo_Deerling_Winter,
+    [OBJ_EVENT_GFX_SAWSBUCK_SUMMER] =             &gObjectEventGraphicsInfo_Sawsbuck_Summer,
+    [OBJ_EVENT_GFX_SAWSBUCK_AUTUMN] =             &gObjectEventGraphicsInfo_Sawsbuck_Autumn,
+    [OBJ_EVENT_GFX_SAWSBUCK_WINTER] =             &gObjectEventGraphicsInfo_Sawsbuck_Winter,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

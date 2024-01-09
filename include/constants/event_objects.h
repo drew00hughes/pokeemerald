@@ -1076,36 +1076,42 @@
 #define OBJ_EVENT_GFX_ROTOM_FAN            1072
 #define OBJ_EVENT_GFX_ROTOM_MOW            1073
 #define OBJ_EVENT_GFX_SHAYMIN_SKY               1074
+#define OBJ_EVENT_GFX_DEERLING_SUMMER           1075
+#define OBJ_EVENT_GFX_DEERLING_AUTUMN           1076
+#define OBJ_EVENT_GFX_DEERLING_WINTER           1077
+#define OBJ_EVENT_GFX_SAWSBUCK_SUMMER           1078
+#define OBJ_EVENT_GFX_SAWSBUCK_AUTUMN           1079
+#define OBJ_EVENT_GFX_SAWSBUCK_WINTER           1080
+
 
 // update numbers below after paste
-#define OBJ_EVENT_GFX_GREAT_BALL                1075
-#define OBJ_EVENT_GFX_ULTRA_BALL                1076
-#define OBJ_EVENT_GFX_MASTER_BALL               1077
-#define OBJ_EVENT_GFX_SAFARI_BALL               1078
-#define OBJ_EVENT_GFX_NET_BALL                  1079
-#define OBJ_EVENT_GFX_DIVE_BALL                 1080
-#define OBJ_EVENT_GFX_NEST_BALL                 1081
-#define OBJ_EVENT_GFX_REPEAT_BALL               1082
-#define OBJ_EVENT_GFX_TIMER_BALL                1083
-#define OBJ_EVENT_GFX_LUXURY_BALL               1084
-#define OBJ_EVENT_GFX_PREMIER_BALL              1085
-#define OBJ_EVENT_GFX_HEAL_BALL                 1086
-#define OBJ_EVENT_GFX_DUSK_BALL                 1087
-#define OBJ_EVENT_GFX_QUICK_BALL                1088
-#define OBJ_EVENT_GFX_LEVEL_BALL                1089
-#define OBJ_EVENT_GFX_LURE_BALL                 1090
-#define OBJ_EVENT_GFX_MOON_BALL                 1091
-#define OBJ_EVENT_GFX_FRIEND_BALL               1092
-#define OBJ_EVENT_GFX_LOVE_BALL                 1093
-#define OBJ_EVENT_GFX_FAST_BALL                 1094
-#define OBJ_EVENT_GFX_HEAVY_BALL                1095
-#define OBJ_EVENT_GFX_DREAM_BALL                1096
-#define OBJ_EVENT_GFX_SPORT_BALL                1097
-#define OBJ_EVENT_GFX_PARK_BALL                 1098
-#define OBJ_EVENT_GFX_CHERISH_BALL              1099
-#define OBJ_EVENT_GFX_EXPANDING_SPARKLE         1100
-
-#define NUM_OBJ_EVENT_GFX                       1101
+#define OBJ_EVENT_GFX_GREAT_BALL                1081
+#define OBJ_EVENT_GFX_ULTRA_BALL                1082
+#define OBJ_EVENT_GFX_MASTER_BALL               1083
+#define OBJ_EVENT_GFX_SAFARI_BALL               1084
+#define OBJ_EVENT_GFX_NET_BALL                  1085
+#define OBJ_EVENT_GFX_DIVE_BALL                 1086
+#define OBJ_EVENT_GFX_NEST_BALL                 1087
+#define OBJ_EVENT_GFX_REPEAT_BALL               1088
+#define OBJ_EVENT_GFX_TIMER_BALL                1089
+#define OBJ_EVENT_GFX_LUXURY_BALL               1090
+#define OBJ_EVENT_GFX_PREMIER_BALL              1091
+#define OBJ_EVENT_GFX_HEAL_BALL                 1092
+#define OBJ_EVENT_GFX_DUSK_BALL                 1093
+#define OBJ_EVENT_GFX_QUICK_BALL                1094
+#define OBJ_EVENT_GFX_LEVEL_BALL                1095
+#define OBJ_EVENT_GFX_LURE_BALL                 1096
+#define OBJ_EVENT_GFX_MOON_BALL                 1097
+#define OBJ_EVENT_GFX_FRIEND_BALL               1098
+#define OBJ_EVENT_GFX_LOVE_BALL                 1099
+#define OBJ_EVENT_GFX_FAST_BALL                 1100
+#define OBJ_EVENT_GFX_HEAVY_BALL                1101
+#define OBJ_EVENT_GFX_DREAM_BALL                1102
+#define OBJ_EVENT_GFX_SPORT_BALL                1103
+#define OBJ_EVENT_GFX_PARK_BALL                 1104
+#define OBJ_EVENT_GFX_CHERISH_BALL              1105
+#define OBJ_EVENT_GFX_EXPANDING_SPARKLE         1106
+#define NUM_OBJ_EVENT_GFX                       1107
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

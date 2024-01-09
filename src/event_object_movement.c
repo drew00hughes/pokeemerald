@@ -1331,9 +1331,15 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MUK_ALOLAN          0xE5A
 #define OBJ_EVENT_PAL_TAG_EXEGGUTOR_ALOLAN          0xE59
 #define OBJ_EVENT_PAL_TAG_MAROWAK_ALOLAN          0xE58
-#define OBJ_EVENT_PAL_TAG_ORICORIO_POM_POM        0xE57
-#define OBJ_EVENT_PAL_TAG_ORICORIO_PAU            0xE56
-#define OBJ_EVENT_PAL_TAG_ORICORIO_SENSU          0xE55
+#define OBJ_EVENT_PAL_TAG_DEERLING_SUMMER         0xE57
+#define OBJ_EVENT_PAL_TAG_DEERLING_AUTUMN         0xE56
+#define OBJ_EVENT_PAL_TAG_DEERLING_WINTER         0xE55
+#define OBJ_EVENT_PAL_TAG_SAWSBUCK_SUMMER         0xE54
+#define OBJ_EVENT_PAL_TAG_SAWSBUCK_AUTUMN         0xE53
+#define OBJ_EVENT_PAL_TAG_SAWSBUCK_WINTER         0xE52
+#define OBJ_EVENT_PAL_TAG_ORICORIO_POM_POM        0xE51
+#define OBJ_EVENT_PAL_TAG_ORICORIO_PAU            0xE50
+#define OBJ_EVENT_PAL_TAG_ORICORIO_SENSU          0xE49
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -2262,6 +2268,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Muk_Alolan,               OBJ_EVENT_PAL_TAG_MUK_ALOLAN},
     {gObjectEventPal_Exeggutor_Alolan,               OBJ_EVENT_PAL_TAG_EXEGGUTOR_ALOLAN},
     {gObjectEventPal_Marowak_Alolan,               OBJ_EVENT_PAL_TAG_MAROWAK_ALOLAN},
+    {gObjectEventPal_Deerling_Summer,               OBJ_EVENT_PAL_TAG_DEERLING_SUMMER},
+    {gObjectEventPal_Deerling_Autumn,               OBJ_EVENT_PAL_TAG_DEERLING_AUTUMN},
+    {gObjectEventPal_Deerling_Winter,               OBJ_EVENT_PAL_TAG_DEERLING_WINTER},
+    {gObjectEventPal_Sawsbuck_Summer,               OBJ_EVENT_PAL_TAG_SAWSBUCK_SUMMER},
+    {gObjectEventPal_Sawsbuck_Autumn,               OBJ_EVENT_PAL_TAG_SAWSBUCK_AUTUMN},
+    {gObjectEventPal_Sawsbuck_Winter,               OBJ_EVENT_PAL_TAG_SAWSBUCK_WINTER},
     {gObjectEventPal_Oricorio_Pom_Pom,               OBJ_EVENT_PAL_TAG_ORICORIO_POM_POM},
     {gObjectEventPal_Oricorio_Pau,               OBJ_EVENT_PAL_TAG_ORICORIO_PAU},
     {gObjectEventPal_Oricorio_Sensu,               OBJ_EVENT_PAL_TAG_ORICORIO_SENSU},
