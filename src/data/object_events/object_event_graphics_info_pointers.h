@@ -1162,6 +1162,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Wi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Summer;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Autumn;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Winter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Pom_Pom;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Pau;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Sensu;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -2271,6 +2274,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SAWSBUCK_SUMMER] =             &gObjectEventGraphicsInfo_Sawsbuck_Summer,
     [OBJ_EVENT_GFX_SAWSBUCK_AUTUMN] =             &gObjectEventGraphicsInfo_Sawsbuck_Autumn,
     [OBJ_EVENT_GFX_SAWSBUCK_WINTER] =             &gObjectEventGraphicsInfo_Sawsbuck_Winter,
+    [OBJ_EVENT_GFX_ORICORIO_POM_POM] =             &gObjectEventGraphicsInfo_Oricorio_Pom_Pom,
+    [OBJ_EVENT_GFX_ORICORIO_PAU] =             &gObjectEventGraphicsInfo_Oricorio_Pau,
+    [OBJ_EVENT_GFX_ORICORIO_SENSU] =             &gObjectEventGraphicsInfo_Oricorio_Sensu,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

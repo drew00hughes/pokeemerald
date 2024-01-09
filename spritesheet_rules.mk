@@ -2634,7 +2634,7 @@ $(OBJEVENTGFXDIR)/pokemon/followers/noivern.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon/followers/oranguru.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/pokemon/followers/oricorio.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon/followers/oricorio_r.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokemon/followers/oshawott.4bpp: %.4bpp: %.png
@@ -3094,6 +3094,15 @@ $(OBJEVENTGFXDIR)/pokemon/followers/sawsbuckautumn.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokemon/followers/sawsbuckwinter.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/followers/oricorio_y.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/followers/oricorio_p.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/followers/oricorio_b.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 

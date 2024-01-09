@@ -857,7 +857,7 @@
 #define SPECIES_SAWSBUCK_AUTUMN              FORMS_START + 32
 #define SPECIES_SAWSBUCK_WINTER              FORMS_START + 33
 
-// Oricorio
+//  Oricorio
 #define SPECIES_ORICORIO_POM_POM             FORMS_START + 34
 #define SPECIES_ORICORIO_PAU                 FORMS_START + 35
 #define SPECIES_ORICORIO_SENSU               FORMS_START + 36
