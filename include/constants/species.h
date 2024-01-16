@@ -895,12 +895,12 @@
 // Worma6
 #define SPECIES_WORMADAM_SANDY_CLOAK         FORMS_START + 66
 #define SPECIES_WORMADAM_TRASH_CLOAK         FORMS_START + 67
-// Cher6
-#define SPECIES_CHERRIM_SUNSHINE             FORMS_START + 68
 // Shel6
-#define SPECIES_SHELLOS_EAST_SEA             FORMS_START + 69
+#define SPECIES_SHELLOS_EAST_SEA             FORMS_START + 68
 // Gastro6
-#define SPECIES_GASTRODON_EAST_SEA           FORMS_START + 70
+#define SPECIES_GASTRODON_EAST_SEA           FORMS_START + 69
+// Cher6
+#define SPECIES_CHERRIM_SUNSHINE             FORMS_START + 70
 
 // not included in this build
 #define SPECIES_GROOKEY FORMS_START + 71

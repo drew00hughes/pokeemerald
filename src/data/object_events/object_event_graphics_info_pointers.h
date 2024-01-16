@@ -2302,8 +2302,14 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_UNOWN_X] =                        &gObjectEventGraphicsInfo_Unown_X,
     [OBJ_EVENT_GFX_UNOWN_Y] =                        &gObjectEventGraphicsInfo_Unown_Y,
     [OBJ_EVENT_GFX_UNOWN_Z] =                        &gObjectEventGraphicsInfo_Unown_Z,
-    [OBJ_EVENT_GFX_UNOWN_EMARK] =                        &gObjectEventGraphicsInfo_Unown_Exclamation,
-    [OBJ_EVENT_GFX_UNOWN_QMARK] =                        &gObjectEventGraphicsInfo_Unown_Question,
+    [OBJ_EVENT_GFX_UNOWN_EMARK] =                    &gObjectEventGraphicsInfo_Unown_Exclamation,
+    [OBJ_EVENT_GFX_UNOWN_QMARK] =                    &gObjectEventGraphicsInfo_Unown_Question,
+    [OBJ_EVENT_GFX_BURMY_SANDY_CLOAK] =              &gObjectEventGraphicsInfo_Burmy_Sand,
+    [OBJ_EVENT_GFX_BURMY_TRASH_CLOAK] =              &gObjectEventGraphicsInfo_Burmy_Trash,
+    [OBJ_EVENT_GFX_WORMADAM_SANDY_CLOAK] =           &gObjectEventGraphicsInfo_Wormadam_Sand,
+    [OBJ_EVENT_GFX_WORMADAM_TRASH_CLOAK] =           &gObjectEventGraphicsInfo_Wormadam_Trash,
+    [OBJ_EVENT_GFX_SHELLOS_EAST] =                   &gObjectEventGraphicsInfo_Shellos_East,
+    [OBJ_EVENT_GFX_GASTRODON_EAST] =                 &gObjectEventGraphicsInfo_Gastrodon_East,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
