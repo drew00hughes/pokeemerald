@@ -1138,6 +1138,33 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zoroark;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zorua;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zweilous;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zygarde;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rattata_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raticate_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raichu_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sandshrew_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sandslash_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vulpix_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ninetales_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diglett_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dugtrio_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Persian_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Geodude_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Graveler_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Golem_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grimer_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Muk_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Exeggutor_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Marowak_Alolan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Summer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Autumn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deerling_Winter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Summer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Autumn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Winter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Pom_Pom;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Pau;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Sensu;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -2214,6 +2241,75 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZORUA] =                    &gObjectEventGraphicsInfo_Zorua,
     [OBJ_EVENT_GFX_ZWEILOUS] =                 &gObjectEventGraphicsInfo_Zweilous,
     [OBJ_EVENT_GFX_ZYGARDE] =                  &gObjectEventGraphicsInfo_Zygarde,
+    [OBJ_EVENT_GFX_RATTATA_ALOLAN] =           &gObjectEventGraphicsInfo_Rattata_Alolan,
+    [OBJ_EVENT_GFX_RATICATE_ALOLAN] =           &gObjectEventGraphicsInfo_Raticate_Alolan,
+    [OBJ_EVENT_GFX_RAICHU_ALOLAN] =           &gObjectEventGraphicsInfo_Raichu_Alolan,
+    [OBJ_EVENT_GFX_SANDSHREW_ALOLAN] =           &gObjectEventGraphicsInfo_Sandshrew_Alolan,
+    [OBJ_EVENT_GFX_SANDSLASH_ALOLAN] =           &gObjectEventGraphicsInfo_Sandslash_Alolan,
+    [OBJ_EVENT_GFX_VULPIX_ALOLAN] =           &gObjectEventGraphicsInfo_Vulpix_Alolan,
+    [OBJ_EVENT_GFX_NINETALES_ALOLAN] =           &gObjectEventGraphicsInfo_Ninetales_Alolan,
+    [OBJ_EVENT_GFX_DIGLETT_ALOLAN] =           &gObjectEventGraphicsInfo_Diglett_Alolan,
+    [OBJ_EVENT_GFX_DUGTRIO_ALOLAN] =           &gObjectEventGraphicsInfo_Dugtrio_Alolan,
+    [OBJ_EVENT_GFX_MEOWTH_ALOLAN] =           &gObjectEventGraphicsInfo_Meowth_Alolan,
+    [OBJ_EVENT_GFX_PERSIAN_ALOLAN] =           &gObjectEventGraphicsInfo_Persian_Alolan,
+    [OBJ_EVENT_GFX_GEODUDE_ALOLAN] =           &gObjectEventGraphicsInfo_Geodude_Alolan,
+    [OBJ_EVENT_GFX_GRAVELER_ALOLAN] =           &gObjectEventGraphicsInfo_Graveler_Alolan,
+    [OBJ_EVENT_GFX_GOLEM_ALOLAN] =           &gObjectEventGraphicsInfo_Golem_Alolan,
+    [OBJ_EVENT_GFX_GRIMER_ALOLAN] =           &gObjectEventGraphicsInfo_Grimer_Alolan,
+    [OBJ_EVENT_GFX_MUK_ALOLAN] =           &gObjectEventGraphicsInfo_Muk_Alolan,
+    [OBJ_EVENT_GFX_EXEGGUTOR_ALOLAN] =           &gObjectEventGraphicsInfo_Exeggutor_Alolan,
+    [OBJ_EVENT_GFX_MAROWAK_ALOLAN] =           &gObjectEventGraphicsInfo_Marowak_Alolan,
+    [OBJ_EVENT_GFX_DEOXYS_ATTACK] =           &gObjectEventGraphicsInfo_Deoxys_Attack,
+    [OBJ_EVENT_GFX_DEOXYS_SPEED] =           &gObjectEventGraphicsInfo_Deoxys_Speed,
+    [OBJ_EVENT_GFX_DEOXYS_DEFENSE] =           &gObjectEventGraphicsInfo_Deoxys_Defense,
+    [OBJ_EVENT_GFX_ROTOM_HEAT] =           &gObjectEventGraphicsInfo_Rotom_Heat,
+    [OBJ_EVENT_GFX_ROTOM_WASH] =           &gObjectEventGraphicsInfo_Rotom_Wash,
+    [OBJ_EVENT_GFX_ROTOM_FROST] =           &gObjectEventGraphicsInfo_Rotom_Frost,
+    [OBJ_EVENT_GFX_ROTOM_FAN] =           &gObjectEventGraphicsInfo_Rotom_Fan,
+    [OBJ_EVENT_GFX_ROTOM_MOW] =           &gObjectEventGraphicsInfo_Rotom_Mow,
+    [OBJ_EVENT_GFX_SHAYMIN_SKY] =             &gObjectEventGraphicsInfo_Shaymin_Sky,
+    [OBJ_EVENT_GFX_DEERLING_SUMMER] =             &gObjectEventGraphicsInfo_Deerling_Summer,
+    [OBJ_EVENT_GFX_DEERLING_AUTUMN] =             &gObjectEventGraphicsInfo_Deerling_Autumn,
+    [OBJ_EVENT_GFX_DEERLING_WINTER] =             &gObjectEventGraphicsInfo_Deerling_Winter,
+    [OBJ_EVENT_GFX_SAWSBUCK_SUMMER] =             &gObjectEventGraphicsInfo_Sawsbuck_Summer,
+    [OBJ_EVENT_GFX_SAWSBUCK_AUTUMN] =             &gObjectEventGraphicsInfo_Sawsbuck_Autumn,
+    [OBJ_EVENT_GFX_SAWSBUCK_WINTER] =             &gObjectEventGraphicsInfo_Sawsbuck_Winter,
+    [OBJ_EVENT_GFX_ORICORIO_POM_POM] =             &gObjectEventGraphicsInfo_Oricorio_Pom_Pom,
+    [OBJ_EVENT_GFX_ORICORIO_PAU] =             &gObjectEventGraphicsInfo_Oricorio_Pau,
+    [OBJ_EVENT_GFX_ORICORIO_SENSU] =             &gObjectEventGraphicsInfo_Oricorio_Sensu,
+    [OBJ_EVENT_GFX_UNOWN_B] =                   &gObjectEventGraphicsInfo_Unown_B,
+    [OBJ_EVENT_GFX_UNOWN_C] =                        &gObjectEventGraphicsInfo_Unown_C,
+    [OBJ_EVENT_GFX_UNOWN_D] =                        &gObjectEventGraphicsInfo_Unown_D,
+    [OBJ_EVENT_GFX_UNOWN_E] =                        &gObjectEventGraphicsInfo_Unown_E,
+    [OBJ_EVENT_GFX_UNOWN_F] =                        &gObjectEventGraphicsInfo_Unown_F,
+    [OBJ_EVENT_GFX_UNOWN_G] =                        &gObjectEventGraphicsInfo_Unown_G,
+    [OBJ_EVENT_GFX_UNOWN_H] =                        &gObjectEventGraphicsInfo_Unown_H,
+    [OBJ_EVENT_GFX_UNOWN_I] =                        &gObjectEventGraphicsInfo_Unown_I,
+    [OBJ_EVENT_GFX_UNOWN_J] =                        &gObjectEventGraphicsInfo_Unown_J,
+    [OBJ_EVENT_GFX_UNOWN_K] =                        &gObjectEventGraphicsInfo_Unown_K,
+    [OBJ_EVENT_GFX_UNOWN_L] =                        &gObjectEventGraphicsInfo_Unown_L,
+    [OBJ_EVENT_GFX_UNOWN_M] =                        &gObjectEventGraphicsInfo_Unown_M,
+    [OBJ_EVENT_GFX_UNOWN_N] =                        &gObjectEventGraphicsInfo_Unown_N,
+    [OBJ_EVENT_GFX_UNOWN_O] =                        &gObjectEventGraphicsInfo_Unown_O,
+    [OBJ_EVENT_GFX_UNOWN_P] =                        &gObjectEventGraphicsInfo_Unown_P,
+    [OBJ_EVENT_GFX_UNOWN_Q] =                        &gObjectEventGraphicsInfo_Unown_Q,
+    [OBJ_EVENT_GFX_UNOWN_R] =                        &gObjectEventGraphicsInfo_Unown_R,
+    [OBJ_EVENT_GFX_UNOWN_S] =                        &gObjectEventGraphicsInfo_Unown_S,
+    [OBJ_EVENT_GFX_UNOWN_T] =                        &gObjectEventGraphicsInfo_Unown_T,
+    [OBJ_EVENT_GFX_UNOWN_U] =                        &gObjectEventGraphicsInfo_Unown_U,
+    [OBJ_EVENT_GFX_UNOWN_V] =                        &gObjectEventGraphicsInfo_Unown_V,
+    [OBJ_EVENT_GFX_UNOWN_W] =                        &gObjectEventGraphicsInfo_Unown_W,
+    [OBJ_EVENT_GFX_UNOWN_X] =                        &gObjectEventGraphicsInfo_Unown_X,
+    [OBJ_EVENT_GFX_UNOWN_Y] =                        &gObjectEventGraphicsInfo_Unown_Y,
+    [OBJ_EVENT_GFX_UNOWN_Z] =                        &gObjectEventGraphicsInfo_Unown_Z,
+    [OBJ_EVENT_GFX_UNOWN_EMARK] =                    &gObjectEventGraphicsInfo_Unown_Exclamation,
+    [OBJ_EVENT_GFX_UNOWN_QMARK] =                    &gObjectEventGraphicsInfo_Unown_Question,
+    [OBJ_EVENT_GFX_BURMY_SANDY_CLOAK] =              &gObjectEventGraphicsInfo_Burmy_Sand,
+    [OBJ_EVENT_GFX_BURMY_TRASH_CLOAK] =              &gObjectEventGraphicsInfo_Burmy_Trash,
+    [OBJ_EVENT_GFX_WORMADAM_SANDY_CLOAK] =           &gObjectEventGraphicsInfo_Wormadam_Sand,
+    [OBJ_EVENT_GFX_WORMADAM_TRASH_CLOAK] =           &gObjectEventGraphicsInfo_Wormadam_Trash,
+    [OBJ_EVENT_GFX_SHELLOS_EAST] =                   &gObjectEventGraphicsInfo_Shellos_East,
+    [OBJ_EVENT_GFX_GASTRODON_EAST] =                 &gObjectEventGraphicsInfo_Gastrodon_East,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

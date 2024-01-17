@@ -1313,9 +1313,33 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_ZORUA                   0xE6C
 #define OBJ_EVENT_PAL_TAG_ZWEILOUS                0xE6B
 #define OBJ_EVENT_PAL_TAG_ZYGARDE                 0xE6A
-#define OBJ_EVENT_PAL_TAG_ORICORIO_POM_POM        0xE69
-#define OBJ_EVENT_PAL_TAG_ORICORIO_PAU            0xE68
-#define OBJ_EVENT_PAL_TAG_ORICORIO_SENSU          0xE67
+#define OBJ_EVENT_PAL_TAG_RATTATA_ALOLAN          0xE69
+#define OBJ_EVENT_PAL_TAG_RATICATE_ALOLAN          0xE68
+#define OBJ_EVENT_PAL_TAG_RAICHU_ALOLAN          0xE67
+#define OBJ_EVENT_PAL_TAG_SANDSHREW_ALOLAN          0xE66
+#define OBJ_EVENT_PAL_TAG_SANDSLASH_ALOLAN          0xE65
+#define OBJ_EVENT_PAL_TAG_VULPIX_ALOLAN          0xE64
+#define OBJ_EVENT_PAL_TAG_NINETALES_ALOLAN          0xE63
+#define OBJ_EVENT_PAL_TAG_DIGLETT_ALOLAN          0xE62
+#define OBJ_EVENT_PAL_TAG_DUGTRIO_ALOLAN          0xE61
+#define OBJ_EVENT_PAL_TAG_MEOWTH_ALOLAN          0xE60
+#define OBJ_EVENT_PAL_TAG_PERSIAN_ALOLAN          0xE5F
+#define OBJ_EVENT_PAL_TAG_GEODUDE_ALOLAN          0xE5E
+#define OBJ_EVENT_PAL_TAG_GRAVELER_ALOLAN          0xE5D
+#define OBJ_EVENT_PAL_TAG_GOLEM_ALOLAN          0xE5C
+#define OBJ_EVENT_PAL_TAG_GRIMER_ALOLAN          0xE5B
+#define OBJ_EVENT_PAL_TAG_MUK_ALOLAN          0xE5A
+#define OBJ_EVENT_PAL_TAG_EXEGGUTOR_ALOLAN          0xE59
+#define OBJ_EVENT_PAL_TAG_MAROWAK_ALOLAN          0xE58
+#define OBJ_EVENT_PAL_TAG_DEERLING_SUMMER         0xE57
+#define OBJ_EVENT_PAL_TAG_DEERLING_AUTUMN         0xE56
+#define OBJ_EVENT_PAL_TAG_DEERLING_WINTER         0xE55
+#define OBJ_EVENT_PAL_TAG_SAWSBUCK_SUMMER         0xE54
+#define OBJ_EVENT_PAL_TAG_SAWSBUCK_AUTUMN         0xE53
+#define OBJ_EVENT_PAL_TAG_SAWSBUCK_WINTER         0xE52
+#define OBJ_EVENT_PAL_TAG_ORICORIO_POM_POM        0xE51
+#define OBJ_EVENT_PAL_TAG_ORICORIO_PAU            0xE50
+#define OBJ_EVENT_PAL_TAG_ORICORIO_SENSU          0xE49
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -2226,6 +2250,30 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Zorua,               OBJ_EVENT_PAL_TAG_ZORUA},
     {gObjectEventPal_Zweilous,               OBJ_EVENT_PAL_TAG_ZWEILOUS},
     {gObjectEventPal_Zygarde,               OBJ_EVENT_PAL_TAG_ZYGARDE},
+    {gObjectEventPal_Rattata_Alolan,               OBJ_EVENT_PAL_TAG_RATTATA_ALOLAN},
+    {gObjectEventPal_Raticate_Alolan,               OBJ_EVENT_PAL_TAG_RATICATE_ALOLAN},
+    {gObjectEventPal_Raichu_Alolan,               OBJ_EVENT_PAL_TAG_RAICHU_ALOLAN},
+    {gObjectEventPal_Sandshrew_Alolan,               OBJ_EVENT_PAL_TAG_SANDSHREW_ALOLAN},
+    {gObjectEventPal_Sandslash_Alolan,               OBJ_EVENT_PAL_TAG_SANDSLASH_ALOLAN},
+    {gObjectEventPal_Vulpix_Alolan,               OBJ_EVENT_PAL_TAG_VULPIX_ALOLAN},
+    {gObjectEventPal_Ninetales_Alolan,               OBJ_EVENT_PAL_TAG_NINETALES_ALOLAN},
+    {gObjectEventPal_Diglett_Alolan,               OBJ_EVENT_PAL_TAG_DIGLETT_ALOLAN},
+    {gObjectEventPal_Dugtrio_Alolan,               OBJ_EVENT_PAL_TAG_DUGTRIO_ALOLAN},
+    {gObjectEventPal_Meowth_Alolan,               OBJ_EVENT_PAL_TAG_MEOWTH_ALOLAN},
+    {gObjectEventPal_Persian_Alolan,               OBJ_EVENT_PAL_TAG_PERSIAN_ALOLAN},
+    {gObjectEventPal_Geodude_Alolan,               OBJ_EVENT_PAL_TAG_GEODUDE_ALOLAN},
+    {gObjectEventPal_Graveler_Alolan,               OBJ_EVENT_PAL_TAG_GRAVELER_ALOLAN},
+    {gObjectEventPal_Golem_Alolan,               OBJ_EVENT_PAL_TAG_GOLEM_ALOLAN},
+    {gObjectEventPal_Grimer_Alolan,               OBJ_EVENT_PAL_TAG_GRIMER_ALOLAN},
+    {gObjectEventPal_Muk_Alolan,               OBJ_EVENT_PAL_TAG_MUK_ALOLAN},
+    {gObjectEventPal_Exeggutor_Alolan,               OBJ_EVENT_PAL_TAG_EXEGGUTOR_ALOLAN},
+    {gObjectEventPal_Marowak_Alolan,               OBJ_EVENT_PAL_TAG_MAROWAK_ALOLAN},
+    {gObjectEventPal_Deerling_Summer,               OBJ_EVENT_PAL_TAG_DEERLING_SUMMER},
+    {gObjectEventPal_Deerling_Autumn,               OBJ_EVENT_PAL_TAG_DEERLING_AUTUMN},
+    {gObjectEventPal_Deerling_Winter,               OBJ_EVENT_PAL_TAG_DEERLING_WINTER},
+    {gObjectEventPal_Sawsbuck_Summer,               OBJ_EVENT_PAL_TAG_SAWSBUCK_SUMMER},
+    {gObjectEventPal_Sawsbuck_Autumn,               OBJ_EVENT_PAL_TAG_SAWSBUCK_AUTUMN},
+    {gObjectEventPal_Sawsbuck_Winter,               OBJ_EVENT_PAL_TAG_SAWSBUCK_WINTER},
     {gObjectEventPal_Oricorio_Pom_Pom,               OBJ_EVENT_PAL_TAG_ORICORIO_POM_POM},
     {gObjectEventPal_Oricorio_Pau,               OBJ_EVENT_PAL_TAG_ORICORIO_PAU},
     {gObjectEventPal_Oricorio_Sensu,               OBJ_EVENT_PAL_TAG_ORICORIO_SENSU},
