@@ -12,10 +12,15 @@ MtChimney_MapScripts::
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
+	call_if_unset FLAG_HIDE_HEATRAN, MtChimney_EventScript_Reset_Heatran_Trigger
 	end
 
 MtChimney_OnResume:
 	setstepcallback STEP_CB_ASH
+	end
+
+MtChimney_EventScript_Reset_Heatran_Trigger::
+	setvar VAR_TRIGGER_HEATRAN, 1
 	end
 
 MtChimney_EventScript_Archie::
@@ -360,17 +365,10 @@ MtChimney_Movement_Unused12:
 	walk_down
 	step_end
 
-MtChimney_Movement_Unused13:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	walk_in_place_faster_left
-	delay_16
-	walk_down
-	walk_down
+MtChimney_Movement_Heatran_Depart:
+	walk_slow_up
+	walk_slow_up
+	face_down
 	step_end
 
 MtChimney_Movement_Player_Face_Up:
@@ -542,7 +540,29 @@ MtChimney_EventScript_HeatranBattle::
 	waitmovement 0
 	setwildbattle SPECIES_HEATRAN, 30, ITEM_LAVA_COOKIE
 	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, MtChimney_EventScript_PostHeatranBattleRematch
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtChimney_EventScript_PostHeatranBattleRematch
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MtChimney_EventScript_PostHeatranBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtChimney_EventScript_PostHeatranBattle
 	releaseall
+	end
+
+MtChimney_EventScript_PostHeatranBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 31
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_HEATRAN
+	setvar VAR_TRIGGER_HEATRAN, 0
+	end
+
+MtChimney_EventScript_PostHeatranBattleRematch::
+	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	applymovement 31, MtChimney_Movement_Heatran_Depart
+	waitmovement 0
+	end
 
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the METEORITE…\p"
