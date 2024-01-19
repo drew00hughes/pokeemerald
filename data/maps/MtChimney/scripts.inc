@@ -373,17 +373,13 @@ MtChimney_Movement_Unused13:
 	walk_down
 	step_end
 
-MtChimney_Movement_Unused14:
-	lock_facing_direction
-	walk_fast_left
-	unlock_facing_direction
-	face_right
+MtChimney_Movement_Player_Face_Up:
+	face_up
 	step_end
 
-MtChimney_Movement_Unused15:
-	walk_left
-	walk_in_place_faster_right
-	delay_16
+MtChimney_Movement_Heatran_Approach:
+	walk_slow_down
+	walk_slow_down
 	step_end
 
 MtChimney_EventScript_BusyAquaGrunt1::
@@ -532,6 +528,21 @@ MtChimney_EventScript_SawyerRematch::
 	trainerbattle_rematch TRAINER_SAWYER_1, MtChimney_Text_SawyerRematchIntro, MtChimney_Text_SawyerRematchDefeat
 	msgbox MtChimney_Text_SawyerPostRematch, MSGBOX_AUTOCLOSE
 	end
+
+MtChimney_EventScript_HeatranBattle::
+	lockall
+	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MtChimney_Movement_Player_Face_Up
+	waitmovement 0
+	applymovement 31, MtChimney_Movement_Heatran_Approach
+	waitmovement 0
+	setwildbattle SPECIES_HEATRAN, 30, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	releaseall
 
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the METEORITE…\p"
