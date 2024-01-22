@@ -11,6 +11,7 @@ SealedChamber_OuterRoom_OnResume:
 
 SealedChamber_OuterRoom_OnTransition:
 	setflag FLAG_LANDMARK_SEALED_CHAMBER
+	setflag FLAG_HIDE_REGIGIGAS
 	end
 
 SealedChamber_OuterRoom_OnLoad:
