@@ -368,7 +368,8 @@ MtChimney_Movement_Unused12:
 MtChimney_Movement_Heatran_Depart:
 	walk_slow_up
 	walk_slow_up
-	face_down
+	walk_slow_up
+	walk_slow_down
 	step_end
 
 MtChimney_Movement_Player_Face_Up:
