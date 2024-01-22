@@ -46,11 +46,11 @@
 #define FLAG_FOLLOWER_IN_BUILDING                0x21 // Used for speeding up follower door exiting
 
 #define FLAG_CLEANSE_TAG     0x22 // Cleanse Tag Flag
-#define FLAG_NO_ENCOUNTER    0x23 // Unused Flag
-#define FLAG_NO_TRAINER_SEE  0x24 // Unused Flag
-#define FLAG_NO_COLLISION    0x25 // Unused Flag
-#define FLAG_HIDE_HEATRAN    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_NO_ENCOUNTER    0x23 
+#define FLAG_NO_TRAINER_SEE  0x24 
+#define FLAG_NO_COLLISION    0x25 
+#define FLAG_HIDE_HEATRAN    0x26 
+#define FLAG_ROTOM_CAUGHT    0x27
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
