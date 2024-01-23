@@ -1,6 +1,76 @@
 FallarborTown_CozmosHouse_MapScripts::
 	.byte 0
 
+FallarborTown_CozmosHouse_EventScript_LittleGirl::
+	call_if_unset FLAG_RECEIVED_VICTINI FallarborTown_CozmosHouse_EventScript_WantVictini
+	call_if_set FLAG_RECEIVED_VICTINI FallarborTown_CozmosHouse_EventScript_TakeCareOfIt
+	end
+
+FallarborTown_CozmosHouse_EventScript_WantVictini::
+	lock
+	msgbox FallarborTown_CozmosHouse_Text_MomCutsApples MSGBOX_DEFAULT
+	showmonpic SPECIES_VICTINI, 10, 3
+	msgbox FallarborTown_CozmosHouse_Text_WantPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FallarborTown_CozmosHouse_EventScript_OhOK
+	goto FallarborTown_CozmosHouse_EventScript_GiveVictini
+	end
+
+FallarborTown_CozmosHouse_EventScript_OhOK::
+	hidemonpic
+	msgbox FallarborTown_CozmosHouse_Text_OhOK, MSGBOX_DEFAULT
+	releaseall
+	end
+
+FallarborTown_CozmosHouse_EventScript_GiveVictini::
+	bufferspeciesname STR_VAR_1, SPECIES_VICTINI
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VICTINI
+	givemon SPECIES_VICTINI, 15
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, FallarborTown_CozmosHouse_EventScript_SendVictiniToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, FallarborTown_CozmosHouse_EventScript_SendVictiniToPC
+	hidemonpic
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+FallarborTown_CozmosHouse_EventScript_SendVictiniToParty::
+	call FallarborTown_CozmosHouse_EventScript_ReceivedVictiniPokemon
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FallarborTown_CozmosHouse_EventScript_ReceivedVictini
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto FallarborTown_CozmosHouse_EventScript_ReceivedVictini
+	end
+
+FallarborTown_CozmosHouse_EventScript_SendVictiniToPC::
+	call FallarborTown_CozmosHouse_EventScript_ReceivedVictiniPokemon
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FallarborTown_CozmosHouse_EventScript_VictiniTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto FallarborTown_CozmosHouse_EventScript_VictiniTransferredToPC
+	end
+
+FallarborTown_CozmosHouse_EventScript_VictiniTransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto FallarborTown_CozmosHouse_EventScript_ReceivedVictini
+	end
+
+FallarborTown_CozmosHouse_EventScript_ReceivedVictini::
+	hidemonpic
+	msgbox FallarborTown_CozmosHouse_Text_TakeCareOfIt MSGBOX_DEFAULT
+	releaseall
+	end
+
+FallarborTown_CozmosHouse_EventScript_ReceivedVictiniPokemon::
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_RECEIVED_VICTINI
+	return
+
+FallarborTown_CozmosHouse_EventScript_TakeCareOfIt::
+	lock
+	msgbox FallarborTown_CozmosHouse_Text_TakeCareOfIt MSGBOX_DEFAULT
+	release
+	end
+
 FallarborTown_CozmosHouse_EventScript_ProfCozmo::
 	lock
 	faceplayer
@@ -115,4 +185,23 @@ FallarborTown_CozmosHouse_Text_FeelSorryForCozmo:
 FallarborTown_CozmosHouse_Text_CozmoIsSoHappy:
 	.string "Look at PROF. COZMO…\n"
 	.string "He's so happy! I think it's cute.$"
+
+FallarborTown_CozmosHouse_Text_MomCutsApples:
+	.string "My mommy always cuts my apples\n"
+	.string "for me.\p"
+	.string "...\p"
+	.string "I found a POKéMON that looks like\n"
+	.string "my apples!$"
+
+FallarborTown_CozmosHouse_Text_WantPokemon:
+	.string "Do you want it?$"
+
+FallarborTown_CozmosHouse_Text_OhOK:
+	.string "Oh, OK.$"
+
+FallarborTown_CozmosHouse_Text_TakeCareOfIt:
+	.string "Take good care of it!!$"
+
+FallarborTown_CozmosHouse_Text_Received:
+	.string "{PLAYER} received the {STR_VAR_1}!$"
 
