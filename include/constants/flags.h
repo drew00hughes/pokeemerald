@@ -54,7 +54,7 @@
 #define FLAG_HIDE_REGIGIGAS  0x28 
 #define FLAG_DEFEATED_REGIGIGAS 0x29 
 #define FLAG_HIDE_MANAPHY    0x2A
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_HIDE_PHIONE     0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
