@@ -6,6 +6,19 @@ Route124_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
+Route124_EventScript_HintSwimmerBoy::
+	lock
+	msgbox Route124_Text_PokemonDownThere, MSGBOX_DEFAULT
+	call_if_set FLAG_HIDE_MANAPHY Route124_EventScript_HintSwimmerBoyAfterCatch
+	release
+	end
+
+Route124_EventScript_HintSwimmerBoyAfterCatch::
+	lock
+	msgbox Route124_Text_DidYouGetIt, MSGBOX_DEFAULT
+	release
+	end
+
 Route124_EventScript_HuntersHouseSign::
 	msgbox Route124_Text_HuntersHouse, MSGBOX_SIGN
 	end
@@ -102,3 +115,8 @@ Route124_EventScript_Isabella::
 Route124_Text_HuntersHouse:
 	.string "HUNTER'S HOUSE$"
 
+Route124_Text_PokemonDownThere:
+	.string "I think I see a POKéMON down there!$"
+
+Route124_Text_DidYouGetIt:
+	.string "Wait, did you get it?$"
