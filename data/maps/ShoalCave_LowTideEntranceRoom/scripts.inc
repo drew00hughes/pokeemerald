@@ -89,3 +89,15 @@ ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems::
 	clearflag FLAG_RECEIVED_SHOAL_SHELL_4
 	clearflag FLAG_SYS_SHOAL_ITEM
 	return
+
+ShoalCave_LowTideEntranceRoom_EventScripts_HintMan::
+	lock
+	msgbox ShoalCave_LowTideEntranceRoom_Text_Hint MSGBOX_DEFAULT
+	release
+	end
+
+ShoalCave_LowTideEntranceRoom_Text_Hint:
+	.string "Someone told me there was a\n"
+	.string "rare POKéMON here...\p"
+	.string "but I don't see it!$"
+
