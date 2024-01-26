@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE119_HIDDEN_FOREST",
+      "name": "Route119_HiddenForest_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route119_HiddenForest/border.bin",
+      "blockdata_filepath": "data/layouts/Route119_HiddenForest/map.bin"
     }
   ]
 }
