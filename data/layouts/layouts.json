@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route119_HiddenForest/border.bin",
       "blockdata_filepath": "data/layouts/Route119_HiddenForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAGMA_HIDEOUT_3F_4R",
+      "name": "MagmaHideout_3F_4R_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/MagmaHideout_3F_4R/border.bin",
+      "blockdata_filepath": "data/layouts/MagmaHideout_3F_4R/map.bin"
     }
   ]
 }

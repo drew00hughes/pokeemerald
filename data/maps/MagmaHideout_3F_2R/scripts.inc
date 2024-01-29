@@ -6,6 +6,13 @@ MagmaHideout_3F_2R_EventScript_Grunt10::
 	msgbox MagmaHideout_3F_2R_Text_Grunt10PostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MagmaHideout_3F_2R_EventScript_Hinter::
+	lock
+	faceplayer
+	msgbox MagmaHideout_3F_2R_Text_Scientist, MSGBOX_DEFAULT
+	release
+	end
+
 MagmaHideout_3F_2R_Text_Grunt10Intro:
 	.string "I understand everything our leader\n"
 	.string "says. But you know what?\p"
@@ -23,4 +30,9 @@ MagmaHideout_3F_2R_Text_Grunt10PostBattle:
 	.string "You know, losing to you cleared my mind.\p"
 	.string "The next time I see our leader,\n"
 	.string "I'm going to ask him about what we do.$"
+
+MagmaHideout_3F_2R_Text_Scientist:
+	.string "You probably don't want to go in there...\p"
+	.string "That's our backup plan in case this\n"
+	.string "whole GROUDON thing doesn't work out.$"
 

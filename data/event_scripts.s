@@ -1062,3 +1062,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/Route119_HiddenForest/scripts.inc"
+
+	.include "data/maps/MagmaHideout_3F_4R/scripts.inc"
