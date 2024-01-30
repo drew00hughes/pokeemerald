@@ -11,6 +11,12 @@ Route119_OnResume:
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route119_EventScript_TryRemoveKecleon
 	end
 
+Route119_EventScript_HiddenForestHinter::
+	lock
+	msgbox Route119_Text_HiddenForestHinter, MSGBOX_DEFAULT
+	release
+	end
+
 Route119_EventScript_TryRemoveKecleon::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
@@ -612,3 +618,8 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own SECRET BASE exactly the\l"
 	.string "way you want.$"
+
+Route119_Text_HiddenForestHinter:
+	.string "I can see another part of the forest\n"
+	.string "over there, but I can't get to it!\p"
+	.string "Maybe if I had a SURFBOARD...$"

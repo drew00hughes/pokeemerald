@@ -15,6 +15,9 @@ PacifidlogTown_House1_Text_RegiStory:
 	.string "rock, ice, and steel.\p"
 	.string "Each of them is said to hide away deep\n"
 	.string "inside caves.\p"
+	.string "Rumors say that there is a secret\n"
+	.string "4th POKéMON that appears when all\l"
+	.string "three have fallen... Who knows?\p"
 	.string "That's the story I heard when I was\n"
 	.string "just a little kid.$"
 

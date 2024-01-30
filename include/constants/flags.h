@@ -46,20 +46,20 @@
 #define FLAG_FOLLOWER_IN_BUILDING                0x21 // Used for speeding up follower door exiting
 
 #define FLAG_CLEANSE_TAG     0x22 // Cleanse Tag Flag
-#define FLAG_NO_ENCOUNTER    0x23 // Unused Flag
-#define FLAG_NO_TRAINER_SEE  0x24 // Unused Flag
-#define FLAG_NO_COLLISION    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
+#define FLAG_NO_ENCOUNTER    0x23 
+#define FLAG_NO_TRAINER_SEE  0x24 
+#define FLAG_NO_COLLISION    0x25 
+#define FLAG_HIDE_HEATRAN    0x26 
+#define FLAG_ROTOM_CAUGHT    0x27
+#define FLAG_HIDE_REGIGIGAS  0x28 
+#define FLAG_DEFEATED_REGIGIGAS 0x29 
+#define FLAG_HIDE_MANAPHY    0x2A
+#define FLAG_HIDE_PHIONE     0x2B 
+#define FLAG_RECEIVED_VICTINI   0x2C 
+#define FLAG_HIDE_MELOETTA   0x2D
+#define FLAG_HIDE_KELDEO     0x2E 
+#define FLAG_HIDE_XERNEAS    0x2F
+#define FLAG_HIDE_YVELTAL    0x30
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag

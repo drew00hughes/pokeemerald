@@ -14,6 +14,26 @@ Route101_OnFrame:
 	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
 	.2byte 0
 
+Route101_EventScript_MeloettaFight::
+	lockall
+	playmoncry SPECIES_MELOETTA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_MELOETTA, 10, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route101_EventScript_PostMeloettaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route101_EventScript_PostMeloettaBattle
+	releaseall
+	end
+
+Route101_EventScript_PostMeloettaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 7
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_MELOETTA
+	end
+
 Route101_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE101_STATE, 1
