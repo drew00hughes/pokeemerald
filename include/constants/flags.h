@@ -60,8 +60,8 @@
 #define FLAG_HIDE_KELDEO     0x2E 
 #define FLAG_HIDE_XERNEAS    0x2F
 #define FLAG_HIDE_YVELTAL    0x30
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_HIDE_ARTICUNO   0x31 
+#define FLAG_CAUGHT_ARTICUNO 0x32 
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
