@@ -64,8 +64,8 @@
 #define FLAG_CAUGHT_ARTICUNO 0x32 
 #define FLAG_HIDE_ZAPDOS     0x33 
 #define FLAG_CAUGHT_ZAPDOS   0x34 
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_HIDE_MOLTRES    0x35 
+#define FLAG_CAUGHT_MOLTRES  0x36 
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
