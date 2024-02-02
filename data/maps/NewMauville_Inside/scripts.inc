@@ -24,6 +24,39 @@ NewMauville_Inside_OnTransition:
 	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
 
+NewMauville_Inside_EventScripts_CheckZapdos::
+	call_if_unset FLAG_CAUGHT_ZAPDOS, NewMauville_Inside_EventScripts_ShowZapdos
+	call_if_set FLAG_CAUGHT_ZAPDOS, NewMauville_Inside_EventScripts_HideZapdos
+	end
+
+NewMauville_Inside_EventScripts_ShowZapdos::
+	clearflag FLAG_HIDE_ZAPDOS
+	end
+
+NewMauville_Inside_EventScripts_HideZapdos::
+	setflag FLAG_HIDE_ZAPDOS
+	end
+
+NewMauville_Inside_EventScript_ZapdosFight::
+	lockall
+	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_ZAPDOS, 60, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NewMauville_Inside_EventScript_PostZapdosBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_PostZapdosBattle
+	releaseall
+	end
+
+NewMauville_Inside_EventScript_PostZapdosBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 9
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_CAUGHT_ZAPDOS
+	end
+
 NewMauville_Inside_EventScript_ShowVoltorb1::
 	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
 	return
@@ -38,6 +71,8 @@ NewMauville_Inside_EventScript_ShowVoltorb3::
 
 NewMauville_Inside_OnLoad:
 	call_if_eq VAR_NEW_MAUVILLE_STATE, 2, NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	call_if_set FLAG_SYS_NATIONAL_DEX, NewMauville_Inside_EventScripts_CheckZapdos
+	call_if_unset FLAG_SYS_NATIONAL_DEX, NewMauville_Inside_EventScripts_HideZapdos
 	end
 
 NewMauville_Inside_EventScript_BlueButton::
