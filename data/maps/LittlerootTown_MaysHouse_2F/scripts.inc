@@ -12,24 +12,29 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	setflag FLAG_HIDE_JIRACHI
-	goto_if_set FLAG_SYS_NATIONAL_DEX, LittlerootTown_MaysHouse_2F_EventScript_CheckIfNight
+	call LittlerootTown_MaysHouse_2F_EventScript_CheckForJirachiEvent
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_CheckIfNight::
+LittlerootTown_MaysHouse_2F_EventScript_CheckForJirachiEvent::
+	goto_if_set FLAG_CAUGHT_JIRACHI, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	goto_if_unset FLAG_SYS_NATIONAL_DEX, LittlerootTown_MaysHouse_2F_EventScript_Ret
 	special IsNight
+	goto_if_set FLAG_IS_NIGHT, LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventOpening
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEvent::
+LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventOpening::
 	goto_if_set FLAG_CAUGHT_JIRACHI, LittlerootTown_MaysHouse_2F_EventScript_Ret
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_2F_EventScript_Ret
 	clearflag FLAG_HIDE_JIRACHI
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-	setobjectxyperm LOCALID_RIVAL, 7, 5
-	playse SE_PIN
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
-	msgbox RivalsHouse_2F_Text_QuickComeSee, MSGBOX_DEFAULT
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_2F_Movement_PlayerMoveJirachi
+	setobjectxyperm LOCALID_RIVAL, 7, 4
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_RIGHT
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventToBattle::
+	lock
+	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_MadeAWish, MSGBOX_DEFAULT
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_TurnRival
@@ -37,17 +42,15 @@ LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEvent::
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_Woah, MSGBOX_DEFAULT
-	applymovement 17, LittlerootTown_MaysHouse_2F_Movement_JirachiMovement
-	waitmovement 0
-	applymovement 17, Common_Movement_FacePlayer
-	waitmovement 0
 	call LittlerootTown_MaysHouse_2F_EventScript_JirachiFight
+	lock
 	msgbox RivalsHouse_2F_Text_WhatIWishedFor, MSGBOX_DEFAULT
 	msgbox RivalsHouse_2F_Text_TimeForBed, MSGBOX_DEFAULT
+	release
 	fadescreen FADE_TO_BLACK
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	removeobject LOCALID_RIVAL
 	fadescreen FADE_FROM_BLACK
-	return
+	end
 
 LittlerootTown_MaysHouse_2F_EventScript_JirachiFight::
 	lockall
@@ -56,9 +59,7 @@ LittlerootTown_MaysHouse_2F_EventScript_JirachiFight::
 	setwildbattle SPECIES_JIRACHI, 75, ITEM_LAVA_COOKIE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, LittlerootTown_MaysHouse_2F_EventScript_PostJirachiBattle
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LittlerootTown_MaysHouse_2F_EventScript_PostJirachiBattle
+	call LittlerootTown_MaysHouse_2F_EventScript_PostJirachiBattle
 	releaseall
 	return
 
@@ -304,10 +305,15 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerMoveJirachi:
 	step_end
 
 LittlerootTown_MaysHouse_2F_Movement_TurnRival:
+	face_right
 	delay_16
+	delay_8
 	face_left
-	face_down
-	face_left
+	delay_16
+	delay_8
+	face_right
+	delay_16
+	delay_8
 	step_end
 
 LittlerootTown_MaysHouse_2F_Movement_JirachiMovement:
@@ -323,6 +329,7 @@ RivalsHouse_2F_EventScript_Rival::
 	end
 
 RivalsHouse_2F_EventScript_May::
+	goto_if_unset FLAG_CAUGHT_JIRACHI, LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventToBattle
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -482,6 +489,7 @@ RivalsHouse_2F_Text_QuickComeSee:
 	.string "POKéMON!$"
 
 RivalsHouse_2F_Text_MadeAWish:
+	.string "Oh! Hi {PLAYER}!\p"
 	.string "I made a wish on a shooting star and\n"
 	.string "this POKéMON came down to visit me!\p"
 	.string "...\p"
@@ -495,7 +503,7 @@ RivalsHouse_2F_Text_Woah:
 RivalsHouse_2F_Text_WhatIWishedFor:
 	.string "Wow {PLAYER} that was amazing!\n"
 	.string "You really are the champion.\p"
-	.string ".../p"
+	.string "...\p"
 	.string "I'm not supposed to tell you what I\n"
 	.string "wished for...\p"
 	.string "but I'll tell you. I wished to be the\n"
