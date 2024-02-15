@@ -3,7 +3,7 @@
   "name": "MossdeepCity_Space_Temple",
   "layout": "LAYOUT_MOSSDEEP_CITY_SPACE_TEMPLE",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_MOSSDEEP_CITY",
+  "region_map_section": "MAPSEC_SPACE_TEMPLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -59,22 +59,22 @@
       "x": 16,
       "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_TEMPLE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_CENTER_2F",
+      "dest_warp_id": "1"
     },
     {
       "x": 15,
       "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_TEMPLE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_CENTER_2F",
+      "dest_warp_id": "1"
     },
     {
       "x": 17,
       "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_TEMPLE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_CENTER_2F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

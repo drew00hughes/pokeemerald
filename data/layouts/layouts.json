@@ -2755,7 +2755,7 @@
       "id": "LAYOUT_MOSSDEEP_CITY_SPACE_CENTER_2F",
       "name": "MossdeepCity_SpaceCenter_2F_Layout",
       "width": 16,
-      "height": 10,
+      "height": 13,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MossdeepCity_SpaceCenter_2F/border.bin",

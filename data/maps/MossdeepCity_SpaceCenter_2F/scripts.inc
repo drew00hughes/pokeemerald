@@ -24,6 +24,10 @@ MossdeepCity_SpaceCenter_2F_EventScript_CheckSinnohEvent::
 	goto_if_unset FLAG_SYS_NATIONAL_DEX, MossdeepCity_SpaceCenter_2F_EventScript_Ret
 	end
 
+MossdeepCity_SpaceCenter_2F_EventScript_TeleportToSpaceTemple::
+	warp MAP_MOSSDEEP_CITY_SPACE_TEMPLE, 0
+	end
+
 MossdeepCity_SpaceCenter_2F_EventScript_Ret::
 	return
 
