@@ -78,11 +78,11 @@
 #define FLAG_SINNOH_EVENT_COMPLETE    0x40
 #define FLAG_HIDE_SHAYMIN    0x41 
 #define FLAG_CAUGHT_SHAYMIN  0x42
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define FLAG_HIDE_ZEKROM     0x43
+#define FLAG_CAUGHT_ZEKROM   0x44
+#define FLAG_HIDE_RESHIRAM   0x45
+#define FLAG_CAUGHT_RESHIRAM 0x46
+#define FLAG_BW_DEFEATED     0x47
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
