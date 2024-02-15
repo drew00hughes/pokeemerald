@@ -74,10 +74,10 @@
 #define FLAG_HIDE_DIALGA     0x3C
 #define FLAG_HIDE_GIRITINA   0x3D
 #define FLAG_HIDE_SPACE_PORTAL     0x3E
-#define FLAG_SINNOH_INTRO_DONE   0x3F // Unused Flag
-#define FLAG_SINNOH_EVENT_COMPLETE    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+#define FLAG_SINNOH_INTRO_DONE   0x3F
+#define FLAG_SINNOH_EVENT_COMPLETE    0x40
+#define FLAG_HIDE_SHAYMIN    0x41 
+#define FLAG_CAUGHT_SHAYMIN  0x42
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
