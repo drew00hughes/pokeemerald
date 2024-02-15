@@ -17,7 +17,15 @@ MossdeepCity_SpaceCenter_2F_MapScripts::
 MossdeepCity_SpaceCenter_2F_OnTransition:
 	call_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians
 	call_if_eq VAR_MOSSDEEP_SPACE_CENTER_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveDefeatedGrunts
+	call MossdeepCity_SpaceCenter_2F_EventScript_CheckSinnohEvent
 	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_CheckSinnohEvent::
+	goto_if_unset FLAG_SYS_NATIONAL_DEX, MossdeepCity_SpaceCenter_2F_EventScript_Ret
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_Ret::
+	return
 
 MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians::
 	clearflag FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER

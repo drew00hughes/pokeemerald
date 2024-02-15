@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MagmaHideout_3F_4R/border.bin",
       "blockdata_filepath": "data/layouts/MagmaHideout_3F_4R/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOSSDEEP_CITY_SPACE_TEMPLE",
+      "name": "MossdeepCity_Space_Temple_Layout",
+      "width": 33,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattlePike",
+      "border_filepath": "data/layouts/MossdeepCity_Space_Temple/border.bin",
+      "blockdata_filepath": "data/layouts/MossdeepCity_Space_Temple/map.bin"
     }
   ]
 }

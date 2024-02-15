@@ -1165,6 +1165,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sawsbuck_Wi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Pom_Pom;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Pau;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oricorio_Sensu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Space_Portal;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -2310,6 +2311,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WORMADAM_TRASH_CLOAK] =           &gObjectEventGraphicsInfo_Wormadam_Trash,
     [OBJ_EVENT_GFX_SHELLOS_EAST] =                   &gObjectEventGraphicsInfo_Shellos_East,
     [OBJ_EVENT_GFX_GASTRODON_EAST] =                 &gObjectEventGraphicsInfo_Gastrodon_East,
+    [OBJ_EVENT_GFX_SPACE_PORTAL] =                   &gObjectEventGraphicsInfo_Space_Portal,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
