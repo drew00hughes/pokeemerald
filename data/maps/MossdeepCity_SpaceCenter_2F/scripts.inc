@@ -17,11 +17,69 @@ MossdeepCity_SpaceCenter_2F_MapScripts::
 MossdeepCity_SpaceCenter_2F_OnTransition:
 	call_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians
 	call_if_eq VAR_MOSSDEEP_SPACE_CENTER_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveDefeatedGrunts
-	call MossdeepCity_SpaceCenter_2F_EventScript_CheckSinnohEvent
+	setflag FLAG_HIDE_SPACE_PORTAL
+	goto_if_unset FLAG_SINNOH_EVENT_COMPLETE, MossdeepCity_SpaceCenter_2F_EventScript_CheckSinnohEvent
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_CheckSinnohEvent::
+	goto_if_set FLAG_SPACE_TRIO_DEFEATED, MossdeepCity_SpaceCenter_2F_EventScript_PlaceFinalSinnoh
+	goto_if_set FLAG_SINNOH_INTRO_DONE, MossdeepCity_SpaceCenter_2F_EventScript_PlaceSinnohActors
 	goto_if_unset FLAG_SYS_NATIONAL_DEX, MossdeepCity_SpaceCenter_2F_EventScript_Ret
+	goto MossdeepCity_SpaceCenter_2F_EventScript_PrepareSinnohEvent
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_PlaceFinalSinnoh::
+	setobjectxyperm LOCALID_RICH_BOY, 4, 6
+	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN
+	setobjectxyperm LOCALID_STEVEN, 5, 4
+	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_RIGHT
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_PlaceSinnohActors::
+	clearflag FLAG_HIDE_SPACE_PORTAL
+	setobjectxyperm LOCALID_RICH_BOY, 4, 6
+	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN
+	setobjectxyperm LOCALID_STEVEN, 5, 4
+	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_RIGHT
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_PrepareSinnohEvent::
+	clearflag FLAG_HIDE_SPACE_PORTAL
+	setobjectxyperm LOCALID_RICH_BOY, 4, 6
+	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN
+	setobjectxyperm LOCALID_STEVEN, 6, 4
+	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_UP
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_StartSinnohEvent::
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenSinnoh1, MSGBOX_DEFAULT
+	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_ShiftLeft
+	waitmovement 0
+	release
+	setflag FLAG_SINNOH_INTRO_DONE
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_StevenEncourage::
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenGoForIt, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_StevenFinished::
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenTimeToLeave, MSGBOX_DEFAULT
+	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLeave
+	waitmovement 0
+	removeobject LOCALID_STEVEN
+	release
+	setflag FLAG_SINNOH_EVENT_COMPLETE
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_TeleportToSpaceTemple::
@@ -200,6 +258,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_Maxie::
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_Steven::
+	goto_if_set FLAG_SPACE_TRIO_DEFEATED, MossdeepCity_SpaceCenter_2F_EventScript_StevenFinished
+	goto_if_set FLAG_SINNOH_INTRO_DONE, MossdeepCity_SpaceCenter_2F_EventScript_StevenEncourage
+	goto_if_set FLAG_SYS_NATIONAL_DEX, MossdeepCity_SpaceCenter_2F_EventScript_StartSinnohEvent
 	lockall
 	goto_if_set FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER, MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
 	setflag FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER
@@ -243,6 +304,24 @@ MossdeepCity_SpaceCenter_2F_Movement_StevenFightSouth:
 	walk_slow_left
 	walk_slow_left
 	face_down
+	step_end
+
+MossdeepCity_SpaceCenter_2F_Movement_ShiftLeft:
+	walk_left
+	face_right
+	step_end
+
+MossdeepCity_SpaceCenter_2F_Movement_StevenLeave:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
 	step_end
 
 MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt::
@@ -525,3 +604,41 @@ MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
 	.string "after this.\p"
 	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
 	.string "I live right here on this island.$"
+
+MossdeepCity_SpaceCenter_2F_Text_StevenSinnoh1:
+	.string "{PLAYER}! Glad you could make it.\n"
+	.string "I trust you read my note?\p"
+	.string "Well, no matter. We're working\n"
+	.string "on a big project here. There is some\l"
+	.string "kind of disturbance in our operations.\p"
+	.string "Our satellites are acting crazy! We\n"
+	.string "believe some POKéMON are responsible.\p"
+	.string "Please, {PLAYER}, aid us, if you will.\p"
+	.string "Your mission is to subdue or capture\n"
+	.string "the POKéMON responsible.\p"
+	.string "Without our satellites, who knows what\n"
+	.string "could happen...\p"
+	.string "...\p"
+	.string "This portal here will take you to the\n"
+	.string "SPACE TEMPLE, where we believe these \l"
+	.string "POKéMON reside.\p"
+	.string "Just like last time, it's up to you to\n"
+	.string "save the day!$"
+
+MossdeepCity_SpaceCenter_2F_Text_StevenGoForIt:
+	.string "Go for it!$"
+
+MossdeepCity_SpaceCenter_2F_Text_StevenTimeToLeave:
+	.string "Amazing work as always {PLAYER}!\p"
+	.string "Thank you for saving this space center\n"
+	.string "We couldn't have done it without you.\p"
+	.string "...\p"
+	.string "I believe it's now time for me to go\n"
+	.string "on my own adventure.\p"
+	.string "I've decided to do a little soul-\n"
+	.string "searching and train on the road.\p"
+	.string "I don't plan to return home for some\n"
+	.string "time.\p"
+	.string "I'm counting on you to keep the peace\n"
+	.string "while I'm away. I know you'll do great.\p"
+	.string "May our paths cross someday again soon.$"
