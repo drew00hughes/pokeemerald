@@ -15,7 +15,38 @@ RusturfTunnel_OnFrame:
 	.2byte 0
 
 RusturfTunnel_OnTransition:
+	setflag FLAG_HIDE_ZYGARDE
+	call_if_unset FLAG_CAUGHT_ZYGARDE, RusturfTunnel_EventScript_CheckForZVisible
 	call_if_eq VAR_RUSTURF_TUNNEL_STATE, 2, RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos
+	end
+
+RusturfTunnel_EventScript_CheckForZVisible::
+	call_if_set FLAG_SYS_NATIONAL_DEX, RusturfTunnel_EventScript_ZVisible
+	return
+
+RusturfTunnel_EventScript_ZVisible::
+	clearflag FLAG_HIDE_ZYGARDE
+	return
+
+RusturfTunnel_EventScript_ZygardeBattle::
+	lockall
+	playmoncry SPECIES_ZYGARDE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_ZYGARDE, 70, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, RusturfTunnel_EventScript_PostZygardeBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, RusturfTunnel_EventScript_PostZygardeBattle
+	releaseall
+	end
+
+RusturfTunnel_EventScript_PostZygardeBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 11
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_ZYGARDE
+	setflag FLAG_CAUGHT_ZYGARDE
 	end
 
 RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos::
