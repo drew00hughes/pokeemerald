@@ -14,6 +14,10 @@ Route107_EventScript_Tony::
 	release
 	end
 
+Route107_EventScript_CaveSign::
+	msgbox Route107_Text_TrialsSign, MSGBOX_SIGN
+	end
+
 Route107_EventScript_TonyRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
@@ -52,3 +56,6 @@ Route107_EventScript_Camron::
 	msgbox Route107_Text_CamronPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route107_Text_TrialsSign:
+	.string "To you who are worthy, enter\n"
+	.string "and start your trial.$"

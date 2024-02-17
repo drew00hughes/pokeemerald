@@ -18,6 +18,13 @@ DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
 	end
 
+DewfordTown_EventScript_TapuHint::
+	lock
+	faceplayer
+	msgbox DewfordTown_Text_TapuHint, MSGBOX_DEFAULT
+	release
+	end
+
 DewfordTown_EventScript_Briney::
 	lock
 	faceplayer
@@ -800,3 +807,9 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DewfordTown_Text_TapuHint:
+	.string "I've heard of a cave EAST of here that\n"
+	.string "has some really strong POKéMON!\p"
+	.string "I don't know anyone strong enough to\n"
+	.string "actually face them though...$"
