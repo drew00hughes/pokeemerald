@@ -431,7 +431,8 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "MagmaHideout_3F_4R"
+    "MagmaHideout_3F_4R",
+    "CaveOfTrials"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

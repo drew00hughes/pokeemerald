@@ -118,7 +118,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 43,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_OF_TRIALS",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

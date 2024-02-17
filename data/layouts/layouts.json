@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_BattlePike",
       "border_filepath": "data/layouts/MossdeepCity_Space_Temple/border.bin",
       "blockdata_filepath": "data/layouts/MossdeepCity_Space_Temple/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAVE_OF_TRIALS",
+      "name": "CaveOfTrials_Layout",
+      "width": 19,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/CaveOfTrials/border.bin",
+      "blockdata_filepath": "data/layouts/CaveOfTrials/map.bin"
     }
   ]
 }

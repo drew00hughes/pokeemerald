@@ -1066,3 +1066,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/MagmaHideout_3F_4R/scripts.inc"
 
 	.include "data/maps/MossdeepCity_Space_Temple/scripts.inc"
+
+	.include "data/maps/CaveOfTrials/scripts.inc"
