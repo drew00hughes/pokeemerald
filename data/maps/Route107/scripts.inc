@@ -58,4 +58,5 @@ Route107_EventScript_Camron::
 
 Route107_Text_TrialsSign:
 	.string "To you who are worthy, enter\n"
-	.string "and start your trial.$"
+	.string "and start your trial.\p"
+	.string "Remember: RUNNING AWAY is not worthy.$"
