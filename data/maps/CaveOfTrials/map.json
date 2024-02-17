@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_KOKO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TAPUBULU",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BULU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TAPUFINI",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_FINI"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TAPULELE",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LELE"
     }
   ],
   "warp_events": [
@@ -77,7 +77,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_TAPUS",
+      "var_value": "0",
+      "script": "CaveOfTrials_EventScript_CheckIfWorthy"
+    }
   ],
   "bg_events": [
 
