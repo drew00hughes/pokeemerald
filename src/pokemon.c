@@ -53,11 +53,11 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 
-#define DAY_EVO_HOUR_BEGIN       6
-#define DAY_EVO_HOUR_END         19
+#define DAY_EVO_HOUR_BEGIN       7
+#define DAY_EVO_HOUR_END         20
 
 #define NIGHT_EVO_HOUR_BEGIN     20
-#define NIGHT_EVO_HOUR_END       6
+#define NIGHT_EVO_HOUR_END       7
 
 #define FRIENDSHIP_EVO_THRESHOLD 220
 

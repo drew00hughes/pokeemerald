@@ -2,7 +2,42 @@
 .set LOCALID_DEVON_EMPLOYEE, 4
 
 PetalburgWoods_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgWoods_OnTransition
 	.byte 0
+
+PetalburgWoods_OnTransition:
+	setflag FLAG_HIDE_SHAYMIN
+	goto_if_unset FLAG_CAUGHT_SHAYMIN, PetalburgWoods_EventScript_CheckForShaymin
+	end
+
+PetalburgWoods_EventScript_CheckForShaymin::
+	goto_if_set FLAG_SYS_NATIONAL_DEX, PetalburgWoods_EventScript_ShayminVisible
+	end
+
+PetalburgWoods_EventScript_ShayminVisible::
+	clearflag FLAG_HIDE_SHAYMIN
+	end
+
+PetalburgWoods_EventScript_ShayminBattle::
+	lockall
+	playmoncry SPECIES_SHAYMIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_SHAYMIN, 5, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PetalburgWoods_EventScript_PostShayminBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PetalburgWoods_EventScript_PostShayminBattle
+	releaseall
+	end
+
+PetalburgWoods_EventScript_PostShayminBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 14
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_SHAYMIN
+	setflag FLAG_CAUGHT_SHAYMIN
+	end
 
 PetalburgWoods_EventScript_DevonResearcherLeft::
 	lockall

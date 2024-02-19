@@ -172,8 +172,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 33,
-      "y": 5,
+      "x": 41,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -182,6 +182,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgWoods_EventScript_Girl",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHAYMIN_LAND",
+      "x": 34,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgWoods_EventScript_ShayminBattle",
+      "flag": "FLAG_HIDE_SHAYMIN"
     }
   ],
   "warp_events": [

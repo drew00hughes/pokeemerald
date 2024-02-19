@@ -1,7 +1,42 @@
 .set LOCALID_STEVEN, 1
 
 GraniteCave_StevensRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GraniteCave_StevensRoom_OnTransition
 	.byte 0
+
+GraniteCave_StevensRoom_OnTransition:
+	setflag FLAG_HIDE_DIANCIE
+	call_if_unset FLAG_CAUGHT_DIANCIE, GraniteCave_StevensRoom_EventScript_CheckForDVisible
+	end
+
+GraniteCave_StevensRoom_EventScript_CheckForDVisible::
+	call_if_set FLAG_SYS_NATIONAL_DEX, GraniteCave_StevensRoom_EventScript_DVisible
+	return
+
+GraniteCave_StevensRoom_EventScript_DVisible::
+	clearflag FLAG_HIDE_DIANCIE
+	return
+
+GraniteCave_StevensRoom_EventScript_DiancieBattle::
+	lockall
+	playmoncry SPECIES_DIANCIE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_DIANCIE, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, GraniteCave_StevensRoom_EventScript_PostDiancieBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GraniteCave_StevensRoom_EventScript_PostDiancieBattle
+	releaseall
+	end
+
+GraniteCave_StevensRoom_EventScript_PostDiancieBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 2
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_DIANCIE
+	setflag FLAG_CAUGHT_DIANCIE
+	end
 
 GraniteCave_StevensRoom_EventScript_Steven::
 	lock

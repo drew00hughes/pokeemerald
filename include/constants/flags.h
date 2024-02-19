@@ -60,37 +60,37 @@
 #define FLAG_HIDE_KELDEO     0x2E 
 #define FLAG_HIDE_XERNEAS    0x2F
 #define FLAG_HIDE_YVELTAL    0x30
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_HIDE_ARTICUNO   0x31 
+#define FLAG_CAUGHT_ARTICUNO 0x32 
+#define FLAG_HIDE_ZAPDOS     0x33 
+#define FLAG_CAUGHT_ZAPDOS   0x34 
+#define FLAG_HIDE_MOLTRES    0x35 
+#define FLAG_CAUGHT_MOLTRES  0x36 
+#define FLAG_IS_NIGHT        0x37
+#define FLAG_CAUGHT_JIRACHI  0x38 
+#define FLAG_HIDE_JIRACHI    0x39 
+#define FLAG_SPACE_TRIO_DEFEATED    0x3A
+#define FLAG_HIDE_PALKIA     0x3B
+#define FLAG_HIDE_DIALGA     0x3C
+#define FLAG_HIDE_GIRITINA   0x3D
+#define FLAG_HIDE_SPACE_PORTAL     0x3E
+#define FLAG_SINNOH_INTRO_DONE   0x3F
+#define FLAG_SINNOH_EVENT_COMPLETE    0x40
+#define FLAG_HIDE_SHAYMIN    0x41 
+#define FLAG_CAUGHT_SHAYMIN  0x42
+#define FLAG_HIDE_ZEKROM     0x43
+#define FLAG_CAUGHT_ZEKROM   0x44
+#define FLAG_HIDE_RESHIRAM   0x45
+#define FLAG_CAUGHT_RESHIRAM 0x46
+#define FLAG_BW_DEFEATED     0x47
+#define FLAG_HIDE_ZYGARDE    0x48 
+#define FLAG_CAUGHT_ZYGARDE  0x49 
+#define FLAG_HIDE_GENESECT   0x4A 
+#define FLAG_CAUGHT_GENESECT 0x4B 
+#define FLAG_HIDE_DIANCIE    0x4C 
+#define FLAG_CAUGHT_DIANCIE  0x4D 
+#define FLAG_HIDE_KOKO       0x4E 
+#define FLAG_HIDE_BULU       0x4F 
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -99,7 +99,7 @@
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define FLAG_WATERFALL   					 0x54  // Allow Surfboard to go up waterfalls
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_HIDE_FINI                       0x55 
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -120,7 +120,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_HIDE_LELE                       0x68  
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -169,7 +169,7 @@
 #define FLAG_MR_BRINEY_SAILING_INTRO         0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
+#define FLAG_HIDE_MAGEARNA                   0x96
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
@@ -255,7 +255,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define FLAG_CAUGHT_MAGEARNA                 0xE9
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -340,12 +340,12 @@
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
-#define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
-#define FLAG_WONDER_CARD_UNUSED_2            0x13E
-#define FLAG_WONDER_CARD_UNUSED_3            0x13F
-#define FLAG_WONDER_CARD_UNUSED_4            0x140
-#define FLAG_WONDER_CARD_UNUSED_5            0x141
-#define FLAG_WONDER_CARD_UNUSED_6            0x142
+#define FLAG_HIDE_MARSHADOW                  0x13D
+#define FLAG_CAUGHT_MARSHADOW                0x13E
+#define FLAG_HIDE_MELTAN                     0x13F
+#define FLAG_CAUGHT_MELTAN                   0x140
+#define FLAG_HIDE_ZERAORA                    0x141
+#define FLAG_CAUGHT_ZERAORA                  0x142
 #define FLAG_WONDER_CARD_UNUSED_7            0x143
 #define FLAG_WONDER_CARD_UNUSED_8            0x144
 #define FLAG_WONDER_CARD_UNUSED_9            0x145

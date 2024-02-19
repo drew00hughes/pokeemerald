@@ -49,6 +49,17 @@ bool8 IsMirageIslandPresent(void)
     return FALSE;
 }
 
+void IsNight(void)
+{
+    // day is 7am to 8pm
+    // night is 8pm to 7am
+    RtcCalcLocalTime(); // possibly don't call? IDK
+    if (gLocalTime.hours < 7 || gLocalTime.hours >= 20)
+        FlagSet(FLAG_IS_NIGHT);
+    else
+        FlagClear(FLAG_IS_NIGHT);
+}
+
 void UpdateShoalTideFlag(void)
 {
     static const u8 tide[] =

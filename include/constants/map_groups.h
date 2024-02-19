@@ -230,6 +230,7 @@
 #define MAP_MOSSDEEP_CITY_SPACE_CENTER_2F   (10 | (14 << 8))
 #define MAP_MOSSDEEP_CITY_GAME_CORNER_1F    (11 | (14 << 8))
 #define MAP_MOSSDEEP_CITY_GAME_CORNER_B1F   (12 | (14 << 8))
+#define MAP_MOSSDEEP_CITY_SPACE_TEMPLE      (13 | (14 << 8))
 
 // gMapGroup_IndoorSootopolis
 #define MAP_SOOTOPOLIS_CITY_GYM_1F                   (0 | (15 << 8))
@@ -401,6 +402,7 @@
 #define MAP_ALTERING_CAVE                            (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
 #define MAP_MAGMA_HIDEOUT_3F_4R                      (108 | (24 << 8))
+#define MAP_CAVE_OF_TRIALS                           (109 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

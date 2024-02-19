@@ -11,7 +11,65 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
+	setflag FLAG_HIDE_JIRACHI
+	call LittlerootTown_MaysHouse_2F_EventScript_CheckForJirachiEvent
 	end
+
+LittlerootTown_MaysHouse_2F_EventScript_CheckForJirachiEvent::
+	goto_if_set FLAG_CAUGHT_JIRACHI, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	goto_if_unset FLAG_SYS_NATIONAL_DEX, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	special IsNight
+	goto_if_set FLAG_IS_NIGHT, LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventOpening
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventOpening::
+	goto_if_set FLAG_CAUGHT_JIRACHI, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_MaysHouse_2F_EventScript_Ret
+	clearflag FLAG_HIDE_JIRACHI
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	setobjectxyperm LOCALID_RIVAL, 7, 4
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_RIGHT
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventToBattle::
+	lock
+	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox RivalsHouse_2F_Text_MadeAWish, MSGBOX_DEFAULT
+	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_TurnRival
+	waitmovement 0
+	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox RivalsHouse_2F_Text_Woah, MSGBOX_DEFAULT
+	call LittlerootTown_MaysHouse_2F_EventScript_JirachiFight
+	lock
+	msgbox RivalsHouse_2F_Text_WhatIWishedFor, MSGBOX_DEFAULT
+	msgbox RivalsHouse_2F_Text_TimeForBed, MSGBOX_DEFAULT
+	release
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_RIVAL
+	fadescreen FADE_FROM_BLACK
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_JirachiFight::
+	lockall
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_JIRACHI, 75, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	call LittlerootTown_MaysHouse_2F_EventScript_PostJirachiBattle
+	releaseall
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_PostJirachiBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 17
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_CAUGHT_JIRACHI
+	setflag FLAG_HIDE_JIRACHI
+	return
 
 LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos::
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
@@ -235,6 +293,33 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast:
 	walk_in_place_faster_right
 	step_end
 
+LittlerootTown_MaysHouse_2F_Movement_PlayerMoveJirachi:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	step_end
+
+LittlerootTown_MaysHouse_2F_Movement_TurnRival:
+	face_right
+	delay_16
+	delay_8
+	face_left
+	delay_16
+	delay_8
+	face_right
+	delay_16
+	delay_8
+	step_end
+
+LittlerootTown_MaysHouse_2F_Movement_JirachiMovement:
+	walk_left
+	step_end
+
 RivalsHouse_2F_EventScript_Rival::
 	lockall
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, RivalsHouse_2F_EventScript_RivalPostLilycove
@@ -244,6 +329,7 @@ RivalsHouse_2F_EventScript_Rival::
 	end
 
 RivalsHouse_2F_EventScript_May::
+	goto_if_unset FLAG_CAUGHT_JIRACHI, LittlerootTown_MaysHouse_2F_EventScript_PlayJirachiEventToBattle
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -397,3 +483,34 @@ RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
 	.string "Hey, {PLAYER}, if I see you while I'm out\n"
 	.string "catching POKéMON, I can pitch you a\l"
 	.string "battle if you'd like.$"
+
+RivalsHouse_2F_Text_QuickComeSee:
+	.string "{PLAYER}! Quick! Come see this\n"
+	.string "POKéMON!$"
+
+RivalsHouse_2F_Text_MadeAWish:
+	.string "Oh! Hi {PLAYER}!\p"
+	.string "I made a wish on a shooting star and\n"
+	.string "this POKéMON came down to visit me!\p"
+	.string "...\p"
+	.string "It's so cute!$"
+
+RivalsHouse_2F_Text_Woah:
+	.string "I think it senses that you're a\n"
+	.string "strong trainer...\p"
+	.string "I think it wants to battle you!$"
+
+RivalsHouse_2F_Text_WhatIWishedFor:
+	.string "Wow {PLAYER} that was amazing!\n"
+	.string "You really are the champion.\p"
+	.string "...\p"
+	.string "I'm not supposed to tell you what I\n"
+	.string "wished for...\p"
+	.string "but I'll tell you. I wished to be the\n"
+	.string "very best trainer around, like you!$"
+
+RivalsHouse_2F_Text_TimeForBed:
+	.string "Anyways... It's time for me to go\n"
+	.string "to bed.\p"
+	.string "Goodnight {PLAYER}! Don't let the\n"
+	.string "Wurmples bite!$"

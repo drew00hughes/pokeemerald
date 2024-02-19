@@ -9900,3 +9900,12 @@ const struct SpriteFrameImage gObjectEventPicTable_Sawsbuck_Winter[] = {
     overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 4),
     overworld_frame(gObjectEventPic_Sawsbuck_Winter, 4, 4, 5),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Space_Portal[] = {
+    overworld_frame(gObjectEventPic_Space_Portal, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Space_Portal, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Space_Portal, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Space_Portal, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Space_Portal, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Space_Portal, 4, 4, 5),
+};

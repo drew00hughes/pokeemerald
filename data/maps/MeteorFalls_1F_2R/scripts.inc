@@ -1,5 +1,40 @@
 MeteorFalls_1F_2R_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MeteorFalls_1F_2R_OnTransition
 	.byte 0
+
+MeteorFalls_1F_2R_OnTransition::
+	setflag FLAG_HIDE_MAGEARNA
+	call_if_unset FLAG_CAUGHT_MAGEARNA, MeteorFalls_1F_2R_EventScript_CheckForMVisible
+	end
+
+MeteorFalls_1F_2R_EventScript_CheckForMVisible::
+	call_if_set FLAG_SYS_NATIONAL_DEX, MeteorFalls_1F_2R_EventScript_MVisible
+	return
+
+MeteorFalls_1F_2R_EventScript_MVisible::
+	clearflag FLAG_HIDE_MAGEARNA
+	return
+
+MeteorFalls_1F_2R_EventScript_MagearnaBattle::
+	lockall
+	playmoncry SPECIES_MAGEARNA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_MAGEARNA, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MeteorFalls_1F_2R_EventScript_PostMagearnaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MeteorFalls_1F_2R_EventScript_PostMagearnaBattle
+	releaseall
+	end
+
+MeteorFalls_1F_2R_EventScript_PostMagearnaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 4
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_MAGEARNA
+	setflag FLAG_CAUGHT_MAGEARNA
+	return
 
 MeteorFalls_1F_2R_EventScript_Nicolas::
 	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas
