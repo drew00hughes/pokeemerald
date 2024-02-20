@@ -6,6 +6,37 @@ DesertUnderpass_MapScripts::
 
 DesertUnderpass_OnTransition:
 	setflag FLAG_LANDMARK_DESERT_UNDERPASS
+	setflag FLAG_HIDE_MELTAN
+	call_if_unset FLAG_CAUGHT_MELTAN, DesertUnderpass_EventScript_CheckNat
+	end
+
+DesertUnderpass_EventScript_CheckNat::
+	call_if_set FLAG_SYS_NATIONAL_DEX, DesertUnderpass_EventScript_ShowMeltan
+	end
+
+DesertUnderpass_EventScript_ShowMeltan::
+	clearflag FLAG_HIDE_MELTAN
+	end
+
+DesertUnderpass_EventScript_MeltanFight::
+	lockall
+	playmoncry SPECIES_MELTAN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_MELTAN, 5, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, DesertUnderpass_EventScript_PostMeltanBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DesertUnderpass_EventScript_PostMeltanBattle
+	releaseall
+	end
+
+DesertUnderpass_EventScript_PostMeltanBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 2
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_MELTAN
+	setflag FLAG_CAUGHT_MELTAN
 	end
 
 DesertUnderpass_EventScript_Fossil::

@@ -342,10 +342,10 @@
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
 #define FLAG_HIDE_MARSHADOW                  0x13D
 #define FLAG_CAUGHT_MARSHADOW                0x13E
-#define FLAG_WONDER_CARD_UNUSED_3            0x13F
-#define FLAG_WONDER_CARD_UNUSED_4            0x140
-#define FLAG_WONDER_CARD_UNUSED_5            0x141
-#define FLAG_WONDER_CARD_UNUSED_6            0x142
+#define FLAG_HIDE_MELTAN                     0x13F
+#define FLAG_CAUGHT_MELTAN                   0x140
+#define FLAG_HIDE_ZERAORA                    0x141
+#define FLAG_CAUGHT_ZERAORA                  0x142
 #define FLAG_WONDER_CARD_UNUSED_7            0x143
 #define FLAG_WONDER_CARD_UNUSED_8            0x144
 #define FLAG_WONDER_CARD_UNUSED_9            0x145

@@ -488,6 +488,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_COSMOG]                = {{EVO_LEVEL, 43, SPECIES_COSMOEM}},
     [SPECIES_COSMOEM]               = {{EVO_LEVEL_DAY, 53, SPECIES_SOLGALEO},
                                        {EVO_LEVEL_NIGHT, 53, SPECIES_LUNALA}},
+    [SPECIES_MELTAN]                = {{EVO_LEVEL, 45, SPECIES_MELMETAL}},
     [SPECIES_POIPOLE]               = {{EVO_MOVE, MOVE_DRAGON_PULSE, SPECIES_NAGANADEL}},
 #endif
 #if P_GEN_8_POKEMON == TRUE
