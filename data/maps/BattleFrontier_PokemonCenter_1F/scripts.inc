@@ -9,6 +9,28 @@ BattleFrontier_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST
 	end
 
+BattleFrontier_PokemonCenter_1F_EventScript_WonderTradeStation::
+	lock
+	faceplayer
+	setvar VAR_0x8008, INGAME_TRADE_PLUSLE
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special GenerateWondertradeMon
+	special DoInGameTradeScene
+	waitstate
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	release
+	end
+
 BattleFrontier_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_NURSE
 	call Common_EventScript_PkmnCenterNurse

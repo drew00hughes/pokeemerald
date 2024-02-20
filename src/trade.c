@@ -4555,7 +4555,7 @@ static void BufferInGameTradeMonName(void)
     StringCopy(gStringVar2, GetSpeciesName(inGameTrade->species));
 }
 
-static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTrade)
+static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTrade, bool8 wonderTrade)
 {
     const struct InGameTrade *inGameTrade = &sIngameTrades[whichInGameTrade];
     u8 level = GetMonData(&gPlayerParty[whichPlayerMon], MON_DATA_LEVEL);
@@ -4564,26 +4564,37 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     u8 metLocation = METLOC_IN_GAME_TRADE;
     u8 mailNum;
     struct Pokemon *pokemon = &gEnemyParty[0];
+    if (wonderTrade) {
+        u16 pokemonID;
+        do {
+            pokemonID = Random();
+        } while (pokemonID < 1 || pokemonID > 878);
+        do {
+            level = Random();
+        } while (level < 1 || level > 100);
+        CreateMon(pokemon, pokemonID, level, USE_RANDOM_IVS, 0, 0, OT_ID_PRESET, 0);
+    } // set item, nickname, and trainer from
+    else {
+        CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
 
-    CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
-
-    SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
-    SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
-    SetMonData(pokemon, MON_DATA_DEF_IV, &inGameTrade->ivs[2]);
-    SetMonData(pokemon, MON_DATA_SPEED_IV, &inGameTrade->ivs[3]);
-    SetMonData(pokemon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
-    SetMonData(pokemon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
-    SetMonData(pokemon, MON_DATA_NICKNAME, inGameTrade->nickname);
-    SetMonData(pokemon, MON_DATA_OT_NAME, inGameTrade->otName);
-    SetMonData(pokemon, MON_DATA_OT_GENDER, &inGameTrade->otGender);
-    SetMonData(pokemon, MON_DATA_ABILITY_NUM, &inGameTrade->abilityNum);
-    SetMonData(pokemon, MON_DATA_BEAUTY, &inGameTrade->conditions[1]);
-    SetMonData(pokemon, MON_DATA_CUTE, &inGameTrade->conditions[2]);
-    SetMonData(pokemon, MON_DATA_COOL, &inGameTrade->conditions[0]);
-    SetMonData(pokemon, MON_DATA_SMART, &inGameTrade->conditions[3]);
-    SetMonData(pokemon, MON_DATA_TOUGH, &inGameTrade->conditions[4]);
-    SetMonData(pokemon, MON_DATA_SHEEN, &inGameTrade->sheen);
-    SetMonData(pokemon, MON_DATA_MET_LOCATION, &metLocation);
+        SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
+        SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
+        SetMonData(pokemon, MON_DATA_DEF_IV, &inGameTrade->ivs[2]);
+        SetMonData(pokemon, MON_DATA_SPEED_IV, &inGameTrade->ivs[3]);
+        SetMonData(pokemon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
+        SetMonData(pokemon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
+        SetMonData(pokemon, MON_DATA_NICKNAME, inGameTrade->nickname);
+        SetMonData(pokemon, MON_DATA_OT_NAME, inGameTrade->otName);
+        SetMonData(pokemon, MON_DATA_OT_GENDER, &inGameTrade->otGender);
+        SetMonData(pokemon, MON_DATA_ABILITY_NUM, &inGameTrade->abilityNum);
+        SetMonData(pokemon, MON_DATA_BEAUTY, &inGameTrade->conditions[1]);
+        SetMonData(pokemon, MON_DATA_CUTE, &inGameTrade->conditions[2]);
+        SetMonData(pokemon, MON_DATA_COOL, &inGameTrade->conditions[0]);
+        SetMonData(pokemon, MON_DATA_SMART, &inGameTrade->conditions[3]);
+        SetMonData(pokemon, MON_DATA_TOUGH, &inGameTrade->conditions[4]);
+        SetMonData(pokemon, MON_DATA_SHEEN, &inGameTrade->sheen);
+        SetMonData(pokemon, MON_DATA_MET_LOCATION, &metLocation);
+    }
 
     mailNum = 0;
     if (inGameTrade->heldItem != ITEM_NONE)
@@ -4630,7 +4641,7 @@ u16 GetTradeSpecies(void)
 
 void CreateInGameTradePokemon(void)
 {
-    CreateInGameTradePokemonInternal(gSpecialVar_0x8005, gSpecialVar_0x8004);
+    CreateInGameTradePokemonInternal(gSpecialVar_0x8005, gSpecialVar_0x8004, FALSE);
 }
 
 static void CB2_UpdateLinkTrade(void)
@@ -5106,4 +5117,9 @@ static void CB2_SaveAndEndWirelessTrade(void)
     AnimateSprites();
     BuildOamBuffer();
     UpdatePaletteFade();
+}
+
+void GenerateWondertradeMon(void)
+{
+    CreateInGameTradePokemonInternal(gSpecialVar_0x8005, gSpecialVar_0x8004, TRUE);
 }
