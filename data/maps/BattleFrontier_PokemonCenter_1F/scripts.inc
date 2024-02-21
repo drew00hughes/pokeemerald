@@ -12,7 +12,7 @@ BattleFrontier_PokemonCenter_1F_OnTransition:
 BattleFrontier_PokemonCenter_1F_EventScript_WonderTradeStation::
 	lock
 	faceplayer
-	setvar VAR_0x8008, INGAME_TRADE_PLUSLE
+	setvar VAR_0x8008, INGAME_TRADE_WONDER
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT

@@ -4573,7 +4573,8 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
             level = Random();
         } while (level < 1 || level > 100);
         CreateMon(pokemon, pokemonID, level, USE_RANDOM_IVS, 0, 0, OT_ID_PRESET, 0);
-    } // set item, nickname, and trainer from
+        SetMonData(pokemon, MON_DATA_HELD_ITEM, ITEM_NONE);
+    } // set nickname to base name
     else {
         CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
 
@@ -4594,23 +4595,23 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
         SetMonData(pokemon, MON_DATA_TOUGH, &inGameTrade->conditions[4]);
         SetMonData(pokemon, MON_DATA_SHEEN, &inGameTrade->sheen);
         SetMonData(pokemon, MON_DATA_MET_LOCATION, &metLocation);
+        mailNum = 0;
+        if (inGameTrade->heldItem != ITEM_NONE)
+        {
+            if (ItemIsMail(inGameTrade->heldItem))
+            {
+                GetInGameTradeMail(&mail, inGameTrade);
+                gTradeMail[0] = mail;
+                SetMonData(pokemon, MON_DATA_MAIL, &mailNum);
+                SetMonData(pokemon, MON_DATA_HELD_ITEM, &inGameTrade->heldItem);
+            }
+            else
+            {
+                SetMonData(pokemon, MON_DATA_HELD_ITEM, &inGameTrade->heldItem);
+            }
+        }
     }
 
-    mailNum = 0;
-    if (inGameTrade->heldItem != ITEM_NONE)
-    {
-        if (ItemIsMail(inGameTrade->heldItem))
-        {
-            GetInGameTradeMail(&mail, inGameTrade);
-            gTradeMail[0] = mail;
-            SetMonData(pokemon, MON_DATA_MAIL, &mailNum);
-            SetMonData(pokemon, MON_DATA_HELD_ITEM, &inGameTrade->heldItem);
-        }
-        else
-        {
-            SetMonData(pokemon, MON_DATA_HELD_ITEM, &inGameTrade->heldItem);
-        }
-    }
     CalculateMonStats(&gEnemyParty[0]);
 }
 
