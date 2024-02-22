@@ -113,7 +113,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "BattleFrontier_PokemonCenter_1F_EventScript_WonderTradeStation"
+      "script": "BattleFrontier_PokemonCenter_1F_EventScript_WonderTradeOpening"
     }
   ]
 }
