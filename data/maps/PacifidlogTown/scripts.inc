@@ -11,6 +11,10 @@ PacifidlogTown_OnResume:
 	setstepcallback STEP_CB_PACIFIDLOG_BRIDGE
 	end
 
+PacifidlogTown_EventScript_Scientist::
+	msgbox PacifidlogTown_Text_TooBusy, MSGBOX_NPC
+	end
+
 PacifidlogTown_EventScript_NinjaBoy::
 	msgbox PacifidlogTown_Text_NeatHousesOnWater, MSGBOX_NPC
 	end
@@ -52,3 +56,6 @@ PacifidlogTown_Text_TownSign:
 	.string "“Where the morning sun smiles upon\n"
 	.string "the waters.”$"
 
+PacifidlogTown_Text_TooBusy:
+	.string "...\p"
+	.string "Huh? What? Oh. Shoo, I'm too busy.$"
