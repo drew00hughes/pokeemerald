@@ -7216,11 +7216,11 @@ static const struct TrainerMon sParty_GruntSeafloorCavern5[] = {
 static const struct TrainerMon sParty_GruntUnused[] = {
     {
     .lvl = 31,
-    .species = SPECIES_WAILMER,
+    .species = SPECIES_CROBAT,
     },
     {
     .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .species = SPECIES_ARBOK,
     }
 };
 
@@ -11802,5 +11802,50 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     {
     .lvl = 5,
     .species = SPECIES_KYOGRE,
+    }
+};
+
+static const struct TrainerMon sParty_MewGrunt2[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_HYPNO,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_HYDREIGON,
+    }
+};
+
+static const struct TrainerMon sParty_MewGrunt3[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_MAROWAK_ALOLAN,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_MACHOKE,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_MUK,
+    }
+};
+
+static const struct TrainerMon sParty_MewGrunt4[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_VENOMOTH,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_DRIFBLIM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_FROSLASS,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_MALAMAR,
     }
 };

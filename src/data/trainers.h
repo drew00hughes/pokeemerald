@@ -10269,7 +10269,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntSeafloorCavern5),
+        .party = TRAINER_PARTY(sParty_GruntUnused),
     }, 
 
     [TRAINER_FMG1_MEWTWO] =
@@ -10281,7 +10281,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntSeafloorCavern5),
+        .party = TRAINER_PARTY(sParty_MewGrunt2),
     }, 
 
     [TRAINER_MMG1_MEWTWO] =
@@ -10293,7 +10293,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntSeafloorCavern5),
+        .party = TRAINER_PARTY(sParty_MewGrunt3),
     }, 
 
     [TRAINER_FAG1_MEWTWO] =
@@ -10305,6 +10305,6 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntSeafloorCavern5),
+        .party = TRAINER_PARTY(sParty_MewGrunt4),
     },  
 };
