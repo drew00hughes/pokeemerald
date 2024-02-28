@@ -7,7 +7,9 @@ PetalburgWoods_MapScripts::
 
 PetalburgWoods_OnTransition:
 	setflag FLAG_HIDE_SHAYMIN
+	setflag FLAG_HIDE_CELEBI
 	goto_if_unset FLAG_CAUGHT_SHAYMIN, PetalburgWoods_EventScript_CheckForShaymin
+	goto_if_set FLAG_CAUGHT_SHAYMIN, PetalburgWoods_EventScript_CheckForCelebi
 	end
 
 PetalburgWoods_EventScript_CheckForShaymin::
@@ -16,6 +18,35 @@ PetalburgWoods_EventScript_CheckForShaymin::
 
 PetalburgWoods_EventScript_ShayminVisible::
 	clearflag FLAG_HIDE_SHAYMIN
+	end
+
+PetalburgWoods_EventScript_CheckForCelebi::
+	goto_if_unset FLAG_CAUGHT_CELEBI, PetalburgWoods_EventScript_CelebiVisible
+	end
+
+PetalburgWoods_EventScript_CelebiVisible::
+	clearflag FLAG_HIDE_CELEBI
+	end
+
+PetalburgWoods_EventScript_CelebiBattle::
+	lockall
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_CELEBI, 5, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PetalburgWoods_EventScript_PostCelebiBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PetalburgWoods_EventScript_PostCelebiBattle
+	releaseall
+	end
+
+PetalburgWoods_EventScript_PostCelebiBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 15
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_CELEBI
+	setflag FLAG_CAUGHT_CELEBI
 	end
 
 PetalburgWoods_EventScript_ShayminBattle::

@@ -347,8 +347,8 @@
 #define FLAG_HIDE_ZERAORA                    0x141
 #define FLAG_CAUGHT_ZERAORA                  0x142
 #define FLAG_HIDE_MEWTWO                     0x143
-#define FLAG_WONDER_CARD_UNUSED_8            0x144
-#define FLAG_WONDER_CARD_UNUSED_9            0x145
+#define FLAG_HIDE_CELEBI                     0x144
+#define FLAG_CAUGHT_CELEBI                   0x145
 #define FLAG_WONDER_CARD_UNUSED_10           0x146
 #define FLAG_WONDER_CARD_UNUSED_11           0x147
 #define FLAG_WONDER_CARD_UNUSED_12           0x148
