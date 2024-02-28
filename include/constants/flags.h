@@ -349,8 +349,8 @@
 #define FLAG_HIDE_MEWTWO                     0x143
 #define FLAG_HIDE_CELEBI                     0x144
 #define FLAG_CAUGHT_CELEBI                   0x145
-#define FLAG_WONDER_CARD_UNUSED_10           0x146
-#define FLAG_WONDER_CARD_UNUSED_11           0x147
+#define FLAG_HIDE_ARCEUS                     0x146
+#define FLAG_CAUGHT_ARCEUS                   0x147
 #define FLAG_WONDER_CARD_UNUSED_12           0x148
 #define FLAG_WONDER_CARD_UNUSED_13           0x149
 #define FLAG_WONDER_CARD_UNUSED_14           0x14A

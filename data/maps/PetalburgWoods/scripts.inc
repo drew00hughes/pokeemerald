@@ -21,7 +21,11 @@ PetalburgWoods_EventScript_ShayminVisible::
 	end
 
 PetalburgWoods_EventScript_CheckForCelebi::
-	goto_if_unset FLAG_CAUGHT_CELEBI, PetalburgWoods_EventScript_CelebiVisible
+	goto_if_unset FLAG_CAUGHT_CELEBI, PetalburgWoods_EventScript_CheckCelebiAgain
+	end
+
+PetalburgWoods_EventScript_CheckCelebiAgain::
+	goto_if_set FLAG_HIDE_MEW, PetalburgWoods_EventScript_CelebiVisible
 	end
 
 PetalburgWoods_EventScript_CelebiVisible::
