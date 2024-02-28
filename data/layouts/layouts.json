@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/CaveOfTrials/border.bin",
       "blockdata_filepath": "data/layouts/CaveOfTrials/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLAND_OF_DREAMS",
+      "name": "IslandOfDreams_Layout",
+      "width": 20,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/IslandOfDreams/border.bin",
+      "blockdata_filepath": "data/layouts/IslandOfDreams/map.bin"
     }
   ]
 }

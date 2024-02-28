@@ -351,9 +351,9 @@
 #define FLAG_CAUGHT_CELEBI                   0x145
 #define FLAG_HIDE_ARCEUS                     0x146
 #define FLAG_CAUGHT_ARCEUS                   0x147
-#define FLAG_WONDER_CARD_UNUSED_12           0x148
-#define FLAG_WONDER_CARD_UNUSED_13           0x149
-#define FLAG_WONDER_CARD_UNUSED_14           0x14A
+#define FLAG_DREAM_STATE                     0x148
+#define FLAG_HIDE_CRESSELIA                  0x149
+#define FLAG_HIDE_DARKRAI                    0x14A
 #define FLAG_WONDER_CARD_UNUSED_15           0x14B
 #define FLAG_WONDER_CARD_UNUSED_16           0x14C
 #define FLAG_WONDER_CARD_UNUSED_17           0x14D
