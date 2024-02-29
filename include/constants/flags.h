@@ -354,8 +354,8 @@
 #define FLAG_DREAM_STATE                     0x148
 #define FLAG_HIDE_CRESSELIA                  0x149
 #define FLAG_HIDE_DARKRAI                    0x14A
-#define FLAG_WONDER_CARD_UNUSED_15           0x14B
-#define FLAG_WONDER_CARD_UNUSED_16           0x14C
+#define FLAG_CAUGHT_CRESSELIA                0x14B
+#define FLAG_CAUGHT_DARKRAI                  0x14C
 #define FLAG_WONDER_CARD_UNUSED_17           0x14D
 #define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
 

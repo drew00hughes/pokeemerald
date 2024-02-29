@@ -854,6 +854,9 @@ static const u8 sText_Fossil9[] = _("Plume Fossil");
 static const u8 sText_Fossil10[] = _("Jaw Fossil");
 static const u8 sText_Fossil11[] = _("Sail Fossil");
 
+static const u8 sText_Cresselia[] = _("Dream");
+static const u8 sText_Darkrai[] = _("Nightmare");
+
 // Sets of multichoices.
 static const struct ListMenuItem sSet1[] =
 {
@@ -885,6 +888,12 @@ static const struct ListMenuItem sSet2[] =
     {sText_Fossil11, 10},
 };
 
+static const struct ListMenuItem sSet3[] =
+{
+    {sText_Cresselia, 0},
+    {sText_Darkrai, 1},
+};
+
 // Table of your multichoice sets.
 struct
 {
@@ -894,6 +903,7 @@ struct
 {
     {sSet1, ARRAY_COUNT(sSet1)},
     {sSet2, ARRAY_COUNT(sSet2)},
+    {sSet3, ARRAY_COUNT(sSet3)},
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);

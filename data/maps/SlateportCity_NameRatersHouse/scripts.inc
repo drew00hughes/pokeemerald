@@ -2,10 +2,16 @@ SlateportCity_NameRatersHouse_MapScripts::
 	.byte 0
 
 SlateportCity_NameRatersHouse_EventScript_DreamMaster::
+	lock
+	faceplayer
+	goto_if_set FLAG_DREAM_STATE, SlateportCity_NameRatersHouse_EventScript_NothingMore
+	msgbox SlateportCity_NameRatersHouse_Text_Explain, MSGBOX_NPC
 	goto_if_unset FLAG_HIDE_MEW, SlateportCity_NameRatersHouse_EventScript_NotReadyYet
-	goto_if_unset FLAG_HIDE_DARKRAI, SlateportCity_NameRatersHouse_EventScript_WantNightmare
-	goto_if_unset FLAG_HIDE_CRESSELIA, SlateportCity_NameRatersHouse_EventScript_WantDream
-	goto SlateportCity_NameRatersHouse_EventScript_NothingMore
+	msgbox SlateportCity_NameRatersHouse_Text_WantToRest, MSGBOX_DEFAULT
+	scrollingmultichoice 3, 2, 3, 2, TRUE
+	goto_if_eq VAR_RESULT, 0, SlateportCity_NameRatersHouse_EventScript_WantDream
+	goto_if_eq VAR_RESULT, 1, SlateportCity_NameRatersHouse_EventScript_WantNightmare
+	release
 	end
 
 SlateportCity_NameRatersHouse_EventScript_WantNightmare::
@@ -48,11 +54,16 @@ SlateportCity_NameRatersHouse_Text_ComeBack:
 	.string "Come back when you're ready.$"
 
 SlateportCity_NameRatersHouse_Text_NotReady:
-	.string "Oh my friend, I don't think you're\n"
+	.string "But oh, I don't think you're\n"
 	.string "ready for this level of sleep yet.$"
 
+SlateportCity_NameRatersHouse_Text_Explain:
+	.string "Oh hello there! I am the\n"
+	.string "Dream Master. I can help you have\l"
+	.string "certain dreams with my elixirs.$"
+
 SlateportCity_NameRatersHouse_Text_WantToRest:
-	.string "Do you want to take a rest?$"
+	.string "What kind of rest would you like?$"
 
 SlateportCity_NameRatersHouse_Text_BlackVial:
 	.string "Take this black vial. This will\n"
