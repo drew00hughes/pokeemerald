@@ -39,7 +39,10 @@ IslandOfDreams_EventScript_PostCresseliaBattle::
 	fadescreen FADE_TO_BLACK
 	removeobject 2
 	setflag FLAG_HIDE_CRESSELIA
+	setflag FLAG_CAUGHT_CRESSELIA
 	fadescreen FADE_FROM_BLACK
+	fadescreen FADE_TO_BLACK
+	warp MAP_SLATEPORT_CITY_NAME_RATERS_HOUSE, 2
 	end
 
 IslandOfDreams_EventScript_PrepareDarkrai::
@@ -62,5 +65,8 @@ IslandOfDreams_EventScript_PostDarkraiBattle::
 	fadescreen FADE_TO_BLACK
 	removeobject 1
 	setflag FLAG_HIDE_DARKRAI
+	setflag FLAG_CAUGHT_DARKRAI
 	fadescreen FADE_FROM_BLACK
+	fadescreen FADE_TO_BLACK
+	warp MAP_SLATEPORT_CITY_NAME_RATERS_HOUSE, 2
 	end
