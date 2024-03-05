@@ -356,8 +356,8 @@
 #define FLAG_HIDE_DARKRAI                    0x14A
 #define FLAG_CAUGHT_CRESSELIA                0x14B
 #define FLAG_CAUGHT_DARKRAI                  0x14C
-#define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
+#define FLAG_HIDE_KYUREM                     0x14D
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_HIDE_KYUREM - FLAG_RECEIVED_AURORA_TICKET)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
@@ -457,7 +457,7 @@
 #define FLAG_REMATCH_DRAKE                   0x1A8
 #define FLAG_REMATCH_WALLACE                 0x1A9
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
+#define FLAG_CAUGHT_KYUREM                   0x1AA 
 #define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
