@@ -14,9 +14,11 @@ Route110_OnResume:
 	end
 
 Route110_OnTransition:
+	setflag FLAG_HIDE_PHEROMOSA
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
 	call_if_eq VAR_CYCLING_CHALLENGE_STATE, 1, Route110_EventScript_SaveCyclingMusic
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route110_EventScript_CheckIfCaught
 	end
 
 Route110_EventScript_SaveCyclingMusic::
@@ -26,6 +28,36 @@ Route110_EventScript_SaveCyclingMusic::
 Route110_OnFrame:
 	map_script_2 VAR_CYCLING_CHALLENGE_STATE, 1, Route110_EventScript_BeginCylcingRoadChallenge
 	.2byte 0
+
+Route110_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_PHEROMOSA, Route110_EventScript_ShowPortal
+	end
+
+Route110_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_PHEROMOSA
+	end
+
+Route110_EventScript_PheromosaBattle::
+	lockall
+	playmoncry SPECIES_PHEROMOSA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_PHEROMOSA, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route110_EventScript_PostPheromosaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route110_EventScript_PostPheromosaBattle
+	releaseall
+	end
+
+Route110_EventScript_PostPheromosaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 37
+	setflag FLAG_HIDE_PHEROMOSA
+	setflag FLAG_CAUGHT_PHEROMOSA
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
+	end
 
 Route110_EventScript_BeginCylcingRoadChallenge::
 	special Special_BeginCyclingRoadChallenge
@@ -109,7 +141,7 @@ Route110_EventScript_VandalizedSign::
 	end
 
 Route110_EventScript_Route103Sign::
-	msgbox Route110_Text_Route103Sign, MSGBOX_SIGN
+	msgbox Route110_Text_Route110Sign, MSGBOX_SIGN
 	end
 
 Route110_EventScript_SeasideParkingSign::
@@ -927,7 +959,7 @@ Route110_Text_AquaWasHere:
 	.string "“TEAM MAGMA rules!” is what it\n"
 	.string "says now.$"
 
-Route110_Text_Route103Sign:
+Route110_Text_Route110Sign:
 	.string "ROUTE 110\n"
 	.string "{LEFT_ARROW} ROUTE 103$"
 

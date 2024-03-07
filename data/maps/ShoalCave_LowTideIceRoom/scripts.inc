@@ -3,6 +3,7 @@ ShoalCave_LowTideIceRoom_MapScripts::
 	.byte 0
 
 ShoalCave_LowTideIceRoom_OnLoad::
+	setflag FLAG_HIDE_KYUREM
 	call_if_set FLAG_SYS_NATIONAL_DEX, ShoalCave_LowTideIceRoom_EventScripts_CheckArticuno
 	call_if_unset FLAG_SYS_NATIONAL_DEX, ShoalCave_LowTideIceRoom_EventScripts_HideArticuno
 	end
@@ -18,6 +19,15 @@ ShoalCave_LowTideIceRoom_EventScripts_ShowArticuno::
 
 ShoalCave_LowTideIceRoom_EventScripts_HideArticuno::
 	setflag FLAG_HIDE_ARTICUNO
+	call_if_set FLAG_HIDE_MEW, ShoalCave_LowTideIceRoom_EventScript_CheckKyurem
+	end
+
+ShoalCave_LowTideIceRoom_EventScript_CheckKyurem::
+	call_if_unset FLAG_CAUGHT_KYUREM, ShoalCave_LowTideIceRoom_EventScripts_ShowKyurem
+	end
+
+ShoalCave_LowTideIceRoom_EventScripts_ShowKyurem::
+	clearflag FLAG_HIDE_KYUREM
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ArticunoFight::
@@ -38,4 +48,25 @@ ShoalCave_LowTideIceRoom_EventScript_PostArticunoBattle::
 	removeobject 3
 	fadescreen FADE_FROM_BLACK
 	setflag FLAG_CAUGHT_ARTICUNO
+	end
+
+ShoalCave_LowTideIceRoom_EventScript_KyuremFight::
+	lockall
+	playmoncry SPECIES_KYUREM, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_KYUREM, 75, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, ShoalCave_LowTideIceRoom_EventScript_PostKyuremBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShoalCave_LowTideIceRoom_EventScript_PostKyuremBattle
+	releaseall
+	end
+
+ShoalCave_LowTideIceRoom_EventScript_PostKyuremBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 4
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_CAUGHT_KYUREM
+	setflag FLAG_HIDE_KYUREM
 	end

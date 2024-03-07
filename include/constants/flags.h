@@ -346,18 +346,18 @@
 #define FLAG_CAUGHT_MELTAN                   0x140
 #define FLAG_HIDE_ZERAORA                    0x141
 #define FLAG_CAUGHT_ZERAORA                  0x142
-#define FLAG_WONDER_CARD_UNUSED_7            0x143
-#define FLAG_WONDER_CARD_UNUSED_8            0x144
-#define FLAG_WONDER_CARD_UNUSED_9            0x145
-#define FLAG_WONDER_CARD_UNUSED_10           0x146
-#define FLAG_WONDER_CARD_UNUSED_11           0x147
-#define FLAG_WONDER_CARD_UNUSED_12           0x148
-#define FLAG_WONDER_CARD_UNUSED_13           0x149
-#define FLAG_WONDER_CARD_UNUSED_14           0x14A
-#define FLAG_WONDER_CARD_UNUSED_15           0x14B
-#define FLAG_WONDER_CARD_UNUSED_16           0x14C
-#define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
+#define FLAG_HIDE_MEWTWO                     0x143
+#define FLAG_HIDE_CELEBI                     0x144
+#define FLAG_CAUGHT_CELEBI                   0x145
+#define FLAG_HIDE_ARCEUS                     0x146
+#define FLAG_CAUGHT_ARCEUS                   0x147
+#define FLAG_DREAM_STATE                     0x148
+#define FLAG_HIDE_CRESSELIA                  0x149
+#define FLAG_HIDE_DARKRAI                    0x14A
+#define FLAG_CAUGHT_CRESSELIA                0x14B
+#define FLAG_CAUGHT_DARKRAI                  0x14C
+#define FLAG_HIDE_KYUREM                     0x14D
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_HIDE_KYUREM - FLAG_RECEIVED_AURORA_TICKET)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
@@ -457,8 +457,8 @@
 #define FLAG_REMATCH_DRAKE                   0x1A8
 #define FLAG_REMATCH_WALLACE                 0x1A9
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_CAUGHT_KYUREM                   0x1AA 
+#define FLAG_HIDE_VOLCANION                  0x1AB
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -507,18 +507,18 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define FLAG_CAUGHT_VOLCANION                0x1DA
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_HIDE_HOOPA                      0x1DE
+#define FLAG_CAUGHT_HOOPA                    0x1DF
+#define FLAG_ALL_PORTALS_CLOSED              0x1E0
+#define FLAG_MET_HOOPA_ONCE                  0x1E1
+#define FLAG_HIDE_NECROZMA                   0x1E2
+#define FLAG_CAUGHT_NECROZMA                 0x1E3
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -653,29 +653,29 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_EXP_SHARE_ALL  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
+#define FLAG_EXP_SHARE_ALL                0x264
+#define FLAG_HIDE_POIPOLE                 0x265
+#define FLAG_HIDE_STAKATAKA               0x266
+#define FLAG_HIDE_ETERNATUS               0x267
+#define FLAG_HIDE_NIHILEGO                0x268
+#define FLAG_HIDE_BUZZWOLE                0x269
+#define FLAG_HIDE_PHEROMOSA               0x26A
+#define FLAG_HIDE_XURKITREE               0x26B
+#define FLAG_HIDE_CELESTEELA              0x26C
+#define FLAG_HIDE_KARTANA                 0x26D
+#define FLAG_HIDE_GUZZLORD                0x26E
+#define FLAG_HIDE_BLACEPHALON             0x26F
+#define FLAG_CAUGHT_POIPOLE               0x270 
+#define FLAG_CAUGHT_STAKATAKA             0x271 
+#define FLAG_CAUGHT_ETERNATUS             0x272 
+#define FLAG_CAUGHT_NIHILEGO              0x273 
+#define FLAG_CAUGHT_BUZZWOLE              0x274 
+#define FLAG_CAUGHT_PHEROMOSA             0x275 
+#define FLAG_CAUGHT_XURKITREE             0x276 
+#define FLAG_CAUGHT_CELESTEELA            0x277 
+#define FLAG_CAUGHT_KARTANA               0x278 
+#define FLAG_CAUGHT_GUZZLORD              0x279 
+#define FLAG_CAUGHT_BLACEPHALON           0x27A 
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag

@@ -14,13 +14,45 @@ Route118_OnTransition:
 	end
 
 Route118_OnLoad:
+	setflag FLAG_HIDE_KARTANA
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_EventScript_PlaceTilesRoute118East
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_EventScript_PlaceTilesRoute118West
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route118_EventScript_CheckIfCaught
 	end
 
 Route118_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
+
+Route118_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_KARTANA, Route118_EventScript_ShowPortal
+	end
+
+Route118_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_KARTANA
+	end
+
+Route118_EventScript_KartanaBattle::
+	lockall
+	playmoncry SPECIES_KARTANA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_KARTANA, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route118_EventScript_PostKartanaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route118_EventScript_PostKartanaBattle
+	releaseall
+	end
+
+Route118_EventScript_PostKartanaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 22
+	setflag FLAG_HIDE_KARTANA
+	setflag FLAG_CAUGHT_KARTANA
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
+	end
 
 Route118_EventScript_GoodRodFisherman::
 	lock

@@ -11,7 +11,39 @@ MtPyre_Summit_MapScripts::
 	.byte 0
 
 MtPyre_Summit_OnTransition:
+	setflag FLAG_HIDE_NECROZMA
+	call_if_set FLAG_MET_HOOPA_ONCE, MtPyre_Summit_EventScript_CheckIfCaught
 	call_if_eq VAR_MT_PYRE_STATE, 2, MtPyre_Summit_EventScript_SetArchieMaxiePositions
+	end
+
+MtPyre_Summit_EventScript_CheckIfCaught::
+	call_if_unset FLAG_CAUGHT_NECROZMA, MtPyre_Summit_EventScript_ShowPortal
+	return
+
+MtPyre_Summit_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_NECROZMA
+	return
+
+MtPyre_Summit_EventScript_NecrozmaBattle::
+	lockall
+	playmoncry SPECIES_NECROZMA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_NECROZMA, 75, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MtPyre_Summit_EventScript_PostNecrozmaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtPyre_Summit_EventScript_PostNecrozmaBattle
+	releaseall
+	end
+
+MtPyre_Summit_EventScript_PostNecrozmaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 9
+	setflag FLAG_HIDE_NECROZMA
+	setflag FLAG_CAUGHT_NECROZMA
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
 	end
 
 MtPyre_Summit_EventScript_SetArchieMaxiePositions::

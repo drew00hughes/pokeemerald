@@ -1068,3 +1068,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/MossdeepCity_Space_Temple/scripts.inc"
 
 	.include "data/maps/CaveOfTrials/scripts.inc"
+
+	.include "data/maps/IslandOfDreams/scripts.inc"

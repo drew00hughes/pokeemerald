@@ -2179,3 +2179,5 @@ const u32 gObjectEventPic_Sawsbuck_Winter[] = INCBIN_U32("graphics/object_events
 const u16 gObjectEventPal_Sawsbuck_Winter[] = INCBIN_U16("graphics/object_events/palettes/followers/sawsbuckwinter.gbapal");
 const u32 gObjectEventPic_Space_Portal[] = INCBIN_U32("graphics/object_events/pics/misc/portalspace.4bpp");
 const u16 gObjectEventPal_Space_Portal[] = INCBIN_U16("graphics/object_events/palettes/portalspace.gbapal");
+const u32 gObjectEventPic_Hoopa_Portal[] = INCBIN_U32("graphics/object_events/pics/misc/hoopaportal.4bpp");
+const u16 gObjectEventPal_Hoopa_Portal[] = INCBIN_U16("graphics/object_events/palettes/hoopaportal.gbapal");

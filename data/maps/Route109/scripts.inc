@@ -2,7 +2,43 @@
 @  These are labeled in DewfordTown/scripts.inc
 
 Route109_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route109_OnLoad
 	.byte 0
+
+Route109_OnLoad:
+	setflag FLAG_HIDE_POIPOLE
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route109_EventScript_CheckIfCaught
+	end
+
+Route109_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_POIPOLE, Route109_EventScript_ShowPortal
+	end
+
+Route109_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_POIPOLE
+	end
+
+Route109_EventScript_PoipoleBattle::
+	lockall
+	playmoncry SPECIES_POIPOLE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_POIPOLE, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route109_EventScript_PostPoipoleBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route109_EventScript_PostPoipoleBattle
+	releaseall
+	end
+
+Route109_EventScript_PostPoipoleBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 25
+	setflag FLAG_HIDE_POIPOLE
+	setflag FLAG_CAUGHT_POIPOLE
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
+	end
 
 Route109_EventScript_StartDepartForDewford::
 	call EventScript_BackupMrBrineyLocation

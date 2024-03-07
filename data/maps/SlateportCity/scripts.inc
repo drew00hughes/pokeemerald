@@ -329,8 +329,8 @@ SlateportCity_EventScript_HarborSignFerryComplete::
 	releaseall
 	end
 
-SlateportCity_EventScript_NameRatersHouseSign::
-	msgbox SlateportCity_Text_NameRatersHouseSign, MSGBOX_SIGN
+SlateportCity_EventScript_DreamMastersHouseSign::
+	msgbox SlateportCity_Text_DreamMastersHouseSign, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_Maniac::
@@ -1279,9 +1279,9 @@ SlateportCity_Text_HarborSign:
 	.string "“Enjoy a delightful cruise on\n"
 	.string "the ferry S.S. TIDAL.”$"
 
-SlateportCity_Text_NameRatersHouseSign:
-	.string "NAME RATER'S HOUSE\n"
-	.string "“POKéMON nicknames rated.”$"
+SlateportCity_Text_DreamMastersHouseSign:
+	.string "DREAM MASTER'S HOUSE\n"
+	.string "“Get the sleep you need.”$"
 
 SlateportCity_Text_ExplainBerries:
 	.string "If a wild POKéMON gets hurt, it heals\n"

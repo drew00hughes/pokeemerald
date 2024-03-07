@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "AquaHideout_UnusedRubyMap3_EventScript_MewTwoBattle",
+      "flag": "FLAG_HIDE_MEWTWO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "AquaHideout_UnusedRubyMap3_EventScript_Scientist2",
+      "flag": "FLAG_HIDE_MEWTWO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "AquaHideout_UnusedRubyMap3_EventScript_Scientist3",
+      "flag": "FLAG_HIDE_MEWTWO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "AquaHideout_UnusedRubyMap3_EventScript_Scientist3",
+      "flag": "FLAG_HIDE_MEWTWO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -76,8 +76,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "AquaHideout_UnusedRubyMap3_EventScript_Scientist1",
+      "flag": "FLAG_HIDE_MEWTWO"
     }
   ],
   "warp_events": [

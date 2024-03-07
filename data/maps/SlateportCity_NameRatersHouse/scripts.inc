@@ -1,111 +1,89 @@
 SlateportCity_NameRatersHouse_MapScripts::
 	.byte 0
 
-SlateportCity_NameRatersHouse_EventScript_NameRater::
+SlateportCity_NameRatersHouse_EventScript_DreamMaster::
 	lock
 	faceplayer
-	msgbox SlateportCity_NameRatersHouse_Text_PleasedToRateMonNickname, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, SlateportCity_NameRatersHouse_EventScript_ChooseMonToRate
-	goto_if_eq VAR_RESULT, NO, SlateportCity_NameRatersHouse_EventScript_DeclineNameRate
-	end
-
-SlateportCity_NameRatersHouse_EventScript_ChooseMonToRate::
-	msgbox SlateportCity_NameRatersHouse_Text_CritiqueWhichMonNickname, MSGBOX_DEFAULT
-	special ChoosePartyMon
-	waitstate
-	goto_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, SlateportCity_NameRatersHouse_EventScript_RateMonNickname
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, SlateportCity_NameRatersHouse_EventScript_DeclineNameRate
-	end
-
-SlateportCity_NameRatersHouse_EventScript_DeclineNameRate::
-	msgbox SlateportCity_NameRatersHouse_Text_DoVisitAgain, MSGBOX_DEFAULT
+	call_if_set FLAG_CAUGHT_CRESSELIA, SlateportCity_NameRatersHouse_EventScript_CheckDarkrai
+	msgbox SlateportCity_NameRatersHouse_Text_Explain, MSGBOX_NPC
+	goto_if_unset FLAG_HIDE_MEW, SlateportCity_NameRatersHouse_EventScript_NotReadyYet
+	msgbox SlateportCity_NameRatersHouse_Text_WantToRest, MSGBOX_DEFAULT
+	scrollingmultichoice 2, 2, 3, 2, TRUE
+	goto_if_eq VAR_RESULT, 0, SlateportCity_NameRatersHouse_EventScript_WantDream
+	goto_if_eq VAR_RESULT, 1, SlateportCity_NameRatersHouse_EventScript_WantNightmare
 	release
 	end
 
-SlateportCity_NameRatersHouse_EventScript_RateMonNickname::
-	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-	goto_if_eq VAR_RESULT, SPECIES_EGG, SlateportCity_NameRatersHouse_EventScript_CantRateEgg
-	special BufferMonNickname
-	special IsMonOTIDNotPlayers
-	goto_if_eq VAR_RESULT, TRUE, SlateportCity_NameRatersHouse_EventScript_PlayerNotMonsOT
-	specialvar VAR_RESULT, MonOTNameNotPlayer
-	special BufferMonNickname
-	goto_if_eq VAR_RESULT, TRUE, SlateportCity_NameRatersHouse_EventScript_PlayerNotMonsOT
-	msgbox SlateportCity_NameRatersHouse_Text_FineNameSuggestBetterOne, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, SlateportCity_NameRatersHouse_EventScript_ChangeNickname
-	goto_if_eq VAR_RESULT, NO, SlateportCity_NameRatersHouse_EventScript_DeclineNameRate
-	end
-
-SlateportCity_NameRatersHouse_EventScript_CantRateEgg::
-	msgbox SlateportCity_NameRatersHouse_Text_ThatIsMerelyAnEgg, MSGBOX_DEFAULT
+SlateportCity_NameRatersHouse_EventScript_WantNightmare::
+	goto_if_set FLAG_CAUGHT_DARKRAI, SlateportCity_NameRatersHouse_EventScript_StopVial
+	lock
+	faceplayer
+	msgbox SlateportCity_NameRatersHouse_Text_BlackVial, MSGBOX_NPC
+	fadescreen FADE_TO_BLACK
+	clearflag FLAG_DREAM_STATE
+	warp MAP_ISLAND_OF_DREAMS, 0
 	release
 	end
 
-SlateportCity_NameRatersHouse_EventScript_PlayerNotMonsOT::
-	msgbox SlateportCity_NameRatersHouse_Text_MagnificentName, MSGBOX_DEFAULT
+SlateportCity_NameRatersHouse_EventScript_WantDream::
+	goto_if_set FLAG_CAUGHT_CRESSELIA, SlateportCity_NameRatersHouse_EventScript_StopVial
+	lock
+	faceplayer
+	msgbox SlateportCity_NameRatersHouse_Text_WhiteVial, MSGBOX_NPC
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_DREAM_STATE
+	warp MAP_ISLAND_OF_DREAMS, 0
 	release
 	end
 
-SlateportCity_NameRatersHouse_EventScript_ChangeNickname::
-	msgbox SlateportCity_NameRatersHouse_Text_WhatShallNewNameBe, MSGBOX_DEFAULT
-	call Common_EventScript_NameReceivedPartyMon
-	specialvar VAR_RESULT, TryPutNameRaterShowOnTheAir
-	special BufferMonNickname
-	goto_if_eq VAR_RESULT, TRUE, SlateportCity_NameRatersHouse_EventScript_NewNameDifferent
-	msgbox SlateportCity_NameRatersHouse_Text_NameNoDifferentYetSuperior, MSGBOX_DEFAULT
-	release
+SlateportCity_NameRatersHouse_EventScript_StopVial::
+	msgbox SlateportCity_NameRatersHouse_Text_VialStop, MSGBOX_NPC
 	end
 
-SlateportCity_NameRatersHouse_EventScript_NewNameDifferent::
-	msgbox SlateportCity_NameRatersHouse_Text_MonShallBeKnownAsName, MSGBOX_DEFAULT
-	release
+SlateportCity_NameRatersHouse_EventScript_CheckDarkrai::
+	goto_if_set FLAG_CAUGHT_DARKRAI, SlateportCity_NameRatersHouse_EventScript_NothingLeft
+	return
+
+SlateportCity_NameRatersHouse_EventScript_NothingLeft::
+	msgbox SlateportCity_NameRatersHouse_Text_NothingLeft, MSGBOX_NPC
 	end
 
-SlateportCity_NameRatersHouse_Text_PleasedToRateMonNickname:
-	.string "Hi, hi! I'm the NAME RATER!\n"
-	.string "I'm the fortune-teller of names!\p"
-	.string "I shall be pleased to rate your\n"
-	.string "POKéMON's nickname.$"
+SlateportCity_NameRatersHouse_EventScript_ComebackWhenYouWant::
+	msgbox SlateportCity_NameRatersHouse_Text_ComeBack, MSGBOX_NPC
+	end
 
-SlateportCity_NameRatersHouse_Text_CritiqueWhichMonNickname:
-	.string "Which POKéMON's nickname should\n"
-	.string "I critique?$"
+SlateportCity_NameRatersHouse_EventScript_NotReadyYet::
+	msgbox SlateportCity_NameRatersHouse_Text_NotReady, MSGBOX_NPC
+	end
 
-SlateportCity_NameRatersHouse_Text_FineNameSuggestBetterOne:
-	.string "Hmmm… {STR_VAR_1}, is it? That is\n"
-	.string "quite a fine name you bestowed.\p"
-	.string "But! What say you, if I were to\n"
-	.string "suggest a slightly better name?$"
+SlateportCity_NameRatersHouse_Text_ComeBack:
+	.string "Come back when you're ready.$"
 
-SlateportCity_NameRatersHouse_Text_WhatShallNewNameBe:
-	.string "Ah, good. Then, what shall the new\n"
-	.string "nickname be?$"
+SlateportCity_NameRatersHouse_Text_NotReady:
+	.string "But oh, I don't think you're\n"
+	.string "ready for this level of sleep yet.$"
 
-SlateportCity_NameRatersHouse_Text_MonShallBeKnownAsName:
-	.string "Done! From now on, this POKéMON\n"
-	.string "shall be known as {STR_VAR_1}!\p"
-	.string "It is a better name than before!\n"
-	.string "How fortunate for you!$"
+SlateportCity_NameRatersHouse_Text_Explain:
+	.string "Oh hello there! I am the\n"
+	.string "Dream Master. I can help you have\l"
+	.string "certain dreams with my elixirs.$"
 
-SlateportCity_NameRatersHouse_Text_DoVisitAgain:
-	.string "I see.\n"
-	.string "Do come visit again.$"
+SlateportCity_NameRatersHouse_Text_WantToRest:
+	.string "What kind of rest would you like?$"
 
-SlateportCity_NameRatersHouse_Text_NameNoDifferentYetSuperior:
-	.string "Done! From now on, this POKéMON\n"
-	.string "shall be known as {STR_VAR_1}!\p"
-	.string "It looks no different from before,\n"
-	.string "and yet, this is vastly superior!\p"
-	.string "How fortunate for you!$"
+SlateportCity_NameRatersHouse_Text_BlackVial:
+	.string "Take this black vial. This will\n"
+	.string "help you sleep...$"
 
-SlateportCity_NameRatersHouse_Text_MagnificentName:
-	.string "Hmmm… {STR_VAR_1} it is!\p"
-	.string "This is a magnificent nickname!\n"
-	.string "It is impeccably beyond reproach!\p"
-	.string "You'll do well to cherish your\n"
-	.string "{STR_VAR_1} now and beyond.$"
+SlateportCity_NameRatersHouse_Text_NothingLeft:
+	.string "I've shown you all I can. I have\n"
+	.string "nothing left to offer you, strong\l"
+	.string "trainer.$"
 
-SlateportCity_NameRatersHouse_Text_ThatIsMerelyAnEgg:
-	.string "Now, now.\n"
-	.string "That is merely an EGG!$"
+SlateportCity_NameRatersHouse_Text_WhiteVial:
+	.string "Take this white vial. This will\n"
+	.string "help you sleep...$"
 
+SlateportCity_NameRatersHouse_Text_VialStop:
+	.string "I believe you've seen all\n"
+	.string "that this vial can show you.$"

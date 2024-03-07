@@ -5,8 +5,10 @@ Route115_MapScripts::
 	.byte 0
 
 Route115_OnLoad:
+	setflag FLAG_HIDE_STAKATAKA
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_EventScript_PlaceTilesRoute115West
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_PlaceTilesRoute115East
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route115_EventScript_CheckIfCaught
 	end
 
 Route115_OnTransition:
@@ -18,6 +20,36 @@ Route115_OnTransition:
 Route115_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
+
+Route115_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_STAKATAKA, Route115_EventScript_ShowPortal
+	end
+
+Route115_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_STAKATAKA
+	end
+
+Route115_EventScript_StakatakaBattle::
+	lockall
+	playmoncry SPECIES_STAKATAKA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_STAKATAKA, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route115_EventScript_PostStakatakaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route115_EventScript_PostStakatakaBattle
+	releaseall
+	end
+
+Route115_EventScript_PostStakatakaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 24
+	setflag FLAG_HIDE_STAKATAKA
+	setflag FLAG_CAUGHT_STAKATAKA
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
+	end
 
 Route115_EventScript_Woman::
 	msgbox Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC

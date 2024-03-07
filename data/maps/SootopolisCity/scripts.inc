@@ -25,9 +25,41 @@ SootopolisCity_MapScripts::
 	.byte 0
 
 SootopolisCity_OnLoad:
+	setflag FLAG_HIDE_GUZZLORD
+	call_if_set FLAG_MET_HOOPA_ONCE, SootopolisCity_EventScript_CheckIfCaught
 	call_if_unset FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockGymDoor
 	goto_if_unset FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, SootopolisCity_EventScript_LegendariesNotArrived
 	call_if_unset FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockHouseDoors
+	end
+
+SootopolisCity_EventScript_CheckIfCaught::
+	call_if_unset FLAG_CAUGHT_GUZZLORD, SootopolisCity_EventScript_ShowPortal
+	return
+
+SootopolisCity_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_GUZZLORD
+	return
+
+SootopolisCity_EventScript_GuzzlordBattle::
+	lockall
+	playmoncry SPECIES_GUZZLORD, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_GUZZLORD, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, SootopolisCity_EventScript_PostGuzzlordBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SootopolisCity_EventScript_PostGuzzlordBattle
+	releaseall
+	end
+
+SootopolisCity_EventScript_PostGuzzlordBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 19
+	setflag FLAG_HIDE_GUZZLORD
+	setflag FLAG_CAUGHT_GUZZLORD
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
 	end
 
 SootopolisCity_EventScript_LegendariesNotArrived::

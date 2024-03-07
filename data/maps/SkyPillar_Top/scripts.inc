@@ -17,8 +17,43 @@ SkyPillar_Top_EventScript_TryRemoveRayquaza::
 	return
 
 SkyPillar_Top_OnTransition:
+	setflag FLAG_HIDE_ARCEUS
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
+	call_if_set FLAG_DEFEATED_RAYQUAZA, SkyPillar_Top_EventScript_CheckArceus
+	end
+
+SkyPillar_Top_EventScript_CheckArceus::
+	call_if_set FLAG_HIDE_MEW, SkyPillar_Top_EventScript_CheckArceusAgain
+	return
+
+SkyPillar_Top_EventScript_CheckArceusAgain::
+	call_if_unset FLAG_CAUGHT_ARCEUS, SkyPillar_Top_EventScript_ShowArceus
+	return
+
+SkyPillar_Top_EventScript_ShowArceus::
+	clearflag FLAG_HIDE_ARCEUS
+	return
+
+SkyPillar_Top_EventScript_ArceusBattle::
+	lockall
+	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_ARCEUS, 100, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, SkyPillar_Top_EventScript_PostArceusBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Top_EventScript_PostArceusBattle
+	releaseall
+	end
+
+SkyPillar_Top_EventScript_PostArceusBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 3
+	fadescreen FADE_FROM_BLACK
+	setflag FLAG_HIDE_ARCEUS
+	setflag FLAG_CAUGHT_ARCEUS
 	end
 
 SkyPillar_Top_EventScript_SetCleanLayout::

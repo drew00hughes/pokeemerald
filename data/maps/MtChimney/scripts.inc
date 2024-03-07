@@ -12,15 +12,50 @@ MtChimney_MapScripts::
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
-	call_if_unset FLAG_HIDE_HEATRAN, MtChimney_EventScript_Reset_Heatran_Trigger
+	setflag FLAG_HIDE_VOLCANION
+	goto_if_set FLAG_HIDE_HEATRAN, MtChimney_EventScript_CheckCompletion
+	goto_if_unset FLAG_HIDE_HEATRAN, MtChimney_EventScript_Reset_Heatran_Trigger
 	end
 
 MtChimney_OnResume:
 	setstepcallback STEP_CB_ASH
 	end
 
+MtChimney_EventScript_CheckCompletion::
+	goto_if_set FLAG_HIDE_MEW, MtChimney_EventScript_CheckVolcanionCaught
+	end
+
+MtChimney_EventScript_CheckVolcanionCaught::
+	goto_if_unset FLAG_CAUGHT_VOLCANION, MtChimney_EventScript_VolcanionVisible
+	end
+
+MtChimney_EventScript_VolcanionVisible::
+	clearflag FLAG_HIDE_VOLCANION
+	end
+
 MtChimney_EventScript_Reset_Heatran_Trigger::
 	setvar VAR_TRIGGER_HEATRAN, 1
+	end
+
+MtChimney_EventScript_VolcanionBattle::
+	lockall
+	playmoncry SPECIES_VOLCANION, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_VOLCANION, 75, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MtChimney_EventScript_PostVolcanionBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MtChimney_EventScript_PostVolcanionBattle
+	releaseall
+	end
+
+MtChimney_EventScript_PostVolcanionBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 32
+	setflag FLAG_HIDE_VOLCANION
+	setflag FLAG_CAUGHT_VOLCANION
+	fadescreen FADE_FROM_BLACK
 	end
 
 MtChimney_EventScript_Archie::
