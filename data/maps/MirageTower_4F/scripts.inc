@@ -2,7 +2,12 @@
 .set LOCALID_CLAW_FOSSIL, 2
 
 MirageTower_4F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MirageTower_4F_OnTransition
 	.byte 0
+
+MirageTower_4F_OnTransition:
+	goto MirageTower_4F_EventScript_CheckCompletion
+	end
 
 MirageTower_4F_EventScript_CheckCompletion::
 	goto_if_set FLAG_HIDE_MEW, MirageTower_4F_EventScript_CheckHoopaCaught
@@ -27,18 +32,31 @@ MirageTower_4F_EventScript_HoopaInteraction::
 	end
 
 MirageTower_4F_EventScript_HoopaRunOff::
-	@screen shake
-	@spawn portal
-	@walk through
-	@delete portal
-	@set flag met once
+	setvar VAR_0x8004, 1   @ vertical pan
+	setvar VAR_0x8005, 1   @ horizontal pan
+	setvar VAR_0x8006, 32  @ num shakes
+	setvar VAR_0x8007, 2   @ shake delay
+	special ShakeCamera
+	waitstate
+	applymovement 4, MirageTower_4F_Movement_HoopaExit
+	waitmovement 0
+	fadescreen FADE_TO_BLACK
+	removeobject 4
+	removeobject 5
+	setflag FLAG_MET_HOOPA_ONCE
+	fadescreen FADE_FROM_BLACK
 	end
+
+MirageTower_4F_Movement_HoopaExit:
+	face_up
+	walk_up
+	step_end
 
 MirageTower_4F_EventScript_HoopaBattle::
 	lockall
 	playmoncry SPECIES_HOOPA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_HOOPA, 100, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_HOOPA, 100, ITEM_PRISON_BOTTLE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -50,6 +68,7 @@ MirageTower_4F_EventScript_HoopaBattle::
 MirageTower_4F_EventScript_PostHoopaBattle::
 	fadescreen FADE_TO_BLACK
 	removeobject 4
+	removeobject 5
 	setflag FLAG_HIDE_HOOPA
 	setflag FLAG_CAUGHT_HOOPA
 	fadescreen FADE_FROM_BLACK
@@ -105,7 +124,7 @@ MirageTower_4F_EventScript_CollapseMirageTower::
 	waitstate
 	special DoMirageTowerCeilingCrumble
 	waitstate
-	call_if_set FLAG_CAUGHT_HOOPA, 
+	call_if_set FLAG_CAUGHT_HOOPA, MirageTower_4F_EventScript_MirageFlags
 	warp MAP_ROUTE111, 19, 59
 	waitstate
 	release
