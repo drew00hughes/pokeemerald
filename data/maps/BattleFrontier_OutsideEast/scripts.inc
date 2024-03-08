@@ -9,6 +9,50 @@ BattleFrontier_OutsideEast_OnResume:
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo
 	end
 
+BattleFrontier_OutsideEast_EventScript_WonderTradeOpening::
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_WondertradeWelcome, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideEast_EventScript_WonderTradeBye
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_OutsideEast_EventScript_WonderTradeStation
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_WonderTradeStation::
+	lock
+	followerintopokeball
+	setvar VAR_0x8008, INGAME_TRADE_WONDER
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_OutsideEast_EventScript_WonderTradeBye
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special GenerateWondertradeMon
+	special DoInGameTradeScene
+	waitstate
+	updatefollowerpokemongraphic
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox BattleFrontier_OutsideEast_Text_WondertradeAgain, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideEast_EventScript_WonderTradeBye
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_OutsideEast_EventScript_WonderTradeRepeat
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_WonderTradeRepeat::
+	goto BattleFrontier_OutsideEast_EventScript_WonderTradeStation
+	end
+
+BattleFrontier_OutsideEast_EventScript_WonderTradeBye::
+	msgbox BattleFrontier_OutsideEast_Text_WondertradeGoodbye, MSGBOX_DEFAULT
+	release
+	end
+
 BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
@@ -437,3 +481,14 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail:
 	.string "with a long tail up ahead!\p"
 	.string "It was hiding under a boulder, and\n"
 	.string "it kept staring at me!$"
+
+BattleFrontier_OutsideEast_Text_WondertradeWelcome:
+	.string "Welcome to the Wonder Trade Station!\n"
+	.string "Do you want to trade for a random\l"
+	.string "POKéMON?$"
+
+BattleFrontier_OutsideEast_Text_WondertradeGoodbye:
+	.string "Thanks for using Wonder Trade!$"
+
+BattleFrontier_OutsideEast_Text_WondertradeAgain:
+	.string "Would you like to Wonder Trade again?$"
