@@ -3,7 +3,39 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 EverGrandeCity_OnTransition:
+	setflag FLAG_HIDE_XURKITREE
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	goto_if_set FLAG_MET_HOOPA_ONCE, EverGrandeCity_EventScript_CheckIfCaught
+	end
+
+EverGrandeCity_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_XURKITREE, EverGrandeCity_EventScript_ShowPortal
+	end
+
+EverGrandeCity_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_XURKITREE
+	end
+
+EverGrandeCity_EventScript_XurkitreeBattle::
+	lockall
+	playmoncry SPECIES_XURKITREE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_XURKITREE, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EverGrandeCity_EventScript_PostXurkitreeBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, EverGrandeCity_EventScript_PostXurkitreeBattle
+	releaseall
+	end
+
+EverGrandeCity_EventScript_PostXurkitreeBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 1
+	setflag FLAG_HIDE_XURKITREE
+	setflag FLAG_CAUGHT_XURKITREE
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
 	end
 
 EverGrandeCity_EventScript_VictoryRoadSign::
