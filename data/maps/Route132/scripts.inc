@@ -1,5 +1,41 @@
 Route132_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route132_OnLoad
 	.byte 0
+
+Route132_OnLoad:
+	setflag FLAG_HIDE_BLACEPHALON
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route132_EventScript_CheckIfCaught
+	end
+
+Route132_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_BLACEPHALON, Route132_EventScript_ShowPortal
+	end
+
+Route132_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_BLACEPHALON
+	end
+
+Route132_EventScript_BlacephalonBattle::
+	lockall
+	playmoncry SPECIES_BLACEPHALON, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_BLACEPHALON, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route132_EventScript_PostBlacephalonBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route132_EventScript_PostBlacephalonBattle
+	releaseall
+	end
+
+Route132_EventScript_PostBlacephalonBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 11
+	setflag FLAG_HIDE_BLACEPHALON
+	setflag FLAG_CAUGHT_BLACEPHALON
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
+	end
 
 Route132_EventScript_Gilbert::
 	trainerbattle_single TRAINER_GILBERT, Route132_Text_GilbertIntro, Route132_Text_GilbertDefeat
