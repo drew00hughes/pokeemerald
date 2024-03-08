@@ -4,6 +4,58 @@
 MirageTower_4F_MapScripts::
 	.byte 0
 
+MirageTower_4F_EventScript_CheckCompletion::
+	goto_if_set FLAG_HIDE_MEW, MirageTower_4F_EventScript_CheckHoopaCaught
+	end
+
+MirageTower_4F_EventScript_CheckHoopaCaught::
+	goto_if_unset FLAG_CAUGHT_HOOPA, MirageTower_4F_EventScript_CheckHoopaState
+	end
+
+MirageTower_4F_EventScript_CheckHoopaState::
+	goto_if_unset FLAG_MET_HOOPA_ONCE, MirageTower_4F_EventScript_HoopaVisible
+	goto_if_set FLAG_ALL_PORTALS_CLOSED, MirageTower_4F_EventScript_HoopaVisible
+	end
+
+MirageTower_4F_EventScript_HoopaVisible::
+	clearflag FLAG_HIDE_HOOPA
+	end
+
+MirageTower_4F_EventScript_HoopaInteraction::
+	goto_if_set FLAG_ALL_PORTALS_CLOSED, MirageTower_4F_EventScript_HoopaBattle
+	goto_if_unset FLAG_ALL_PORTALS_CLOSED, MirageTower_4F_EventScript_HoopaRunOff
+	end
+
+MirageTower_4F_EventScript_HoopaRunOff::
+	@screen shake
+	@spawn portal
+	@walk through
+	@delete portal
+	@set flag met once
+	end
+
+MirageTower_4F_EventScript_HoopaBattle::
+	lockall
+	playmoncry SPECIES_HOOPA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_HOOPA, 100, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MirageTower_4F_EventScript_PostHoopaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MirageTower_4F_EventScript_PostHoopaBattle
+	releaseall
+	end
+
+MirageTower_4F_EventScript_PostHoopaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 4
+	setflag FLAG_HIDE_HOOPA
+	setflag FLAG_CAUGHT_HOOPA
+	fadescreen FADE_FROM_BLACK
+	goto MirageTower_4F_EventScript_CollapseMirageTower
+	end
+
 MirageTower_4F_EventScript_RootFossil::
 	lock
 	faceplayer
@@ -53,12 +105,16 @@ MirageTower_4F_EventScript_CollapseMirageTower::
 	waitstate
 	special DoMirageTowerCeilingCrumble
 	waitstate
-	setvar VAR_MIRAGE_TOWER_STATE, 1
-	clearflag FLAG_LANDMARK_MIRAGE_TOWER
+	call_if_set FLAG_CAUGHT_HOOPA, 
 	warp MAP_ROUTE111, 19, 59
 	waitstate
 	release
 	end
+
+MirageTower_4F_EventScript_MirageFlags::
+	setvar VAR_MIRAGE_TOWER_STATE, 1
+	clearflag FLAG_LANDMARK_MIRAGE_TOWER
+	return
 
 MirageTower_4F_Text_TakeRootFossil:
 	.string "You found the ROOT FOSSIL.\p"
