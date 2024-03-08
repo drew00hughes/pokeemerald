@@ -19,7 +19,7 @@ MirageTower_4F_EventScript_CheckHoopaCaught::
 
 MirageTower_4F_EventScript_CheckHoopaState::
 	goto_if_unset FLAG_MET_HOOPA_ONCE, MirageTower_4F_EventScript_HoopaVisible
-	goto_if_set FLAG_ALL_PORTALS_CLOSED, MirageTower_4F_EventScript_HoopaVisible
+	goto_if_ge VAR_ALL_HOOPA_PORTALS, 12, MirageTower_4F_EventScript_HoopaVisible
 	end
 
 MirageTower_4F_EventScript_HoopaVisible::
@@ -45,6 +45,9 @@ MirageTower_4F_EventScript_HoopaRunOff::
 	removeobject 5
 	setflag FLAG_MET_HOOPA_ONCE
 	fadescreen FADE_FROM_BLACK
+	lock
+	msgbox MirageTower_4F_Text_PortalsEverywhere, MSGBOX_DEFAULT
+	release
 	end
 
 MirageTower_4F_Movement_HoopaExit:
@@ -153,3 +156,6 @@ MirageTower_4F_Text_TakeClawFossil:
 MirageTower_4F_Text_LeaveClawFossilAlone:
 	.string "{PLAYER} left the CLAW FOSSIL alone.$"
 
+MirageTower_4F_Text_PortalsEverywhere:
+	.string "Portals have scattered across\n"
+	.string "the world!$"

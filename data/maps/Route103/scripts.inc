@@ -11,7 +11,39 @@ Route103_OnTransition:
 	end
 
 Route103_OnLoad:
+	setflag FLAG_HIDE_BUZZWOLE
 	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route103_EventScript_CheckIfCaught
+	end
+
+Route103_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_BUZZWOLE, Route103_EventScript_ShowPortal
+	end
+
+Route103_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_BUZZWOLE
+	end
+
+Route103_EventScript_BuzzwoleBattle::
+	lockall
+	playmoncry SPECIES_BUZZWOLE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_BUZZWOLE, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route103_EventScript_PostBuzzwoleBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route103_EventScript_PostBuzzwoleBattle
+	releaseall
+	end
+
+Route103_EventScript_PostBuzzwoleBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 21
+	setflag FLAG_HIDE_BUZZWOLE
+	setflag FLAG_CAUGHT_BUZZWOLE
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
 	end
 
 Route103_EventScript_OpenAlteringCave::
