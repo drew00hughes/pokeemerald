@@ -2952,3 +2952,18 @@ MatchCall_Text_MrStone11::
 	.string "I didn't recognize you right off!\p"
 	.string "Hm! You must come visit us at DEVON\n"
 	.string "sometime!$"
+
+MatchCall_Text_BirchNewMons:
+	.string "… … … … … …\n"
+	.string "… … … … … Beep!\p"
+	.string "BIRCH: Hi, {PLAYER}{KUN}!\p"
+	.string "You won't believe it! I have\n"
+	.string "reason to believe that there \l"
+	.string "are brand new legendary POKéMON\l"
+	.string "making there home here!\p"
+	.string "I…\n"
+	.string "I've never seen anything like them.\p"
+	.string "Take a look around the region\n"
+	.string "and see what you can find!\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Click!$"

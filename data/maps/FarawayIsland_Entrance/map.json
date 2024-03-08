@@ -84,6 +84,15 @@
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
       "script": "FarawayIsland_Entrance_EventScript_SetCloudsWeather"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ALERT_NEW_MONS",
+      "var_value": "1",
+      "script": "NULL"
     }
   ],
   "bg_events": [

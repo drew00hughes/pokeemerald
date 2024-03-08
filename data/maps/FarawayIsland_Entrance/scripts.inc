@@ -7,6 +7,16 @@ FarawayIsland_Entrance_MapScripts::
 
 FarawayIsland_Entrance_OnTransition:
 	setflag FLAG_ARRIVED_ON_FARAWAY_ISLAND
+	goto_if_set FLAG_HIDE_MEW, FarawayIsland_Entrance_EventScript_CallSetup
+	end
+
+FarawayIsland_Entrance_EventScript_CallSetup::
+	setvar VAR_ALERT_NEW_MONS, 1
+	end
+
+FarawayIsland_Entrance_EventScript_CallAlertNewMons::
+	pokenavcall MatchCall_Text_BirchNewMons
+	waitmessage
 	end
 
 FarawayIsland_Entrance_EventScript_SetCloudsWeather::
