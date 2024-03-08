@@ -19,7 +19,7 @@ MirageTower_4F_EventScript_CheckHoopaCaught::
 
 MirageTower_4F_EventScript_CheckHoopaState::
 	goto_if_unset FLAG_MET_HOOPA_ONCE, MirageTower_4F_EventScript_HoopaVisible
-	goto_if_ge VAR_ALL_HOOPA_PORTALS, 12, MirageTower_4F_EventScript_HoopaVisible
+	goto_if_ge VAR_ALL_HOOPA_PORTALS, 11, MirageTower_4F_EventScript_HoopaVisible
 	end
 
 MirageTower_4F_EventScript_HoopaVisible::
