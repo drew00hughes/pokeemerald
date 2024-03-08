@@ -11,13 +11,45 @@ Route114_OnTransition:
 	end
 
 Route114_OnLoad:
+	setflag FLAG_HIDE_CELESTEELA
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_EventScript_PlaceTilesRoute114North
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_SOUTH, AbnormalWeather_EventScript_PlaceTilesRoute114South
+	goto_if_set FLAG_MET_HOOPA_ONCE, Route114_EventScript_CheckIfCaught
 	end
 
 Route114_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
+
+Route114_EventScript_CheckIfCaught::
+	goto_if_unset FLAG_CAUGHT_CELESTEELA, Route114_EventScript_ShowPortal
+	end
+
+Route114_EventScript_ShowPortal::
+	clearflag FLAG_HIDE_CELESTEELA
+	end
+
+Route114_EventScript_CelesteelaBattle::
+	lockall
+	playmoncry SPECIES_CELESTEELA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_CELESTEELA, 50, ITEM_LAVA_COOKIE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route114_EventScript_PostCelesteelaBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route114_EventScript_PostCelesteelaBattle
+	releaseall
+	end
+
+Route114_EventScript_PostCelesteelaBattle::
+	fadescreen FADE_TO_BLACK
+	removeobject 28
+	setflag FLAG_HIDE_CELESTEELA
+	setflag FLAG_CAUGHT_CELESTEELA
+	fadescreen FADE_FROM_BLACK
+	addvar VAR_ALL_HOOPA_PORTALS, 1
+	end
 
 Route114_EventScript_Man::
 	lock

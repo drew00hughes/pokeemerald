@@ -27,7 +27,7 @@ MirageTower_4F_EventScript_HoopaVisible::
 	end
 
 MirageTower_4F_EventScript_HoopaInteraction::
-	goto_if_set FLAG_ALL_PORTALS_CLOSED, MirageTower_4F_EventScript_HoopaBattle
+	goto_if_ge VAR_ALL_HOOPA_PORTALS, 11, MirageTower_4F_EventScript_HoopaBattle
 	goto_if_unset FLAG_ALL_PORTALS_CLOSED, MirageTower_4F_EventScript_HoopaRunOff
 	end
 
