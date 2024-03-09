@@ -1,6 +1,50 @@
 BattleFrontier_Lounge1_MapScripts::
 	.byte 0
 
+BattleFrontier_Lounge1_EventScript_WonderTradeOpening::
+	lock
+	msgbox BattleFrontier_Lounge1_Text_WondertradeWelcome, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge1_EventScript_WonderTradeBye
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_Lounge1_EventScript_WonderTradeStation
+	release
+	end
+
+BattleFrontier_Lounge1_EventScript_WonderTradeStation::
+	lock
+	followerintopokeball
+	setvar VAR_0x8008, INGAME_TRADE_WONDER
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_WonderTradeBye
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special GenerateWondertradeMon
+	special DoInGameTradeScene
+	waitstate
+	updatefollowerpokemongraphic
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox BattleFrontier_Lounge1_Text_WondertradeAgain, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge1_EventScript_WonderTradeBye
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_Lounge1_EventScript_WonderTradeRepeat
+	release
+	end
+
+BattleFrontier_Lounge1_EventScript_WonderTradeRepeat::
+	goto BattleFrontier_Lounge1_EventScript_WonderTradeStation
+	end
+
+BattleFrontier_Lounge1_EventScript_WonderTradeBye::
+	msgbox BattleFrontier_Lounge1_Text_WondertradeGoodbye, MSGBOX_DEFAULT
+	release
+	end
+
 @ NPC that rates pokemon based on their IVs
 BattleFrontier_Lounge1_EventScript_Breeder::
 	lock
@@ -143,11 +187,11 @@ BattleFrontier_Lounge1_EventScript_CancelMonSelect::
 	end
 
 BattleFrontier_Lounge1_EventScript_Boy1::
-	msgbox BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding, MSGBOX_NPC
+	msgbox BattleFrontier_Lounge1_Text_LoveWonderTrade, MSGBOX_NPC
 	end
 
 BattleFrontier_Lounge1_EventScript_Boy2::
-	msgbox BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt, MSGBOX_NPC
+	msgbox BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding, MSGBOX_NPC
 	end
 
 BattleFrontier_Lounge1_Text_PokemonBreederIntro:
@@ -251,8 +295,18 @@ BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding:
 	.string "He said my POKéMON is outstanding!\n"
 	.string "I'm glad I raised it carefully!$"
 
-BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt:
-	.string "He said my POKéMON is outstanding!\n"
-	.string "But I didn't do anything special\l"
-	.string "raising it…$"
+BattleFrontier_Lounge1_Text_LoveWonderTrade:
+	.string "I love wonder trading POKéMON!\n"
+	.string "You never know what you'll get!\p"
+	.string "Have you ever done it?$"
 
+BattleFrontier_Lounge1_Text_WondertradeWelcome:
+	.string "Welcome to the Wonder Trade Station!\n"
+	.string "Do you want to trade for a random\l"
+	.string "POKéMON?$"
+
+BattleFrontier_Lounge1_Text_WondertradeGoodbye:
+	.string "Thanks for using Wonder Trade!$"
+
+BattleFrontier_Lounge1_Text_WondertradeAgain:
+	.string "Would you like to Wonder Trade again?$"

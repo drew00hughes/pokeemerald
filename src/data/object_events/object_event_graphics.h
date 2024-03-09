@@ -2181,3 +2181,5 @@ const u32 gObjectEventPic_Space_Portal[] = INCBIN_U32("graphics/object_events/pi
 const u16 gObjectEventPal_Space_Portal[] = INCBIN_U16("graphics/object_events/palettes/portalspace.gbapal");
 const u32 gObjectEventPic_Hoopa_Portal[] = INCBIN_U32("graphics/object_events/pics/misc/hoopaportal.4bpp");
 const u16 gObjectEventPal_Hoopa_Portal[] = INCBIN_U16("graphics/object_events/palettes/hoopaportal.gbapal");
+const u32 gObjectEventPic_Wondertrade_Station[] = INCBIN_U32("graphics/object_events/pics/misc/wondertradestation.4bpp");
+const u16 gObjectEventPal_Wondertrade_Station[] = INCBIN_U16("graphics/object_events/palettes/wondertradestation.gbapal");

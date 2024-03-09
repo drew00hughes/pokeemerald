@@ -9918,3 +9918,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Hoopa_Portal[] = {
     overworld_frame(gObjectEventPic_Hoopa_Portal, 4, 4, 4),
     overworld_frame(gObjectEventPic_Hoopa_Portal, 4, 4, 5),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Wondertrade_Station[] = {
+    overworld_frame(gObjectEventPic_Wondertrade_Station, 4, 4, 0),
+};

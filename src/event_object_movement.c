@@ -1342,6 +1342,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_ORICORIO_SENSU          0xE49
 #define OBJ_EVENT_PAL_TAG_SPACE_PORTAL            0xE48
 #define OBJ_EVENT_PAL_TAG_HOOPA_PORTAL            0xE47
+#define OBJ_EVENT_PAL_TAG_WONDERTRADE_STATION     0xE46
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -2281,6 +2282,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Oricorio_Sensu,               OBJ_EVENT_PAL_TAG_ORICORIO_SENSU},
     {gObjectEventPal_Space_Portal,               OBJ_EVENT_PAL_TAG_SPACE_PORTAL},
     {gObjectEventPal_Hoopa_Portal,               OBJ_EVENT_PAL_TAG_HOOPA_PORTAL},
+    {gObjectEventPal_Wondertrade_Station,               OBJ_EVENT_PAL_TAG_WONDERTRADE_STATION},
     #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE}, 
 #else
