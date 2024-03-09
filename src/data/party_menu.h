@@ -661,6 +661,8 @@ struct
     [MENU_SUMMARY] = {gText_Summary5, CursorCb_Summary},
     [MENU_SWITCH] = {gText_Switch2, CursorCb_Switch},
     [MENU_NICKNAME] = {gText_Nickname, CursorCb_Nickname},
+    [MENU_PUT_MON_AWAY] = {gText_PutMonAway, CursorCb_PutMonAway},
+    [MENU_PULL_MON_OUT] = {gText_PullMonOut, CursorCb_PullMonOut},
     [MENU_CANCEL1] = {gText_Cancel2, CursorCb_Cancel1},
     [MENU_ITEM] = {gText_Item, CursorCb_Item},
     [MENU_GIVE] = {gMenuText_Give, CursorCb_Give},
