@@ -1382,6 +1382,21 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
+void GetOnOffSurfboard(u8 transitionFlags)
+{
+
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+    {
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+        Overworld_ClearSavedMusic();
+        Overworld_PlaySpecialMapMusic();
+    }
+    else
+    {
+        FollowerIntoPokeball();
+    }
+}
+
 void ItemUseOutOfBattle_Surfboard(u8 taskId)
 {
     if (IsPlayerFacingSurfableFishableWater())
@@ -1397,6 +1412,7 @@ static void ItemUseOnFieldCB_Surfboard(u8 taskId)
 {
 	LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_UseSurf);
+    GetOnOffSurfboard(PLAYER_AVATAR_FLAG_SURFING);
     DestroyTask(taskId);
 }
 
