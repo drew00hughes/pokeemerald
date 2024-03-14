@@ -6418,9 +6418,9 @@ bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementAct
     objectEvent->heldMovementActive = TRUE;
     objectEvent->heldMovementFinished = FALSE;
     gSprites[objectEvent->spriteId].sActionFuncId = 0;
-    if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
+    //if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
         FollowMe(objectEvent, movementActionId, FALSE);
-    }
+    //}
     return FALSE;
 }
 
