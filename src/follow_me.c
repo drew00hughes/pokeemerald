@@ -1292,6 +1292,14 @@ void CreateFollowerAvatar(void)
     gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible = TRUE;
 }
 
+void OrientFollower(void) {
+    struct ObjectEvent* follower = &gObjectEvents[GetFollowerObjectId()];
+    struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
+    //TryMoveObjectEventToMapCoords(GetFollowerMapObjId(), gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, player->currentCoords.x, player->currentCoords.y);
+    ObjectEventTurn(follower, player->facingDirection);
+}
+
 static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
 {
     struct ObjectEvent* follower;

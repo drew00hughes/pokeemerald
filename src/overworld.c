@@ -2898,7 +2898,9 @@ static void InitObjectEventsLocal(void)
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
     TryRunOnWarpIntoMapScript();
-    FollowMe_HandleSprite();
+    //if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
+        FollowMe_HandleSprite();
+    //}
 }
 
 static void InitObjectEventsReturnToField(void)

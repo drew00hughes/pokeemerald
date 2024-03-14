@@ -2657,8 +2657,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
             if (slotId == 0) {
-                CheckPlayerHasFollower();
-                if (gSpecialVar_Result == 1) {
+                //CheckPlayerHasFollower();
+                if (gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible == FALSE) {//gSpecialVar_Result == 1) {
                     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_PUT_MON_AWAY);
                 }
                 else {
@@ -2829,13 +2829,20 @@ static void CursorCb_Nickname(u8 taskId) {
 
 static void CursorCb_PutMonAway(u8 taskId) {
     PlaySE(SE_SELECT);
-    DestroyFollower();
+    //DestroyFollower();
+    HideFollower();
+    FlagClear(FLAG_TOGGLE_FOLLOWER);
     Task_ClosePartyMenu(taskId);
 }
 
 static void CursorCb_PullMonOut(u8 taskId) {
     PlaySE(SE_SELECT);
     // create object and set as follow?
+    //CreateFollowerAvatar();
+    ShowFollower();
+    FlagSet(FLAG_TOGGLE_FOLLOWER);
+    OrientFollower();
+    //FollowerPositionFix(0);
     Task_ClosePartyMenu(taskId);
 }
 
