@@ -73,6 +73,7 @@
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/items.h"
+#include "dns.h"
 
 struct CableClubPlayer
 {
@@ -2165,7 +2166,9 @@ void CB1_Overworld(void)
 
 static void OverworldBasic(void)
 {
+    DnsApplyFilters();
     ScriptContext_RunScript();
+    //ScriptContext2_RunScript();
     RunTasks();
     AnimateSprites();
     CameraUpdate();
