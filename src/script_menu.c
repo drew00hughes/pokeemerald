@@ -857,6 +857,56 @@ static const u8 sText_Fossil11[] = _("Sail Fossil");
 static const u8 sText_Cresselia[] = _("Dream");
 static const u8 sText_Darkrai[] = _("Nightmare");
 
+static const u8 sText_Kanto[] = _("Kanto Region");
+static const u8 sText_Johto[] = _("Johto Region");
+static const u8 sText_Hoenn[] = _("Hoenn Region");
+static const u8 sText_Sinnoh[] = _("Sinnoh Region");
+static const u8 sText_Unova[] = _("Unova Region");
+static const u8 sText_Kalos[] = _("Kalos Region");
+static const u8 sText_Alola[] = _("Alola Region");
+static const u8 sText_Ultra[] = _("Ultra Beasts");
+
+static const u8 sText_Articuno[] = _("Articuno");
+static const u8 sText_Zapdos[] = _("Zapdos");
+static const u8 sText_Moltres[] = _("Moltres");
+static const u8 sText_Mew[] = _("Mew");
+static const u8 sText_Mewtwo[] = _("Mewtwo");
+
+static const u8 sText_Raikou[] = _("Raikou");
+static const u8 sText_Entei[] = _("Entei");
+static const u8 sText_Suicune[] = _("Suicune");
+static const u8 sText_Lugia[] = _("Lugia");
+static const u8 sText_Hooh[] = _("Ho-Oh");
+static const u8 sText_Celebi[] = _("Celebi");
+
+static const u8 sText_Regirock[] = _("Regirock");
+static const u8 sText_Regice[] = _("Regice");
+static const u8 sText_Registeel[] = _("Registeel");
+static const u8 sText_Latias[] = _("Latias");
+static const u8 sText_Latios[] = _("Latios");
+static const u8 sText_Groudon[] = _("Groundon");
+static const u8 sText_Kyogre[] = _("Kyogre");
+static const u8 sText_Rayquaza[] = _("Rayquaza");
+static const u8 sText_Deoxys[] = _("Deoxys");
+static const u8 sText_Jirachi[] = _("Jirachi");
+
+static const u8 sText_Uxie[] = _("Uxie");
+static const u8 sText_Mesprit[] = _("Mesprit");
+static const u8 sText_Azelf[] = _("Azelf");
+static const u8 sText_Heatran[] = _("Heatran");
+static const u8 sText_Regigigas[] = _("Regigigas");
+static const u8 sText_Cresselia[] = _("Cresselia");
+static const u8 sText_Darkrai[] = _("Darkrai");
+static const u8 sText_Dialga[] = _("Dialga");
+static const u8 sText_Palkia[] = _("Palkia");
+static const u8 sText_Giratina[] = _("Giratina");
+static const u8 sText_Phione[] = _("Phione");
+static const u8 sText_Manaphy[] = _("Manaphy");
+static const u8 sText_Rotom[] = _("Rotom");
+static const u8 sText_Shaymin[] = _("Shaymin");
+static const u8 sText_Arceus[] = _("Arceus");
+
+
 // Sets of multichoices.
 static const struct ListMenuItem sSet1[] =
 {
@@ -894,6 +944,70 @@ static const struct ListMenuItem sSet3[] =
     {sText_Darkrai, 1},
 };
 
+static const struct ListMenuItem sSet4[] =
+{
+    {sText_Kanto, 0},
+    {sText_Johto, 1},
+    {sText_Hoenn, 2},
+    {sText_Sinnoh, 3},
+    {sText_Unova, 4},
+    {sText_Kalos, 5},
+    {sText_Alola, 6},
+    {sText_Ultra, 7},
+};
+
+static const struct ListMenuItem sSet5[] =
+{
+    {sText_Articuno, 0},
+    {sText_Zapdos, 1},
+    {sText_Moltres, 2},
+    {sText_Mew, 3},
+    {sText_Mewtwo, 4},
+};
+
+static const struct ListMenuItem sSet6[] =
+{
+    {sText_Raikou, 0},
+    {sText_Entei, 1},
+    {sText_Suicune, 2},
+    {sText_Lugia, 3},
+    {sText_Hooh, 4},
+    {sText_Celebi, 5},
+};
+
+static const struct ListMenuItem sSet7[] =
+{
+    {sText_Regirock, 0},
+    {sText_Regice, 1},
+    {sText_Registeel, 2},
+    {sText_Latias, 3},
+    {sText_Latios, 4},
+    {sText_Groudon, 5},
+    {sText_Kyogre, 6},
+    {sText_Rayquaza, 7},
+    {sText_Deoxys, 8},
+    {sText_Jirachi, 9},
+};
+
+static const struct ListMenuItem sSet8[] =
+{
+    {sText_Uxie, 0},
+    {sText_Mesprit, 1},
+    {sText_Azelf, 2},
+    {sText_Heatran, 3},
+    {sText_Regigigas, 4},
+    {sText_Cresselia, 5},
+    {sText_Darkrai, 6},
+    {sText_Dialga, 7},
+    {sText_Palkia, 8},
+    {sText_Giratina, 9},
+    {sText_Phione, 10},
+    {sText_Manaphy, 11},
+    {sText_Rotom, 12},
+    {sText_Shaymin, 13},
+    {sText_Arceus, 14},
+};
+
 // Table of your multichoice sets.
 struct
 {
@@ -904,6 +1018,11 @@ struct
     {sSet1, ARRAY_COUNT(sSet1)},
     {sSet2, ARRAY_COUNT(sSet2)},
     {sSet3, ARRAY_COUNT(sSet3)},
+    {sSet4, ARRAY_COUNT(sSet4)},
+    {sSet5, ARRAY_COUNT(sSet5)},
+    {sSet6, ARRAY_COUNT(sSet6)},
+    {sSet7, ARRAY_COUNT(sSet7)},
+    {sSet8, ARRAY_COUNT(sSet8)},
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);

@@ -265,6 +265,10 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
 	end
 
 PlayersHouse_2F_EventScript_Notebook::
+	@you open the pokepedia! what do you want to learn about?
+	@multiselect list what kind of pokemon based on region
+	@depending on selection, new picklist from each region
+	@depending on seleciton, context summary of what and hint on where to find it
 	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
 	end
 
