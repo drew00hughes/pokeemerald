@@ -906,6 +906,27 @@ static const u8 sText_Rotom[] = _("Rotom");
 static const u8 sText_Shaymin[] = _("Shaymin");
 static const u8 sText_Arceus[] = _("Arceus");
 
+static const u8 sText_Terrakion[] = _("Terrakion");
+static const u8 sText_Virizion[] = _("Virizion");
+static const u8 sText_Cobalion[] = _("Cobalion");
+static const u8 sText_Tornadus[] = _("Tornadus");
+static const u8 sText_Thundurus[] = _("Thundurus");
+static const u8 sText_Landorus[] = _("Landorus");
+static const u8 sText_Reshiram[] = _("Reshiram");
+static const u8 sText_Zekrom[] = _("Zekrom");
+static const u8 sText_Kyurem[] = _("Kyurem");
+static const u8 sText_Victini[] = _("Victini");
+static const u8 sText_Keldeo[] = _("Keldeo");
+static const u8 sText_Meloetta[] = _("Meloetta");
+static const u8 sText_Genesect[] = _("Genesect");
+
+static const u8 sText_Xerneas[] = _("Xerneas");
+static const u8 sText_Yveltal[] = _("Yveltal");
+static const u8 sText_Zygarde[] = _("Zygarde");
+static const u8 sText_Diancie[] = _("Diancie");
+static const u8 sText_Hoopa[] = _("Hoopa");
+static const u8 sText_Volcanion[] = _("Volcanion");
+
 
 // Sets of multichoices.
 static const struct ListMenuItem sSet1[] =
@@ -1008,6 +1029,33 @@ static const struct ListMenuItem sSet8[] =
     {sText_Arceus, 14},
 };
 
+static const struct ListMenuItem sSet9[] =
+{
+    {sText_Terrakion, 0},
+    {sText_Virizion, 1},
+    {sText_Cobalion, 2},
+    {sText_Tornadus, 3},
+    {sText_Thundurus, 4},
+    {sText_Landorus, 5},
+    {sText_Reshiram, 6},
+    {sText_Zekrom, 7},
+    {sText_Kyurem, 8},
+    {sText_Victini, 9},
+    {sText_Keldeo, 10},
+    {sText_Meloetta, 11},
+    {sText_Genesect, 12},
+};
+
+static const struct ListMenuItem sSet10[] =
+{
+    {sText_Xerneas, 0},
+    {sText_Yveltal, 1},
+    {sText_Zygarde, 2},
+    {sText_Diancie, 3},
+    {sText_Hoopa, 4},
+    {sText_Volcanion, 5},
+};
+
 // Table of your multichoice sets.
 struct
 {
@@ -1023,6 +1071,8 @@ struct
     {sSet6, ARRAY_COUNT(sSet6)},
     {sSet7, ARRAY_COUNT(sSet7)},
     {sSet8, ARRAY_COUNT(sSet8)},
+    {sSet9, ARRAY_COUNT(sSet9)},
+    {sSet10, ARRAY_COUNT(sSet10)},
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);
