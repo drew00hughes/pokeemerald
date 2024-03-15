@@ -486,22 +486,22 @@ static u16 GetDNSFilter()
 
 static void DoDnsLightning()
 {
-    u8 i;
+    // u8 i;
 
-    for (i = 0; i < sizeof(gLightingColours)/sizeof(gLightingColours[0]); i++)
-    {
-        u16 colourSlot = gLightingColours[i].paletteNum * 16 + gLightingColours[i].colourNum;
+    // for (i = 0; i < sizeof(gLightingColours)/sizeof(gLightingColours[0]); i++)
+    // {
+    //     u16 colourSlot = gLightingColours[i].paletteNum * 16 + gLightingColours[i].colourNum;
         
-        if (gPaletteFade.active || gPlttBufferUnfaded[colourSlot] != 0x0000)
-        {
-            sDnsPaletteDmaBuffer[colourSlot] = gPlttBufferFaded[colourSlot];
-            gPlttBufferUnfaded[colourSlot] = gLightingColours[i].lightColour;
-        }
-        else
-        {
-            sDnsPaletteDmaBuffer[colourSlot] = gLightingColours[i].lightColour;
-        }
-    }
+    //     if (gPaletteFade.active || gPlttBufferUnfaded[colourSlot] != 0x0000)
+    //     {
+    //         sDnsPaletteDmaBuffer[colourSlot] = gPlttBufferFaded[colourSlot];
+    //         gPlttBufferUnfaded[colourSlot] = gLightingColours[i].lightColour;
+    //     }
+    //     else
+    //     {
+    //         sDnsPaletteDmaBuffer[colourSlot] = gLightingColours[i].lightColour;
+    //     }
+    // }
 }
 
 //Returns Dns time lapse
