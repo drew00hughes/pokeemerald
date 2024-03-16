@@ -265,16 +265,204 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
 	end
 
 PlayersHouse_2F_EventScript_Notebook::
-	@you open the pokepedia! what do you want to learn about?
-	@multiselect list what kind of pokemon based on region
-	@depending on selection, new picklist from each region
-	@depending on seleciton, context summary of what and hint on where to find it
-	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
+	lockall
+	msgbox PlayersHouse_2F_Text_PokepediaIntro, MSGBOX_DEFAULT
+	scrollingmultichoice 3, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_JohtoSelect
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_HoennSelect
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_SinnohSelect
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_UnovaSelect
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_KalosSelect
+	goto_if_eq VAR_RESULT, 6, PlayersHouse_2F_EventScript_AlolaSelect
+	goto_if_eq VAR_RESULT, 7, PlayersHouse_2F_EventScript_UBSelect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_KantoSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 4, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Articuno
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Zapdos
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Moltres
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Mew
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Mewtwo
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Articuno::
+	msgbox PlayersHouse_2F_Text_ArticunoInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Zapdos::
+	msgbox PlayersHouse_2F_Text_ZapdosInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Moltres::
+	msgbox PlayersHouse_2F_Text_MoltresInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Mewtwo::
+	msgbox PlayersHouse_2F_Text_MewtwoInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Mew::
+	msgbox PlayersHouse_2F_Text_MewInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_JohtoSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 5, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Raikou
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Entei
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Suicune
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Lugia
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Hooh
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Celebi
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Raikou::
+	msgbox PlayersHouse_2F_Text_RaikouInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Entei::
+	msgbox PlayersHouse_2F_Text_EnteiInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Suicune::
+	msgbox PlayersHouse_2F_Text_SuicuneInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Lugia::
+	msgbox PlayersHouse_2F_Text_LugiaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Hooh::
+	msgbox PlayersHouse_2F_Text_HoohInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Celebi::
+	msgbox PlayersHouse_2F_Text_CelebiInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_HoennSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 6, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_SinnohSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 7, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_UnovaSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 8, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_KalosSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 9, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_AlolaSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 10, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_UBSelect::
+	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
+	scrollingmultichoice 11, 2, 2, 5, TRUE
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	releaseall
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
 	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
 	end
+
+PlayersHouse_2F_Text_PokepediaIntro:
+	.string "It's a POKépedia! Which region's\n"
+	.string "POKéMON would you like to learn about?$"
+
+PlayersHouse_2F_Text_WhichPokemon:
+	.string "Which POKéMON do you want to learn\n"
+	.string "more about?$"
+
+PlayersHouse_2F_Text_ArticunoInfo:
+	.string "This legendary bird is rumored\n"
+	.string "to dwell in the coldest room of\l"
+	.string "Shoal Cave.$"
+
+PlayersHouse_2F_Text_ZapdosInfo:
+	.string "This legendary bird loves\n"
+	.string "making a home in power plants.$"
+
+PlayersHouse_2F_Text_MoltresInfo:
+	.string "This legendary bird sticks to\n"
+	.string "hot paths around the region when\l"
+	.string "possible.$"
+
+PlayersHouse_2F_Text_MewtwoInfo:
+	.string "Mewtwo is an artificial POKéMON\p"
+	.string "Supposedly, there is a team working\n"
+	.string "to recreate it in a hidden lab near\l"
+	.string "Pacifidlog Town.$"
+
+PlayersHouse_2F_Text_MewInfo:
+	.string "The legendary Mew is thought to live\n"
+	.string "on a faraway island. Sometimes parents\l"
+	.string "give their children tickets to go there.$"
+
+PlayersHouse_2F_Text_RaikouInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_EnteiInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_SuicuneInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_LugiaInfo:
+	.string "Both Lugia and Ho-oh are thought to\n"
+	.string "live on Navel Rock, rulers of the sky\l"
+	.string "above and water below.\p"
+	.string "Some parents are willing to send their\n"
+	.string "brave little trainers there!$"
+
+PlayersHouse_2F_Text_HoohInfo:
+	.string "Both Ho-oh and Lugia are thought to\n"
+	.string "live on Navel Rock, rulers of the sky\l"
+	.string "above and water below.\p"
+	.string "Some parents are willing to send their\n"
+	.string "brave little trainers there!$"
+
+PlayersHouse_2F_Text_CelebiInfo:
+	.string "Celebi is the time travel POKéMON\p"
+	.string "Some have once believed that it would\n"
+	.string "appear to strong trainers in the woods.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"

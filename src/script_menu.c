@@ -895,8 +895,8 @@ static const u8 sText_Mesprit[] = _("Mesprit");
 static const u8 sText_Azelf[] = _("Azelf");
 static const u8 sText_Heatran[] = _("Heatran");
 static const u8 sText_Regigigas[] = _("Regigigas");
-static const u8 sText_Cresselia[] = _("Cresselia");
-static const u8 sText_Darkrai[] = _("Darkrai");
+static const u8 sText_CresseliaInfo[] = _("Cresselia");
+static const u8 sText_DarkraiInfo[] = _("Darkrai");
 static const u8 sText_Dialga[] = _("Dialga");
 static const u8 sText_Palkia[] = _("Palkia");
 static const u8 sText_Giratina[] = _("Giratina");
@@ -926,6 +926,30 @@ static const u8 sText_Zygarde[] = _("Zygarde");
 static const u8 sText_Diancie[] = _("Diancie");
 static const u8 sText_Hoopa[] = _("Hoopa");
 static const u8 sText_Volcanion[] = _("Volcanion");
+
+static const u8 sText_TypeNull[] = _("Type: Null");
+static const u8 sText_TapuKoko[] = _("Tapu Koko");
+static const u8 sText_TapuBulu[] = _("Tapu Bulu");
+static const u8 sText_TapuFini[] = _("Tapu Fini");
+static const u8 sText_TapuLele[] = _("Tapu Lele");
+static const u8 sText_Solgaleo[] = _("Solgaleo");
+static const u8 sText_Lunala[] = _("Lunala");
+static const u8 sText_Magearna[] = _("Magearna");
+static const u8 sText_Marshadow[] = _("Marshadow");
+static const u8 sText_Zeraora[] = _("Zeraora");
+static const u8 sText_Meltan[] = _("Meltan");
+
+static const u8 sText_Nihilego[] = _("Nihilego");
+static const u8 sText_Buzzwole[] = _("Buzzwole");
+static const u8 sText_Pheromosa[] = _("Pheromosa");
+static const u8 sText_Xurkitree[] = _("Xurkitree");
+static const u8 sText_Celesteela[] = _("Celesteela");
+static const u8 sText_Kartana[] = _("Kartana");
+static const u8 sText_Guzzlord[] = _("Guzzlord");
+static const u8 sText_Poipole[] = _("Poipole");
+static const u8 sText_Stakataka[] = _("Stakataka");
+static const u8 sText_Blacephalon[] = _("Blacephalon");
+static const u8 sText_Necrozma[] = _("Necrozma");
 
 
 // Sets of multichoices.
@@ -1017,8 +1041,8 @@ static const struct ListMenuItem sSet8[] =
     {sText_Azelf, 2},
     {sText_Heatran, 3},
     {sText_Regigigas, 4},
-    {sText_Cresselia, 5},
-    {sText_Darkrai, 6},
+    {sText_CresseliaInfo, 5},
+    {sText_DarkraiInfo, 6},
     {sText_Dialga, 7},
     {sText_Palkia, 8},
     {sText_Giratina, 9},
@@ -1056,6 +1080,36 @@ static const struct ListMenuItem sSet10[] =
     {sText_Volcanion, 5},
 };
 
+static const struct ListMenuItem sSet11[] =
+{
+    {sText_TypeNull, 0},
+    {sText_TapuKoko, 1},
+    {sText_TapuBulu, 2},
+    {sText_TapuFini, 3},
+    {sText_TapuLele, 4},
+    {sText_Solgaleo, 5},
+    {sText_Lunala, 6},
+    {sText_Magearna, 7},
+    {sText_Marshadow, 8},
+    {sText_Zeraora, 9},
+    {sText_Meltan, 10},
+};
+
+static const struct ListMenuItem sSet12[] =
+{
+    {sText_Nihilego, 0},
+    {sText_Buzzwole, 1},
+    {sText_Pheromosa, 2},
+    {sText_Xurkitree, 3},
+    {sText_Celesteela, 4},
+    {sText_Kartana, 5},
+    {sText_Guzzlord, 6},
+    {sText_Poipole, 7},
+    {sText_Stakataka, 8},
+    {sText_Blacephalon, 9},
+    {sText_Necrozma, 10},
+};
+
 // Table of your multichoice sets.
 struct
 {
@@ -1073,6 +1127,8 @@ struct
     {sSet8, ARRAY_COUNT(sSet8)},
     {sSet9, ARRAY_COUNT(sSet9)},
     {sSet10, ARRAY_COUNT(sSet10)},
+    {sSet11, ARRAY_COUNT(sSet11)},
+    {sSet12, ARRAY_COUNT(sSet12)},
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);
