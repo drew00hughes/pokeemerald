@@ -426,7 +426,96 @@ PlayersHouse_2F_EventScript_Deoxys::
 PlayersHouse_2F_EventScript_SinnohSelect::
 	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
 	scrollingmultichoice 7, 2, 2, 5, TRUE
-	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Uxie
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Mesprit
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Azelf
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Heatran
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Regigigas
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Cresselia
+	goto_if_eq VAR_RESULT, 6, PlayersHouse_2F_EventScript_Darkrai
+	goto_if_eq VAR_RESULT, 7, PlayersHouse_2F_EventScript_Dialga
+	goto_if_eq VAR_RESULT, 8, PlayersHouse_2F_EventScript_Palkia
+	goto_if_eq VAR_RESULT, 9, PlayersHouse_2F_EventScript_Giratina
+	goto_if_eq VAR_RESULT, 10, PlayersHouse_2F_EventScript_Phione
+	goto_if_eq VAR_RESULT, 11, PlayersHouse_2F_EventScript_Manaphy
+	goto_if_eq VAR_RESULT, 12, PlayersHouse_2F_EventScript_Rotom
+	goto_if_eq VAR_RESULT, 13, PlayersHouse_2F_EventScript_Shaymin
+	goto_if_eq VAR_RESULT, 14, PlayersHouse_2F_EventScript_Arceus
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Uxie::
+	msgbox PlayersHouse_2F_Text_UxieInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Mesprit::
+	msgbox PlayersHouse_2F_Text_MespritInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Azelf::
+	msgbox PlayersHouse_2F_Text_AzelfInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Heatran::
+	msgbox PlayersHouse_2F_Text_HeatranInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Regigigas::
+	msgbox PlayersHouse_2F_Text_RegigigasInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Cresselia::
+	msgbox PlayersHouse_2F_Text_CresseliaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Darkrai::
+	msgbox PlayersHouse_2F_Text_DarkraiInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Dialga::
+	msgbox PlayersHouse_2F_Text_DialgaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Palkia::
+	msgbox PlayersHouse_2F_Text_PalkiaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Giratina::
+	msgbox PlayersHouse_2F_Text_GiratinaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Phione::
+	msgbox PlayersHouse_2F_Text_PhioneInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Manaphy::
+	msgbox PlayersHouse_2F_Text_ManaphyInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Rotom::
+	msgbox PlayersHouse_2F_Text_RotomInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Shaymin::
+	msgbox PlayersHouse_2F_Text_ShayminInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Arceus::
+	msgbox PlayersHouse_2F_Text_ArceusInfo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -574,6 +663,90 @@ PlayersHouse_2F_Text_DeoxysInfo:
 	.string "on an island far away...\p"
 	.string "Many people wish for a special ticket\n"
 	.string "to see such a fascinating POKéMON.$"
+
+PlayersHouse_2F_Text_UxieInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_MespritInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_AzelfInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_HeatranInfo:
+	.string "The Lava Dome POKéMON, Heatran\n"
+	.string "loves to warm it's body in volcanoes\l"
+	.string "and on hot mountain tops.$"
+
+PlayersHouse_2F_Text_RegigigasInfo:
+	.string "There is a strange saying associated\n"
+	.string "with this colossal POKéMON:\p"
+	.string "Three brothers brought together to\n"
+	.string "a sealed salt water room.\p"
+	.string "No one yet knows what this means.$"
+
+PlayersHouse_2F_Text_CresseliaInfo:
+	.string "Called the Lunar POKéMON, Cresselia\n"
+	.string "lives in the dream world of\l"
+	.string "imaginative trainers.\p"
+	.string "It is said that sailors arriving at\n"
+	.string "port often seek to meet this POKéMON\l"
+	.string "in their dreams.$"
+
+PlayersHouse_2F_Text_DarkraiInfo:
+	.string "The Pictch-Black POKéMON, Darkrai\n"
+	.string "lives in the nightmare world of\l"
+	.string "troubled trainers.$"
+
+PlayersHouse_2F_Text_DialgaInfo:
+	.string "Not much is known about this legendary\n"
+	.string "space POKéMON, though the famed\l"
+	.string "POKéMON trainer Steven Stone is\l"
+	.string "actively studying their realm in\l"
+	.string "Mossdeep.$"
+
+PlayersHouse_2F_Text_PalkiaInfo:
+	.string "Not much is known about this legendary\n"
+	.string "space POKéMON, though the famed\l"
+	.string "POKéMON trainer Steven Stone is\l"
+	.string "actively studying their realm in\l"
+	.string "Mossdeep.$"
+
+PlayersHouse_2F_Text_GiratinaInfo:
+	.string "Not much is known about this legendary\n"
+	.string "space POKéMON, though the famed\l"
+	.string "POKéMON trainer Steven Stone is\l"
+	.string "actively studying their realm in\l"
+	.string "Mossdeep.$"
+
+PlayersHouse_2F_Text_PhioneInfo:
+	.string "This quiet and quant little POKéMON can\n"
+	.string "sometimes be seen playing with trainers\l"
+	.string "in the ocean.\p"
+	.string "It is thought to live underwater.$"
+
+PlayersHouse_2F_Text_ManaphyInfo:
+	.string "This fun-loving and social little\n"
+	.string "POKéMON is sometimes seen playing with\l"
+	.string "trainers in the ocean.\p"
+	.string "It is thought to live underwater.$"
+
+PlayersHouse_2F_Text_RotomInfo:
+	.string "Rotom is a prankster POKéMON.\p"
+	.string "They can often be found hiding in\n"
+	.string "the unused electronics of old people.$"
+
+PlayersHouse_2F_Text_ShayminInfo:
+	.string "Shaymin is an interesting POKéMON with\n"
+	.string "two forms. It likes to roam the woods.$"
+
+PlayersHouse_2F_Text_ArceusInfo:
+	.string "Believed to be the first POKéMON, the\n"
+	.string "creator of all life. It will often\l"
+	.string "spend extended time with exceptionally\l"
+	.string "strong trainers.\p"
+	.string "Perhaps if you go to the highest tower,\n"
+	.string "you might catch a glimpse of it?$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
