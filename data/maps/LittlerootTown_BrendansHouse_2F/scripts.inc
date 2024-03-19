@@ -606,7 +606,42 @@ PlayersHouse_2F_EventScript_Genesect::
 PlayersHouse_2F_EventScript_KalosSelect::
 	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
 	scrollingmultichoice 9, 2, 2, 5, TRUE
-	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Xerneas
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Yveltal
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Zygarde
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Diancie
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Hoopa
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Volcanion
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Xerneas::
+	msgbox PlayersHouse_2F_Text_XerneasInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Yveltal::
+	msgbox PlayersHouse_2F_Text_YveltalInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Zygarde::
+	msgbox PlayersHouse_2F_Text_ZygardeInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Diancie::
+	msgbox PlayersHouse_2F_Text_DiancieInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Hoopa::
+	msgbox PlayersHouse_2F_Text_HoopaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Volcanion::
+	msgbox PlayersHouse_2F_Text_VolcanionInfo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -885,6 +920,42 @@ PlayersHouse_2F_Text_GenesectInfo:
 	.string "technology-enhanced fossil come to life!\p"
 	.string "Like the cannon on its back, it likes to\n"
 	.string "dwell in changing caves.$"
+
+PlayersHouse_2F_Text_XerneasInfo:
+	.string "Supposedly, there is a hidden forest\n"
+	.string "near the Weather Institute where this\l"
+	.string "life-giving POKéMON finds solace.$"
+
+PlayersHouse_2F_Text_YveltalInfo:
+	.string "Hidden far away in a hideout somewhere,\n"
+	.string "many believe this POKéMON is evil in\l"
+	.string "in nature.\p"
+	.string "It would not be a surprise if it was\n"
+	.string "working with an evil organization.$"
+
+PlayersHouse_2F_Text_ZygardeInfo:
+	.string "The Order POKéMON. Zygarde is a\n"
+	.string "mysterious POKéMON that likes to live\l"
+	.string "in green caves.$"
+
+PlayersHouse_2F_Text_DiancieInfo:
+	.string "A small, beautiful jewel POKéMON. It\n"
+	.string "most likely lives tucked away in a\l"
+	.string "cave of granite.$"
+
+PlayersHouse_2F_Text_HoopaInfo:
+	.string "Hoopa is a dangerous, mischevieus\n"
+	.string "POKéMON.\p"
+	.string "Always changing and causing mirages, it\n"
+	.string "never ceases creating portals and\l"
+	.string "trouble.\p"
+	.string "It never stays in one place, but could be\n"
+	.string "found in often-vanishing places.$"
+
+PlayersHouse_2F_Text_VolcanionInfo:
+	.string "The Steam POKéMON, Volcanion\n"
+	.string "loves to warm it's body in volcanoes\l"
+	.string "and on hot mountain tops.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
