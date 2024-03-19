@@ -360,7 +360,66 @@ PlayersHouse_2F_EventScript_Celebi::
 PlayersHouse_2F_EventScript_HoennSelect::
 	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
 	scrollingmultichoice 6, 2, 2, 5, TRUE
-	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Regirock
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Regice
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Registeel
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Latias
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Latios
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Groudon
+	goto_if_eq VAR_RESULT, 6, PlayersHouse_2F_EventScript_Kyogre
+	goto_if_eq VAR_RESULT, 7, PlayersHouse_2F_EventScript_Rayquaza
+	goto_if_eq VAR_RESULT, 8, PlayersHouse_2F_EventScript_Deoxys
+	goto_if_eq VAR_RESULT, 9, PlayersHouse_2F_EventScript_Jirachi
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Regirock::
+	msgbox PlayersHouse_2F_Text_RegirockInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Regice::
+	msgbox PlayersHouse_2F_Text_RegiceInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Registeel::
+	msgbox PlayersHouse_2F_Text_RegisteelInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Latias::
+	msgbox PlayersHouse_2F_Text_LatiasInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Latios::
+	msgbox PlayersHouse_2F_Text_LatiosInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Kyogre::
+	msgbox PlayersHouse_2F_Text_KyogreInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Groudon::
+	msgbox PlayersHouse_2F_Text_GroudonInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Rayquaza::
+	msgbox PlayersHouse_2F_Text_RayquazaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Jirachi::
+	msgbox PlayersHouse_2F_Text_JirachiInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Deoxys::
+	msgbox PlayersHouse_2F_Text_DeoxysInfo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -460,9 +519,61 @@ PlayersHouse_2F_Text_HoohInfo:
 	.string "brave little trainers there!$"
 
 PlayersHouse_2F_Text_CelebiInfo:
-	.string "Celebi is the time travel POKéMON\p"
+	.string "Celebi is the time travel POKéMON.\p"
 	.string "Some have once believed that it would\n"
 	.string "appear to strong trainers in the woods.$"
+
+PlayersHouse_2F_Text_RegirockInfo:
+	.string "A member of the legendary giant POKéMON,\n"
+	.string "it likes to hide in old desert ruins,\l"
+	.string "away from humans and POKéMON alike.$"
+
+PlayersHouse_2F_Text_RegiceInfo:
+	.string "A member of the legendary giant POKéMON,\n"
+	.string "it is said to hide out on a frigid island\l"
+	.string "cave away from humans and POKéMON alike.$"
+
+PlayersHouse_2F_Text_RegisteelInfo:
+	.string "A member of the legendary giant POKéMON,\n"
+	.string "it likes to hide in ancient tombs,\l"
+	.string "away from humans and POKéMON alike.$"
+
+PlayersHouse_2F_Text_LatiasInfo:
+	.string "Latias belongs to the Eon Duo with its\n"
+	.string "twin, Latios. It may be seen soaring\l"
+	.string "around the Hoenn region, or resting on\p"
+	.string "an island south of the region.$"
+
+PlayersHouse_2F_Text_LatiosInfo:
+	.string "Latios belongs to the Eon Duo with its\n"
+	.string "twin, Latias. It may be seen soaring\l"
+	.string "around the Hoenn region, or resting on\p"
+	.string "an island south of the region.$"
+
+PlayersHouse_2F_Text_KyogreInfo:
+	.string "A legendary POKéMON, ruler of the ocean.\n"
+	.string "No one is quite sure where it lives.$"
+
+PlayersHouse_2F_Text_GroudonInfo:
+	.string "A legendary POKéMON, ruler of the land.\n"
+	.string "No one is quite sure where it lives.$"
+
+PlayersHouse_2F_Text_RayquazaInfo:
+	.string "A legendary POKéMON, ruler of the sky.\n"
+	.string "It is thought to be a peace-maker\l"
+	.string "POKéMON that lives in a high tower.$"
+
+PlayersHouse_2F_Text_JirachiInfo:
+	.string "Often, this POKéMON can be found\n"
+	.string "granting wishes to young POKéMON\l"
+	.string "trainers in their rooms at night.$"
+
+PlayersHouse_2F_Text_DeoxysInfo:
+	.string "Not much is known about this alien\n"
+	.string "POKéMON other than it currently dwells\l"
+	.string "on an island far away...\p"
+	.string "Many people wish for a special ticket\n"
+	.string "to see such a fascinating POKéMON.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
