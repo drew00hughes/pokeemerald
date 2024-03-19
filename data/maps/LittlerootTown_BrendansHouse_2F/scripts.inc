@@ -522,7 +522,84 @@ PlayersHouse_2F_EventScript_Arceus::
 PlayersHouse_2F_EventScript_UnovaSelect::
 	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
 	scrollingmultichoice 8, 2, 2, 5, TRUE
-	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Terrakion
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Virizion
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Cobalion
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Tornadus
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Thundurus
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Landorus
+	goto_if_eq VAR_RESULT, 6, PlayersHouse_2F_EventScript_Reshiram
+	goto_if_eq VAR_RESULT, 7, PlayersHouse_2F_EventScript_Zekrom
+	goto_if_eq VAR_RESULT, 8, PlayersHouse_2F_EventScript_Kyurem
+	goto_if_eq VAR_RESULT, 9, PlayersHouse_2F_EventScript_Victini
+	goto_if_eq VAR_RESULT, 10, PlayersHouse_2F_EventScript_Keldeo
+	goto_if_eq VAR_RESULT, 11, PlayersHouse_2F_EventScript_Meloetta
+	goto_if_eq VAR_RESULT, 12, PlayersHouse_2F_EventScript_Genesect
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Terrakion::
+	msgbox PlayersHouse_2F_Text_TerrakionInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Virizion::
+	msgbox PlayersHouse_2F_Text_VirizionInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Cobalion::
+	msgbox PlayersHouse_2F_Text_CobalionInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Tornadus::
+	msgbox PlayersHouse_2F_Text_TornadusInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Thundurus::
+	msgbox PlayersHouse_2F_Text_ThundurusInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Landorus::
+	msgbox PlayersHouse_2F_Text_LandorusInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Reshiram::
+	msgbox PlayersHouse_2F_Text_ReshiramInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Zekrom::
+	msgbox PlayersHouse_2F_Text_ZekromInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Kyurem::
+	msgbox PlayersHouse_2F_Text_KyuremInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Victini::
+	msgbox PlayersHouse_2F_Text_VictiniInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Keldeo::
+	msgbox PlayersHouse_2F_Text_KeldeoInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Meloetta::
+	msgbox PlayersHouse_2F_Text_MeloettaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Genesect::
+	msgbox PlayersHouse_2F_Text_GenesectInfo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -747,6 +824,67 @@ PlayersHouse_2F_Text_ArceusInfo:
 	.string "strong trainers.\p"
 	.string "Perhaps if you go to the highest tower,\n"
 	.string "you might catch a glimpse of it?$"
+
+PlayersHouse_2F_Text_TerrakionInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_VirizionInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_CobalionInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_TornadusInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_ThundurusInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_LandorusInfo:
+	.string "DREW REPLACE AFTER ROAMERS$"
+
+PlayersHouse_2F_Text_ReshiramInfo:
+	.string "Is that blue-eyes-white-dragon?\n"
+	.string "Nope! It's Reshiram!\p"
+	.string "Rumor has it that it is dwelling with\n"
+	.string "its partner somewhere near the\l"
+	.string "battle frontier.$"
+
+PlayersHouse_2F_Text_ZekromInfo:
+	.string "Don't let this POKéMON's deep black\n"
+	.string "coat fool you. There is a fearsome\l"
+	.string "dragon beneath!\p"
+	.string "Rumor has it that it is dwelling with\n"
+	.string "its partner somewhere near the\l"
+	.string "battle frontier.$"
+
+PlayersHouse_2F_Text_KyuremInfo:
+	.string "This fearsome icy dragon likes to\n"
+	.string "dwell in low, cold places. If the\l"
+	.string "timing is right, you might be able to\l"
+	.string "to see it!$"
+
+PlayersHouse_2F_Text_VictiniInfo:
+	.string "Victini is a lucky POKéMON!\p"
+	.string "Perhaps you can find it somewhere in\n"
+	.string "the cozmos?$"
+
+PlayersHouse_2F_Text_KeldeoInfo:
+	.string "Keldeo is considered a Sword of Justice,\n"
+	.string "a protector POKéMON. It is the sworn\l"
+	.string "enemy of the legendary Kyurem.\p"
+	.string "Maybe finding one will lead to the other?$"
+
+PlayersHouse_2F_Text_MeloettaInfo:
+	.string "This POKéMON is a melodic force to be\n"
+	.string "reckoned with. It sings its sweet song\l"
+	.string "to trainers just beginning their journey.$"
+
+PlayersHouse_2F_Text_GenesectInfo:
+	.string "This ancient POKéMON is a run-away,\n"
+	.string "technology-enhanced fossil come to life!\p"
+	.string "Like the cannon on its back, it likes to\n"
+	.string "dwell in changing caves.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
