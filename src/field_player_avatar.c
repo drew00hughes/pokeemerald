@@ -613,8 +613,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         {
             if (gSaveBlock2Ptr->follower.inProgress && gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible == TRUE)
                 gSaveBlock2Ptr->follower.delayedState = MOVEMENT_ACTION_JUMP_2_DOWN;
-            FollowerPokeballSparkle();
-            PlayerJumpLedge(direction);
+            //if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
+                FollowerPokeballSparkle();
+                PlayerJumpLedge(direction);
+            //}
             return;
         }
         else if (collision == COLLISION_OBJECT_EVENT && IsPlayerCollidingWithFarawayIslandMew(direction))
@@ -641,14 +643,18 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
     {
-        FollowerPokeballSparkle();
+        //if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
+            FollowerPokeballSparkle();
+        //}
         PlayerRun(direction);
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
     }
     else
     {
-        FollowerPokeballSparkle();
+        //if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
+            FollowerPokeballSparkle();
+        //}
         PlayerWalkNormal(direction);
     }
 }

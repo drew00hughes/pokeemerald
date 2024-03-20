@@ -2901,7 +2901,9 @@ static void InitObjectEventsLocal(void)
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
     TryRunOnWarpIntoMapScript();
-    FollowMe_HandleSprite();
+    //if (FlagGet(FLAG_TOGGLE_FOLLOWER)) {
+        FollowMe_HandleSprite();
+    //}
 }
 
 static void InitObjectEventsReturnToField(void)
@@ -4075,6 +4077,27 @@ bool8 IsBigSprite(u16 graphicsId)
         case OBJ_EVENT_GFX_REGIGIGAS:
         case OBJ_EVENT_GFX_GIRATINA_NORMAL:
         case OBJ_EVENT_GFX_ARCEUS_NORMAL:
+        case OBJ_EVENT_GFX_ARAQUANID:
+        case OBJ_EVENT_GFX_CELESTEELA:
+        case OBJ_EVENT_GFX_DRAMPA:
+        case OBJ_EVENT_GFX_GOLISOPOD:
+        case OBJ_EVENT_GFX_GUZZLORD:
+        case OBJ_EVENT_GFX_KOMMOO:
+        case OBJ_EVENT_GFX_KYUREM:
+        case OBJ_EVENT_GFX_LUNALA:
+        case OBJ_EVENT_GFX_NAGANADEL:
+        case OBJ_EVENT_GFX_NECROZMA:
+        case OBJ_EVENT_GFX_RESHIRAM:
+        case OBJ_EVENT_GFX_SOLGALEO:
+        case OBJ_EVENT_GFX_STAKATAKA:
+        case OBJ_EVENT_GFX_TAPUBULU:
+        case OBJ_EVENT_GFX_TAPUFINI:
+        case OBJ_EVENT_GFX_TAPUKOKO:
+        case OBJ_EVENT_GFX_XERNEAS:
+        case OBJ_EVENT_GFX_XURKITREE:
+        case OBJ_EVENT_GFX_YVELTAL:
+        case OBJ_EVENT_GFX_ZYGARDE:
+        case OBJ_EVENT_GFX_EXEGGUTOR_ALOLAN:
             return TRUE;
         default:
             return FALSE;
@@ -4108,6 +4131,9 @@ static void SparklePokeballCallback(struct Sprite *sprite)
         #endif
             graphicsId = gSaveBlock2Ptr->follower.graphicsId - OBJ_EVENT_GFX_BULBASAUR;
 
+        if (graphicsId > 493) {
+            graphicsId = 1;
+        }
         switch(gObjectEvents[gPlayerAvatar.objectEventId].facingDirection)
         {
             case DIR_SOUTH:

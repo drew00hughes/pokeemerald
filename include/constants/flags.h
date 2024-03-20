@@ -676,8 +676,8 @@
 #define FLAG_CAUGHT_KARTANA               0x278 
 #define FLAG_CAUGHT_GUZZLORD              0x279 
 #define FLAG_CAUGHT_BLACEPHALON           0x27A 
-#define FLAG_CAUGHT_TYPEN                 0x27B
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
+#define FLAG_TOGGLE_FOLLOWER              0x27B
+#define FLAG_CAUGHT_TYPEN                 0x27C
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag

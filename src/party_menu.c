@@ -74,11 +74,14 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "naming_screen.h"
+#include "follow_me.h"
 
 enum {
     MENU_SUMMARY,
     MENU_SWITCH,
     MENU_NICKNAME,
+    MENU_PUT_MON_AWAY,
+    MENU_PULL_MON_OUT,
     MENU_CANCEL1,
     MENU_ITEM,
     MENU_GIVE,
@@ -463,6 +466,8 @@ static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, bool8);
 static void CursorCb_Summary(u8);
 static void CursorCb_Switch(u8);
 static void CursorCb_Nickname(u8);
+static void CursorCb_PutMonAway(u8);
+static void CursorCb_PullMonOut(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
@@ -2651,6 +2656,15 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
+            if (slotId == 0) {
+                CheckPlayerHasFollower();
+                if (gSpecialVar_Result == 1) {
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_PUT_MON_AWAY);
+                }
+                else {
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_PULL_MON_OUT);
+                }
+            }
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
@@ -2810,6 +2824,22 @@ static void CursorCb_Nickname(u8 taskId) {
     PlaySE(SE_SELECT);
     gSpecialVar_0x8004 = gPartyMenu.slotId;
     sPartyMenuInternal->exitCallback = ChangePokemonNicknamePartyScreen;
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CursorCb_PutMonAway(u8 taskId) {
+    PlaySE(SE_SELECT);
+    DestroyFollower();
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CursorCb_PullMonOut(u8 taskId) {
+    PlaySE(SE_SELECT);
+    gSaveBlock2Ptr->follower.inProgress = TRUE;
+    CreateFollowerAvatar();
+    SetUpFollowerSprite(GetFollowerObjectId(), TRUE);
+	UpdateFollowerPokemonGraphic();
+    ShowFollower();
     Task_ClosePartyMenu(taskId);
 }
 
