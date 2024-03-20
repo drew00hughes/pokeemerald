@@ -8655,7 +8655,7 @@ const struct Item gItems[] =
 
     [ITEM_ACRO_BIKE] =
     {
-        .name = _("Acro Bike"),
+        .name = _("Multi Bike"),
         .price = 0,
         .description = sAcroBikeDesc,
         .importance = 1,

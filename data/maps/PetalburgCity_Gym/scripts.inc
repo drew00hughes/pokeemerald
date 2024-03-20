@@ -346,7 +346,14 @@ PetalburgCity_Gym_EventScript_GiveFacade2::
 PetalburgCity_Gym_EventScript_NormanRematch::
 	trainerbattle_rematch_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	call_if_unset FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, PetalburgCity_Gym_EventScript_GiveEonTicket
 	end
+
+PetalburgCity_Gym_EventScript_GiveEonTicket::
+	msgbox PetalburgCity_Gym_Text_NormanGiveTicket, MSGBOX_AUTOCLOSE
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	giveitem ITEM_EON_TICKET
+	return
 
 PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry::
 	specialvar VAR_RESULT, IsEnigmaBerryValid
@@ -1572,12 +1579,17 @@ PetalburgCity_Gym_Text_NormanRematchDefeat:
 	.string "Uh… Haha…\n"
 	.string "Maybe that was going too hard…$"
 
+PetalburgCity_Gym_Text_NormanGiveTicket:
+	.string "I'm so proud of you. I want you to have\n"
+	.string "this. You've earned it.$"
+
 PetalburgCity_Gym_Text_NormanPostRematch:
 	.string "DAD: {PLAYER}…\n"
 	.string "What is your dream?\p"
 	.string "My dream…\n"
 	.string "Hahaha…\l"
 	.string "It has already come true, actually.$"
+
 
 PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "DAD: {PLAYER}…\n"

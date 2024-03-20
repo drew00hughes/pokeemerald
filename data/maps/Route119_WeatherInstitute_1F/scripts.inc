@@ -8,6 +8,77 @@ Route119_WeatherInstitute_1F_OnTransition:
 	call_if_eq VAR_WEATHER_INSTITUTE_STATE, 0, Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos
 	end
 
+Route119_WeatherInstitute_1F_EventScript_ScientistCheckGiveMon::
+	goto_if_unset FLAG_CAUGHT_TYPEN, Route119_WeatherInstitute_1F_EventScript_ScientistGiveMon
+	lock
+	msgbox Route119_WeatherInstitute_1F_Text_TakeCareOfIt, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ScientistGiveMon::
+	msgbox Route119_WeatherInstitute_1F_Text_WorkingOnNewMon, MSGBOX_DEFAULT
+	showmonpic SPECIES_TYPE_NULL, 10, 3
+	msgbox Route119_WeatherInstitute_1F_Text_WantPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_1F_EventScript_OhOK
+	goto Route119_WeatherInstitute_1F_EventScript_GiveTypeN
+	end
+
+Route119_WeatherInstitute_1F_EventScript_OhOK::
+	hidemonpic
+	msgbox Route119_WeatherInstitute_1F_Text_OhOK, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Route119_WeatherInstitute_1F_EventScript_GiveTypeN::
+	bufferspeciesname STR_VAR_1, SPECIES_TYPE_NULL
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPE_NULL
+	givemon SPECIES_TYPE_NULL, 15
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_1F_EventScript_SendTypeNToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route119_WeatherInstitute_1F_EventScript_SendTypeNToPC
+	hidemonpic
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Route119_WeatherInstitute_1F_EventScript_SendTypeNToParty::
+	call Route119_WeatherInstitute_1F_EventScript_ReceivedTypeNPokemon
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_1F_EventScript_ReceivedTypeN
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Route119_WeatherInstitute_1F_EventScript_ReceivedTypeN
+	end
+
+Route119_WeatherInstitute_1F_EventScript_SendTypeNToPC::
+	call Route119_WeatherInstitute_1F_EventScript_ReceivedTypeNPokemon
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_1F_EventScript_TypeNTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto Route119_WeatherInstitute_1F_EventScript_TypeNTransferredToPC
+	end
+
+Route119_WeatherInstitute_1F_EventScript_TypeNTransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto Route119_WeatherInstitute_1F_EventScript_ReceivedTypeN
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ReceivedTypeN::
+	hidemonpic
+	msgbox Route119_WeatherInstitute_1F_Text_TakeCareOfIt MSGBOX_DEFAULT
+	releaseall
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ReceivedTypeNPokemon::
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_CAUGHT_TYPEN
+	return
+
+Route119_WeatherInstitute_1F_EventScript_TakeCareOfIt::
+	lock
+	msgbox Route119_WeatherInstitute_1F_Text_TakeCareOfIt MSGBOX_DEFAULT
+	release
+	end
+
 Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos::
 	setobjectxyperm LOCALID_LITTLE_BOY, 0, 5
 	setobjectmovementtype LOCALID_LITTLE_BOY, MOVEMENT_TYPE_FACE_RIGHT
@@ -133,3 +204,17 @@ Route119_WeatherInstitute_1F_Text_TakeRestInBed:
 	.string "There's a bed…\n"
 	.string "Let's take a rest.$"
 
+Route119_WeatherInstitute_1F_Text_WorkingOnNewMon:
+	.string "I have been creating a new artificial\n"
+	.string "POKéMON!\p"
+	.string "...\p"
+	.string "It's a real breakthrough!$"
+
+Route119_WeatherInstitute_1F_Text_WantPokemon:
+	.string "Do you want it?$"
+
+Route119_WeatherInstitute_1F_Text_OhOK:
+	.string "Maybe another time, then.$"
+
+Route119_WeatherInstitute_1F_Text_TakeCareOfIt:
+	.string "Take good care of my creation!$"
