@@ -1070,7 +1070,10 @@ PlayersHouse_2F_Text_VolcanionInfo:
 	.string "and on hot mountain tops.$"
 
 PlayersHouse_2F_Text_TypeNInfo:
-	.string "DREW REPLACE$"
+	.string "This POKéMON is not naturally born,\n"
+	.string "rather it was created by a scientist\l"
+	.string "at the Weather Institiute in an\l"
+	.string "attempt to control the weather.$"
 
 PlayersHouse_2F_Text_TapusInfo:
 	.string "Guardians of the Alolan Islands, the\n"
