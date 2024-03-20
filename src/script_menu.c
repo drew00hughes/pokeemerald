@@ -928,10 +928,7 @@ static const u8 sText_Hoopa[] = _("Hoopa");
 static const u8 sText_Volcanion[] = _("Volcanion");
 
 static const u8 sText_TypeNull[] = _("Type: Null");
-static const u8 sText_TapuKoko[] = _("Tapu Koko");
-static const u8 sText_TapuBulu[] = _("Tapu Bulu");
-static const u8 sText_TapuFini[] = _("Tapu Fini");
-static const u8 sText_TapuLele[] = _("Tapu Lele");
+static const u8 sText_Tapus[] = _("Guardian Tapus");
 static const u8 sText_Solgaleo[] = _("Solgaleo");
 static const u8 sText_Lunala[] = _("Lunala");
 static const u8 sText_Magearna[] = _("Magearna");
@@ -1083,16 +1080,13 @@ static const struct ListMenuItem sSet10[] =
 static const struct ListMenuItem sSet11[] =
 {
     {sText_TypeNull, 0},
-    {sText_TapuKoko, 1},
-    {sText_TapuBulu, 2},
-    {sText_TapuFini, 3},
-    {sText_TapuLele, 4},
-    {sText_Solgaleo, 5},
-    {sText_Lunala, 6},
-    {sText_Magearna, 7},
-    {sText_Marshadow, 8},
-    {sText_Zeraora, 9},
-    {sText_Meltan, 10},
+    {sText_Tapus, 1},
+    {sText_Solgaleo, 2},
+    {sText_Lunala, 3},
+    {sText_Magearna, 4},
+    {sText_Marshadow, 5},
+    {sText_Zeraora, 6},
+    {sText_Meltan, 7},
 };
 
 static const struct ListMenuItem sSet12[] =

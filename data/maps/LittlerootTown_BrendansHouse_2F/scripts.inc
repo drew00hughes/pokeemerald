@@ -648,7 +648,54 @@ PlayersHouse_2F_EventScript_Volcanion::
 PlayersHouse_2F_EventScript_AlolaSelect::
 	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
 	scrollingmultichoice 10, 2, 2, 5, TRUE
-	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_TypeN
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Tapus
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Solgaleo
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Lunala
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Magearna
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Marshadow
+	goto_if_eq VAR_RESULT, 6, PlayersHouse_2F_EventScript_Zeraora
+	goto_if_eq VAR_RESULT, 7, PlayersHouse_2F_EventScript_Meltan
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_TypeN::
+	msgbox PlayersHouse_2F_Text_TypeNInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Tapus::
+	msgbox PlayersHouse_2F_Text_TapusInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Solgaleo::
+	msgbox PlayersHouse_2F_Text_SolgaleoInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Lunala::
+	msgbox PlayersHouse_2F_Text_LunalaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Magearna::
+	msgbox PlayersHouse_2F_Text_MagearnaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Marshadow::
+	msgbox PlayersHouse_2F_Text_MarshadowInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Zeraora::
+	msgbox PlayersHouse_2F_Text_ZeraoraInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Meltan::
+	msgbox PlayersHouse_2F_Text_MeltanInfo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -956,6 +1003,54 @@ PlayersHouse_2F_Text_VolcanionInfo:
 	.string "The Steam POKéMON, Volcanion\n"
 	.string "loves to warm it's body in volcanoes\l"
 	.string "and on hot mountain tops.$"
+
+PlayersHouse_2F_Text_TypeNInfo:
+	.string "DREW REPLACE AFTER DISTRIBUTE$"
+
+PlayersHouse_2F_Text_TapusInfo:
+	.string "Guardians of the Alolan Islands, the\n"
+	.string "4 Tapu POKéMON may travel to other\l"
+	.string "regions to battle strong trainers.\p"
+	.string "They were most recently spotted in\n"
+	.string "a cave off of Route 107.$"
+
+PlayersHouse_2F_Text_SolgaleoInfo:
+	.string "A powerful final evolution of the\n"
+	.string "Cosmog line, when Cosmoem evolves\l"
+	.string "during the day.\p"
+	.string "Cosmog can be found in DREW UPDATE.$"
+
+PlayersHouse_2F_Text_LunalaInfo:
+	.string "A powerful final evolution of the\n"
+	.string "Cosmog line, when Cosmoem evolves\l"
+	.string "during the night.\p"
+	.string "Cosmog can be found in DREW UPDATE.$"
+
+PlayersHouse_2F_Text_MagearnaInfo:
+	.string "Magearna is an artificial POKéMON.\n"
+	.string "Many believe its steel parts come from\l"
+	.string "meteors that fell to the earth.$"
+
+PlayersHouse_2F_Text_MarshadowInfo:
+	.string "The Gloomdweller POKéMON. No one\n"
+	.string "even knows if this POKéMON exists.\p"
+	.string "Rumors of it living in a hidden\n"
+	.string "forest are rampant, but it remains\l"
+	.string "unconfirmed.$"
+
+PlayersHouse_2F_Text_ZeraoraInfo:
+	.string "This POKéMON was born from an\n"
+	.string "explosive mix of lightning and\l"
+	.string "erupting volcano.\p"
+	.string "Somewhere out there it may dwell\n"
+	.string "on the slab that was scorched by\l"
+	.string "the strike.$"
+
+PlayersHouse_2F_Text_MeltanInfo:
+	.string "Meltan, a cute liquid metal POKéMON,\n"
+	.string "has a distinct interest in fossils.\p"
+	.string "Where lost fossils may be found,\n"
+	.string "so a Meltan may be found as well.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
