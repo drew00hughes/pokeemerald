@@ -116,6 +116,7 @@ LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
 RivalsHouse_1F_EventScript_RivalMom::
 	lock
 	faceplayer
+	call_if_unset FLAG_HIDE_MEW, RivalsHouse_1F_EventScript_CheckOldMap
 	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
@@ -123,6 +124,17 @@ RivalsHouse_1F_EventScript_RivalMom::
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
 	release
 	end
+
+RivalsHouse_1F_EventScript_CheckOldMap::
+	call_if_set FLAG_SYS_NATIONAL_DEX, RivalsHouse_1F_EventScript_FoundOldMap
+	return
+
+RivalsHouse_1F_EventScript_FoundOldMap::
+	msgbox RivalsHouse_1F_Text_FoundOldMap, MSGBOX_DEFAULT
+	giveitem ITEM_OLD_SEA_MAP
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
+	release
+	return
 
 RivalsHouse_1F_EventScript_RivalTooBusy::
 	msgbox RivalsHouse_1F_Text_TooBusyToNoticeVisit, MSGBOX_DEFAULT
@@ -407,3 +419,10 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "Hi, neighbor!\p"
 	.string "Do you already have your\n"
 	.string "own POKéMON?$"
+
+RivalsHouse_1F_Text_FoundOldMap:
+	.string "Oh, hi neighbor!\p"
+	.string "I was just tidying up some junky\n"
+	.string "things and I found this old map.\p"
+	.string "Maybe you and {RIVAL} can find the\n"
+	.string "buried treasure?$"

@@ -437,4 +437,7 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
-	.string "There are still unknown POKéMON.$"
+	.string "There are still unknown POKéMON.\p"
+	.string "Also! I want you to have this.\n"
+	.string "I think you're old enough now\l"
+	.string "to go on an adventure far away!$"

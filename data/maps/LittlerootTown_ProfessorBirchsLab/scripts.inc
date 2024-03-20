@@ -477,12 +477,24 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
+	call_if_unset FLAG_ENABLE_SHIP_NAVEL_ROCK, LittlerootTown_ProfessorBirchsLab_EventScript_CheckTicket
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_CheckTicket::
+	call_if_set FLAG_SYS_NATIONAL_DEX, LittlerootTown_ProfessorBirchsLab_EventScript_GiveTicket
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveTicket::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_GiveTicket, MSGBOX_DEFAULT
+	giveitem ITEM_MYSTIC_TICKET
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	release
+	return
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT
@@ -1478,3 +1490,10 @@ LittlerootTown_ProfessorBirchsLab_Text_GiveSail::
 LittlerootTown_ProfessorBirchsLab_Text_ThankYou::
 	.string "Thank you for using the\n"
 	.string "Birch Fossil Restorer! Bye now.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_GiveTicket:
+	.string "Oh, {PLAYER}! I wanted to see you.\p"
+	.string "I have heard of two very interesting\n"
+	.string "POKéMON on an island not far from here.\p"
+	.string "Please, take this ticket and see what\n"
+	.string "you can find!$"

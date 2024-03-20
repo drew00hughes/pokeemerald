@@ -17,6 +17,7 @@ FarawayIsland_Entrance_EventScript_CallSetup::
 FarawayIsland_Entrance_EventScript_CallAlertNewMons::
 	pokenavcall MatchCall_Text_BirchNewMons
 	waitmessage
+	setvar VAR_ALERT_NEW_MONS, 2
 	end
 
 FarawayIsland_Entrance_EventScript_SetCloudsWeather::
