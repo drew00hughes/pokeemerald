@@ -92,7 +92,7 @@
       "elevation": 0,
       "var": "VAR_ALERT_NEW_MONS",
       "var_value": "1",
-      "script": "NULL"
+      "script": "FarawayIsland_Entrance_EventScript_CallAlertNewMons"
     }
   ],
   "bg_events": [
