@@ -702,7 +702,72 @@ PlayersHouse_2F_EventScript_Meltan::
 PlayersHouse_2F_EventScript_UBSelect::
 	msgbox PlayersHouse_2F_Text_WhichPokemon, MSGBOX_DEFAULT
 	scrollingmultichoice 11, 2, 2, 5, TRUE
-	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_KantoSelect
+	goto_if_eq VAR_RESULT, 0, PlayersHouse_2F_EventScript_Nihilego
+	goto_if_eq VAR_RESULT, 1, PlayersHouse_2F_EventScript_Buzzwole
+	goto_if_eq VAR_RESULT, 2, PlayersHouse_2F_EventScript_Pheromosa
+	goto_if_eq VAR_RESULT, 3, PlayersHouse_2F_EventScript_Xurkitree
+	goto_if_eq VAR_RESULT, 4, PlayersHouse_2F_EventScript_Celesteela
+	goto_if_eq VAR_RESULT, 5, PlayersHouse_2F_EventScript_Kartana
+	goto_if_eq VAR_RESULT, 6, PlayersHouse_2F_EventScript_Guzzlord
+	goto_if_eq VAR_RESULT, 7, PlayersHouse_2F_EventScript_Poipole
+	goto_if_eq VAR_RESULT, 8, PlayersHouse_2F_EventScript_Stakataka
+	goto_if_eq VAR_RESULT, 9, PlayersHouse_2F_EventScript_Blacephalon
+	goto_if_eq VAR_RESULT, 10, PlayersHouse_2F_EventScript_Necrozma
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Nihilego::
+	msgbox PlayersHouse_2F_Text_NihilegoInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Buzzwole::
+	msgbox PlayersHouse_2F_Text_BuzzwoleInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Pheromosa::
+	msgbox PlayersHouse_2F_Text_PheromosaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Xurkitree::
+	msgbox PlayersHouse_2F_Text_XurkitreeInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Celesteela::
+	msgbox PlayersHouse_2F_Text_CelesteelaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Kartana::
+	msgbox PlayersHouse_2F_Text_KartanaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Guzzlord::
+	msgbox PlayersHouse_2F_Text_GuzzlordInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Poipole::
+	msgbox PlayersHouse_2F_Text_PoipoleInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Stakataka::
+	msgbox PlayersHouse_2F_Text_StakatakaInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Blacephalon::
+	msgbox PlayersHouse_2F_Text_BlacephalonInfo, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PlayersHouse_2F_EventScript_Necrozma::
+	msgbox PlayersHouse_2F_Text_NecrozmaInfo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -1005,7 +1070,7 @@ PlayersHouse_2F_Text_VolcanionInfo:
 	.string "and on hot mountain tops.$"
 
 PlayersHouse_2F_Text_TypeNInfo:
-	.string "DREW REPLACE AFTER DISTRIBUTE$"
+	.string "DREW REPLACE$"
 
 PlayersHouse_2F_Text_TapusInfo:
 	.string "Guardians of the Alolan Islands, the\n"
@@ -1051,6 +1116,61 @@ PlayersHouse_2F_Text_MeltanInfo:
 	.string "has a distinct interest in fossils.\p"
 	.string "Where lost fossils may be found,\n"
 	.string "so a Meltan may be found as well.$"
+
+PlayersHouse_2F_Text_NihilegoInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 129.$"
+
+PlayersHouse_2F_Text_BuzzwoleInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 103.$"
+
+PlayersHouse_2F_Text_PheromosaInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 110.$"
+
+PlayersHouse_2F_Text_XurkitreeInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal in\p"
+	.string "Evergrande City.$"
+
+PlayersHouse_2F_Text_CelesteelaInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 114.$"
+
+PlayersHouse_2F_Text_KartanaInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 118.$"
+
+PlayersHouse_2F_Text_GuzzlordInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal in\p"
+	.string "Sootopolis City.$"
+
+PlayersHouse_2F_Text_PoipoleInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 109.$"
+
+PlayersHouse_2F_Text_StakatakaInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 115.$"
+
+PlayersHouse_2F_Text_BlacephalonInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Route 132.$"
+
+PlayersHouse_2F_Text_NecrozmaInfo:
+	.string "A beast POKéMON from another world,\n"
+	.string "brought here through a portal on\p"
+	.string "Mt. Pyre.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
