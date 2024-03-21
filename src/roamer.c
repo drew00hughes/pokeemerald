@@ -229,8 +229,8 @@ void RoamerMoveToOtherLocationSet(u8 index)
         // If moving after fighting the player, stalkers leave the area
         if (IsRoamerAt(index, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum))
         {
-            ROAMER(index)->locationMapGroup = MAP_GROUP(NONE);
-            ROAMER(index)->locationMapNum = MAP_NUM(NONE);
+            ROAMER(index)->locationMapGroup = MAP_GROUP(ALTERING_CAVE);
+            ROAMER(index)->locationMapNum = MAP_NUM(DYNAMIC);
             return;
         }
         else
@@ -325,28 +325,9 @@ void CreateRoamerMonInstance(u8 index)
     struct Pokemon *mon = &gEnemyParty[0];
     
     ZeroEnemyPartyMons();
-#if SCALING_ROAMER_EVOLUTION
-    if (ROAMER(index)->levelScaling)
-    {
-        u16 evoSpecies;
-        
-        ROAMER(index)->level = max(max(min(GetHighestLevelInPlayerParty() + SCALING_LEVEL_MODIFIER, SCALED_LEVEL_CAP), MIN_LEVEL), ROAMER(index)->level);
-        CreateMonWithIVsPersonality(mon, ROAMER(index)->species, ROAMER(index)->level, ROAMER(index)->ivs, ROAMER(index)->personality);
-        evoSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, 0);
-        while (evoSpecies != SPECIES_NONE)
-        {
-            ROAMER(index)->species = evoSpecies;
-            CreateMonWithIVsPersonality(mon, evoSpecies, ROAMER(index)->level, ROAMER(index)->ivs, ROAMER(index)->personality);
-            evoSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, 0);
-        }
-    }
-    else
-        CreateMonWithIVsPersonality(mon, ROAMER(index)->species, ROAMER(index)->level, ROAMER(index)->ivs, ROAMER(index)->personality);
-#else
     if (ROAMER(index)->levelScaling)
         ROAMER(index)->level = max(max(min(GetHighestLevelInPlayerParty() - SCALING_LEVEL_MODIFIER, MAX_LEVEL), MIN_LEVEL), ROAMER(index)->level);
     CreateMonWithIVsPersonality(mon, ROAMER(index)->species, ROAMER(index)->level, ROAMER(index)->ivs, ROAMER(index)->personality);
-#endif
     hp = GetMonData(mon, MON_DATA_MAX_HP) - ROAMER(index)->damage;
     SetMonData(mon, MON_DATA_STATUS, &status);
     SetMonData(mon, MON_DATA_HP, &hp);

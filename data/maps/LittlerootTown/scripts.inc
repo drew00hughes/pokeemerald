@@ -256,6 +256,7 @@ LittlerootTown_EventScript_FatMan::
 
 LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
+	special InitRoamer
 	end
 
 LittlerootTown_EventScript_Twin::
