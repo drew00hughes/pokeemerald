@@ -207,8 +207,9 @@ void NewGameInitData(void)
     ResetContestLinkResults();
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
 #if MULTIPLE_ROAMERS_EXAMPLE	
-    InitRoamer();
     FlagSet(FLAG_SYS_POKEDEX_GET);
+    FlagSet(FLAG_SYS_NATIONAL_DEX);
+    InitRoamer();
 #endif
 }
 

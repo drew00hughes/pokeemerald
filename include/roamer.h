@@ -8,13 +8,14 @@
 /* A terrestrial Pikachu that does not flee from battle
 /* A scaling Weedle stalker that does not flee from battle and respawns instantly
 /* All these species are also added to the Pokedex so you can track them*/
-#define MULTIPLE_ROAMERS_EXAMPLE TRUE
+#define MULTIPLE_ROAMERS_EXAMPLE FALSE
 /* Shows stalkers on the PokeDex. A bit pointless as
 /* stalkers are always either at your location or nowhere */
 #define SHOW_STALKERS_ON_POKEDEX FALSE
 
 void StopAllRoamers(void);
 void InitRoamer(void);
+void ExtraRoamers(void);
 void UpdateLocationHistoryForRoamer(void);
 void RoamerMoveToOtherLocationSet(u8 id);
 void RoamerMove(u8 index);

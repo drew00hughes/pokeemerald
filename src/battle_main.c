@@ -5741,6 +5741,30 @@ static void WaitForEvoSceneToFinish(void)
         gBattleMainFunc = TrySpecialEvolution;
 }
 
+void CheckJohtoRoamers(void) {
+    if (FlagGet(FLAG_CAUGHT_RAIKOU) && FlagGet(FLAG_CAUGHT_ENTEI) && FlagGet(FLAG_CAUGHT_SUICUNE)) {
+        FlagSet(FLAG_CAUGHT_JOHTO_ROAMERS);
+    }
+}
+
+void CheckSwordRoamers(void) {
+    if (FlagGet(FLAG_CAUGHT_VIRIZION) && FlagGet(FLAG_CAUGHT_COBALION) && FlagGet(FLAG_CAUGHT_TERRAKION)) {
+        FlagSet(FLAG_CAUGHT_SWORDS_ROAMERS);
+    }
+}
+
+void CheckSinnohRoamers(void) {
+    if (FlagGet(FLAG_CAUGHT_MESPRIT) && FlagGet(FLAG_CAUGHT_UXIE) && FlagGet(FLAG_CAUGHT_AZELF)) {
+        FlagSet(FLAG_CAUGHT_SINNOH_ROAMERS);
+    }
+}
+
+void CheckStormRoamers(void) {
+    if (FlagGet(FLAG_CAUGHT_THUNDURUS) && FlagGet(FLAG_CAUGHT_TORNADUS) && FlagGet(FLAG_CAUGHT_LANDORUS)) {
+        FlagSet(FLAG_CAUGHT_STORM_ROAMERS);
+    }
+}
+
 static void ReturnFromBattleToOverworld(void)
 {
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
@@ -5758,11 +5782,65 @@ static void ReturnFromBattleToOverworld(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
-        if (gBattleOutcome == B_OUTCOME_CAUGHT || ((gBattleOutcome & B_OUTCOME_WON) && !CanRoamerRespawn(gEncounteredRoamerIndex)))
+        if (gBattleOutcome == B_OUTCOME_CAUGHT || ((gBattleOutcome & B_OUTCOME_WON) && !CanRoamerRespawn(gEncounteredRoamerIndex))){
             StopRoamer(gEncounteredRoamerIndex);
-	    else if (gBattleOutcome & B_OUTCOME_WON) // and roamer can respawn
+            switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)) {
+                case SPECIES_RAIKOU:
+                    FlagSet(FLAG_CAUGHT_RAIKOU);
+                    CheckJohtoRoamers();
+                    break;
+                case SPECIES_ENTEI:
+                    FlagSet(FLAG_CAUGHT_ENTEI);
+                    CheckJohtoRoamers();
+                    break;
+                case SPECIES_SUICUNE:
+                    FlagSet(FLAG_CAUGHT_SUICUNE);
+                    CheckJohtoRoamers();
+                    break;
+                case SPECIES_VIRIZION:
+                    FlagSet(FLAG_CAUGHT_VIRIZION);
+                    CheckSwordRoamers();
+                    break;
+                case SPECIES_COBALION:
+                    FlagSet(FLAG_CAUGHT_COBALION);
+                    CheckSwordRoamers();
+                    break;
+                case SPECIES_TERRAKION:
+                    FlagSet(FLAG_CAUGHT_TERRAKION);
+                    CheckSwordRoamers();
+                    break;
+                case SPECIES_MESPRIT:
+                    FlagSet(FLAG_CAUGHT_MESPRIT);
+                    CheckSinnohRoamers();
+                    break;
+                case SPECIES_UXIE:
+                    FlagSet(FLAG_CAUGHT_UXIE);
+                    CheckSinnohRoamers();
+                    break;
+                case SPECIES_AZELF:
+                    FlagSet(FLAG_CAUGHT_AZELF);
+                    CheckSinnohRoamers();
+                    break;
+                case SPECIES_THUNDURUS:
+                    FlagSet(FLAG_CAUGHT_THUNDURUS);
+                    CheckStormRoamers();
+                    break;
+                case SPECIES_TORNADUS:
+                    FlagSet(FLAG_CAUGHT_TORNADUS);
+                    CheckStormRoamers();
+                    break;
+                case SPECIES_LANDORUS:
+                    FlagSet(FLAG_CAUGHT_LANDORUS);
+                    CheckStormRoamers();
+                    break;
+                default:
+                    break;
+            }
+            ExtraRoamers();
+        }
+	    else if (gBattleOutcome & B_OUTCOME_WON){ // and roamer can respawn
             HandleRoamerRespawnTimer();
-		
+        }
         UpdateRoamerHPStatus(&gEnemyParty[0]);
     }
 

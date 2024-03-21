@@ -187,9 +187,9 @@ void InitRoamer(void)
 #if !MULTIPLE_ROAMERS_EXAMPLE
     // Vanilla Behaviour
     if (gSpecialVar_0x8004 == 1)
-        TryAddRoamer(SPECIES_LATIOS, 40, FLEES);
+        TryAddRoamer(SPECIES_LATIOS, 40, FLEES, NO_RESPAWN);
     else
-        TryAddRoamer(SPECIES_LATIAS, 40, FLEES);
+        TryAddRoamer(SPECIES_LATIAS, 40, FLEES, NO_RESPAWN);
 #else
     TryAddRoamer(SPECIES_LATIAS, 40, FLEES, WEEKLY_RESPAWN);
     TryAddTerrestrialRoamer(SPECIES_PIKACHU, 8, FLEES, DAILY_RESPAWN);
@@ -198,6 +198,85 @@ void InitRoamer(void)
     GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIAS), FLAG_SET_SEEN); //Sets Pokedex to seen
     GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_PIKACHU), FLAG_SET_SEEN);
 #endif
+}
+
+bool8 CheckIfMonIsRoamer(u16 monSpecies) {
+    u32 i;
+    
+    for (i = 0; i < ROAMER_COUNT; i++){
+        if (ROAMER(i)->species == monSpecies) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void ExtraRoamers(void) {
+    if (FlagGet(FLAG_SYS_NATIONAL_DEX)) {
+        if (!FlagGet(FLAG_CAUGHT_JOHTO_ROAMERS)) {
+            if (!FlagGet(FLAG_CAUGHT_RAIKOU) && !CheckIfMonIsRoamer(SPECIES_RAIKOU)) {
+                TryAddTerrestrialRoamer(SPECIES_RAIKOU, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAIKOU), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_ENTEI) && !CheckIfMonIsRoamer(SPECIES_ENTEI)) {
+                TryAddTerrestrialRoamer(SPECIES_ENTEI, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_ENTEI), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_SUICUNE) && !CheckIfMonIsRoamer(SPECIES_SUICUNE)) {
+                TryAddTerrestrialRoamer(SPECIES_SUICUNE, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_SUICUNE), FLAG_SET_SEEN);
+            }
+            return;
+        }
+        else if (!FlagGet(FLAG_CAUGHT_SWORDS_ROAMERS)) {
+            if (!FlagGet(FLAG_CAUGHT_VIRIZION) && !CheckIfMonIsRoamer(SPECIES_VIRIZION)) {
+                TryAddTerrestrialRoamer(SPECIES_VIRIZION, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_VIRIZION), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_COBALION) && !CheckIfMonIsRoamer(SPECIES_COBALION)) {
+                TryAddTerrestrialRoamer(SPECIES_COBALION, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_COBALION), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_TERRAKION) && !CheckIfMonIsRoamer(SPECIES_TERRAKION)) {
+                TryAddTerrestrialRoamer(SPECIES_TERRAKION, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_TERRAKION), FLAG_SET_SEEN);
+            }
+            return;
+        }
+    }
+    if (FlagGet(FLAG_HIDE_MEW)) {
+        if (!FlagGet(FLAG_CAUGHT_SINNOH_ROAMERS)) {
+            if (!FlagGet(FLAG_CAUGHT_MESPRIT) && !CheckIfMonIsRoamer(SPECIES_MESPRIT)) {
+                TryAddTerrestrialRoamer(SPECIES_MESPRIT, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MESPRIT), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_UXIE) && !CheckIfMonIsRoamer(SPECIES_UXIE)) {
+                TryAddTerrestrialRoamer(SPECIES_UXIE, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_UXIE), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_AZELF) && !CheckIfMonIsRoamer(SPECIES_AZELF)) {
+                TryAddTerrestrialRoamer(SPECIES_AZELF, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_AZELF), FLAG_SET_SEEN);
+            }
+            return;
+        }
+        else if (!FlagGet(FLAG_CAUGHT_STORM_ROAMERS)) {
+            if (!FlagGet(FLAG_CAUGHT_THUNDURUS) && !CheckIfMonIsRoamer(SPECIES_THUNDURUS)) {
+                TryAddTerrestrialRoamer(SPECIES_THUNDURUS, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_THUNDURUS), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_TORNADUS) && !CheckIfMonIsRoamer(SPECIES_TORNADUS)) {
+                TryAddTerrestrialRoamer(SPECIES_TORNADUS, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_TORNADUS), FLAG_SET_SEEN);
+            }
+            if (!FlagGet(FLAG_CAUGHT_LANDORUS) && !CheckIfMonIsRoamer(SPECIES_LANDORUS)) {
+                TryAddTerrestrialRoamer(SPECIES_LANDORUS, 50, DOES_NOT_FLEE, NO_RESPAWN);
+                GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LANDORUS), FLAG_SET_SEEN);
+            }
+            return;
+        }
+    }
+    return;
 }
 
 void UpdateLocationHistoryForRoamer(void)
@@ -443,9 +522,12 @@ void MoveAllRoamersToOtherLocationSets(void)
 void MoveAllRoamers(void)
 {
     u32 i;
-    
-    for (i = 0; i < ROAMER_COUNT; i++)
-        RoamerMove(i);
+    u16 rnd = Random() % 20;
+    for (i = 0; i < ROAMER_COUNT; i++) {
+        if (rnd > 12) {
+            RoamerMove(i);
+        }
+    }
 }
 
 bool8 DoesRoamerFlee(void)

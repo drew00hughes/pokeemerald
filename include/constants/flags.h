@@ -678,22 +678,22 @@
 #define FLAG_CAUGHT_BLACEPHALON           0x27A 
 #define FLAG_TOGGLE_FOLLOWER              0x27B
 #define FLAG_CAUGHT_TYPEN                 0x27C
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
+#define FLAG_CAUGHT_RAIKOU                0x27D
+#define FLAG_CAUGHT_ENTEI                 0x27E
+#define FLAG_CAUGHT_SUICUNE               0x27F
+#define FLAG_CAUGHT_JOHTO_ROAMERS         0x280
+#define FLAG_CAUGHT_MESPRIT               0x281
+#define FLAG_CAUGHT_UXIE                  0x282
+#define FLAG_CAUGHT_AZELF                 0x283
+#define FLAG_CAUGHT_SINNOH_ROAMERS        0x284
+#define FLAG_CAUGHT_VIRIZION              0x285
+#define FLAG_CAUGHT_COBALION              0x286
+#define FLAG_CAUGHT_TERRAKION             0x287
+#define FLAG_CAUGHT_SWORDS_ROAMERS        0x288
+#define FLAG_CAUGHT_THUNDURUS             0x289
+#define FLAG_CAUGHT_TORNADUS              0x28A
+#define FLAG_CAUGHT_LANDORUS              0x28B
+#define FLAG_CAUGHT_STORM_ROAMERS         0x28C
 #define FLAG_UNUSED_0x28D  0x28D // Unused Flag
 #define FLAG_UNUSED_0x28E  0x28E // Unused Flag
 #define FLAG_UNUSED_0x28F  0x28F // Unused Flag
