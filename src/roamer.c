@@ -188,8 +188,10 @@ void InitRoamer(void)
     // Vanilla Behaviour
     if (gSpecialVar_0x8004 == 1)
         TryAddRoamer(SPECIES_LATIOS, 40, FLEES, NO_RESPAWN);
-    else
+    else if (gSpecialVar_0x8004 == 0)
         TryAddRoamer(SPECIES_LATIAS, 40, FLEES, NO_RESPAWN);
+    else if (gSpecialVar_0x8004 == 2)
+        ExtraRoamers();
 #else
     TryAddRoamer(SPECIES_LATIAS, 40, FLEES, WEEKLY_RESPAWN);
     TryAddTerrestrialRoamer(SPECIES_PIKACHU, 8, FLEES, DAILY_RESPAWN);
