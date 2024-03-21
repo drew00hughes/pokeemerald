@@ -809,13 +809,19 @@ PlayersHouse_2F_Text_MewInfo:
 	.string "give their children tickets to go there.$"
 
 PlayersHouse_2F_Text_RaikouInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_EnteiInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_SuicuneInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_LugiaInfo:
 	.string "Both Lugia and Ho-oh are thought to\n"
@@ -889,13 +895,19 @@ PlayersHouse_2F_Text_DeoxysInfo:
 	.string "to see such a fascinating POKéMON.$"
 
 PlayersHouse_2F_Text_UxieInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_MespritInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_AzelfInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_HeatranInfo:
 	.string "The Lava Dome POKéMON, Heatran\n"
@@ -973,22 +985,34 @@ PlayersHouse_2F_Text_ArceusInfo:
 	.string "you might catch a glimpse of it?$"
 
 PlayersHouse_2F_Text_TerrakionInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_VirizionInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_CobalionInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_TornadusInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_ThundurusInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_LandorusInfo:
-	.string "DREW REPLACE AFTER ROAMERS$"
+	.string "This POKéMON can be found roaming\n"
+	.string "the region. Check your POKéDEX for\l"
+	.string "more information!$"
 
 PlayersHouse_2F_Text_ReshiramInfo:
 	.string "Is that blue-eyes-white-dragon?\n"
