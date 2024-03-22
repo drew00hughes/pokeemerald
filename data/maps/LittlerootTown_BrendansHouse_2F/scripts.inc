@@ -1110,13 +1110,15 @@ PlayersHouse_2F_Text_SolgaleoInfo:
 	.string "A powerful final evolution of the\n"
 	.string "Cosmog line, when Cosmoem evolves\l"
 	.string "during the day.\p"
-	.string "Cosmog can be found in DREW UPDATE.$"
+	.string "Cosmog can be found in ghostly\n"
+	.string "towers.$"
 
 PlayersHouse_2F_Text_LunalaInfo:
 	.string "A powerful final evolution of the\n"
 	.string "Cosmog line, when Cosmoem evolves\l"
 	.string "during the night.\p"
-	.string "Cosmog can be found in DREW UPDATE.$"
+	.string "Cosmog can be found in ghostly\n"
+	.string "towers.$"
 
 PlayersHouse_2F_Text_MagearnaInfo:
 	.string "Magearna is an artificial POKéMON.\n"
