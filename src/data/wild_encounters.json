@@ -199,7 +199,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_BUNNELBY"
+                "species": "SPECIES_RALTS"
               },
               {
                 "min_level": 4,
@@ -209,7 +209,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_BUNNELBY"
+                "species": "SPECIES_RALTS"
               }
             ]
           },
@@ -7191,7 +7191,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_SCYTHER"
+                "species": "SPECIES_GLAMEOW"
               },
               {
                 "min_level": 29,
@@ -9687,7 +9687,7 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_FLETCHLING"
+                "species": "SPECIES_BUNEARY"
               },
               {
                 "min_level": 36,
