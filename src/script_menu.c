@@ -857,6 +857,98 @@ static const u8 sText_Fossil11[] = _("Sail Fossil");
 static const u8 sText_Cresselia[] = _("Dream");
 static const u8 sText_Darkrai[] = _("Nightmare");
 
+static const u8 sText_Kanto[] = _("Kanto Region");
+static const u8 sText_Johto[] = _("Johto Region");
+static const u8 sText_Hoenn[] = _("Hoenn Region");
+static const u8 sText_Sinnoh[] = _("Sinnoh Region");
+static const u8 sText_Unova[] = _("Unova Region");
+static const u8 sText_Kalos[] = _("Kalos Region");
+static const u8 sText_Alola[] = _("Alola Region");
+static const u8 sText_Ultra[] = _("Ultra Beasts");
+
+static const u8 sText_Articuno[] = _("Articuno");
+static const u8 sText_Zapdos[] = _("Zapdos");
+static const u8 sText_Moltres[] = _("Moltres");
+static const u8 sText_Mew[] = _("Mew");
+static const u8 sText_Mewtwo[] = _("Mewtwo");
+
+static const u8 sText_Raikou[] = _("Raikou");
+static const u8 sText_Entei[] = _("Entei");
+static const u8 sText_Suicune[] = _("Suicune");
+static const u8 sText_Lugia[] = _("Lugia");
+static const u8 sText_Hooh[] = _("Ho-Oh");
+static const u8 sText_Celebi[] = _("Celebi");
+
+static const u8 sText_Regirock[] = _("Regirock");
+static const u8 sText_Regice[] = _("Regice");
+static const u8 sText_Registeel[] = _("Registeel");
+static const u8 sText_Latias[] = _("Latias");
+static const u8 sText_Latios[] = _("Latios");
+static const u8 sText_Groudon[] = _("Groundon");
+static const u8 sText_Kyogre[] = _("Kyogre");
+static const u8 sText_Rayquaza[] = _("Rayquaza");
+static const u8 sText_Deoxys[] = _("Deoxys");
+static const u8 sText_Jirachi[] = _("Jirachi");
+
+static const u8 sText_Uxie[] = _("Uxie");
+static const u8 sText_Mesprit[] = _("Mesprit");
+static const u8 sText_Azelf[] = _("Azelf");
+static const u8 sText_Heatran[] = _("Heatran");
+static const u8 sText_Regigigas[] = _("Regigigas");
+static const u8 sText_CresseliaInfo[] = _("Cresselia");
+static const u8 sText_DarkraiInfo[] = _("Darkrai");
+static const u8 sText_Dialga[] = _("Dialga");
+static const u8 sText_Palkia[] = _("Palkia");
+static const u8 sText_Giratina[] = _("Giratina");
+static const u8 sText_Phione[] = _("Phione");
+static const u8 sText_Manaphy[] = _("Manaphy");
+static const u8 sText_Rotom[] = _("Rotom");
+static const u8 sText_Shaymin[] = _("Shaymin");
+static const u8 sText_Arceus[] = _("Arceus");
+
+static const u8 sText_Terrakion[] = _("Terrakion");
+static const u8 sText_Virizion[] = _("Virizion");
+static const u8 sText_Cobalion[] = _("Cobalion");
+static const u8 sText_Tornadus[] = _("Tornadus");
+static const u8 sText_Thundurus[] = _("Thundurus");
+static const u8 sText_Landorus[] = _("Landorus");
+static const u8 sText_Reshiram[] = _("Reshiram");
+static const u8 sText_Zekrom[] = _("Zekrom");
+static const u8 sText_Kyurem[] = _("Kyurem");
+static const u8 sText_Victini[] = _("Victini");
+static const u8 sText_Keldeo[] = _("Keldeo");
+static const u8 sText_Meloetta[] = _("Meloetta");
+static const u8 sText_Genesect[] = _("Genesect");
+
+static const u8 sText_Xerneas[] = _("Xerneas");
+static const u8 sText_Yveltal[] = _("Yveltal");
+static const u8 sText_Zygarde[] = _("Zygarde");
+static const u8 sText_Diancie[] = _("Diancie");
+static const u8 sText_Hoopa[] = _("Hoopa");
+static const u8 sText_Volcanion[] = _("Volcanion");
+
+static const u8 sText_TypeNull[] = _("Type: Null");
+static const u8 sText_Tapus[] = _("Guardian Tapus");
+static const u8 sText_Solgaleo[] = _("Solgaleo");
+static const u8 sText_Lunala[] = _("Lunala");
+static const u8 sText_Magearna[] = _("Magearna");
+static const u8 sText_Marshadow[] = _("Marshadow");
+static const u8 sText_Zeraora[] = _("Zeraora");
+static const u8 sText_Meltan[] = _("Meltan");
+
+static const u8 sText_Nihilego[] = _("Nihilego");
+static const u8 sText_Buzzwole[] = _("Buzzwole");
+static const u8 sText_Pheromosa[] = _("Pheromosa");
+static const u8 sText_Xurkitree[] = _("Xurkitree");
+static const u8 sText_Celesteela[] = _("Celesteela");
+static const u8 sText_Kartana[] = _("Kartana");
+static const u8 sText_Guzzlord[] = _("Guzzlord");
+static const u8 sText_Poipole[] = _("Poipole");
+static const u8 sText_Stakataka[] = _("Stakataka");
+static const u8 sText_Blacephalon[] = _("Blacephalon");
+static const u8 sText_Necrozma[] = _("Necrozma");
+
+
 // Sets of multichoices.
 static const struct ListMenuItem sSet1[] =
 {
@@ -894,6 +986,124 @@ static const struct ListMenuItem sSet3[] =
     {sText_Darkrai, 1},
 };
 
+static const struct ListMenuItem sSet4[] =
+{
+    {sText_Kanto, 0},
+    {sText_Johto, 1},
+    {sText_Hoenn, 2},
+    {sText_Sinnoh, 3},
+    {sText_Unova, 4},
+    {sText_Kalos, 5},
+    {sText_Alola, 6},
+    {sText_Ultra, 7},
+};
+
+static const struct ListMenuItem sSet5[] =
+{
+    {sText_Articuno, 0},
+    {sText_Zapdos, 1},
+    {sText_Moltres, 2},
+    {sText_Mew, 3},
+    {sText_Mewtwo, 4},
+};
+
+static const struct ListMenuItem sSet6[] =
+{
+    {sText_Raikou, 0},
+    {sText_Entei, 1},
+    {sText_Suicune, 2},
+    {sText_Lugia, 3},
+    {sText_Hooh, 4},
+    {sText_Celebi, 5},
+};
+
+static const struct ListMenuItem sSet7[] =
+{
+    {sText_Regirock, 0},
+    {sText_Regice, 1},
+    {sText_Registeel, 2},
+    {sText_Latias, 3},
+    {sText_Latios, 4},
+    {sText_Groudon, 5},
+    {sText_Kyogre, 6},
+    {sText_Rayquaza, 7},
+    {sText_Deoxys, 8},
+    {sText_Jirachi, 9},
+};
+
+static const struct ListMenuItem sSet8[] =
+{
+    {sText_Uxie, 0},
+    {sText_Mesprit, 1},
+    {sText_Azelf, 2},
+    {sText_Heatran, 3},
+    {sText_Regigigas, 4},
+    {sText_CresseliaInfo, 5},
+    {sText_DarkraiInfo, 6},
+    {sText_Dialga, 7},
+    {sText_Palkia, 8},
+    {sText_Giratina, 9},
+    {sText_Phione, 10},
+    {sText_Manaphy, 11},
+    {sText_Rotom, 12},
+    {sText_Shaymin, 13},
+    {sText_Arceus, 14},
+};
+
+static const struct ListMenuItem sSet9[] =
+{
+    {sText_Terrakion, 0},
+    {sText_Virizion, 1},
+    {sText_Cobalion, 2},
+    {sText_Tornadus, 3},
+    {sText_Thundurus, 4},
+    {sText_Landorus, 5},
+    {sText_Reshiram, 6},
+    {sText_Zekrom, 7},
+    {sText_Kyurem, 8},
+    {sText_Victini, 9},
+    {sText_Keldeo, 10},
+    {sText_Meloetta, 11},
+    {sText_Genesect, 12},
+};
+
+static const struct ListMenuItem sSet10[] =
+{
+    {sText_Xerneas, 0},
+    {sText_Yveltal, 1},
+    {sText_Zygarde, 2},
+    {sText_Diancie, 3},
+    {sText_Hoopa, 4},
+    {sText_Volcanion, 5},
+};
+
+static const struct ListMenuItem sSet11[] =
+{
+    {sText_TypeNull, 0},
+    {sText_Tapus, 1},
+    {sText_Solgaleo, 2},
+    {sText_Lunala, 3},
+    {sText_Magearna, 4},
+    {sText_Marshadow, 5},
+    {sText_Zeraora, 6},
+    {sText_Meltan, 7},
+};
+
+static const struct ListMenuItem sSet12[] =
+{
+    {sText_Nihilego, 0},
+    {sText_Buzzwole, 1},
+    {sText_Pheromosa, 2},
+    {sText_Xurkitree, 3},
+    {sText_Celesteela, 4},
+    {sText_Kartana, 5},
+    {sText_Guzzlord, 6},
+    {sText_Poipole, 7},
+    {sText_Stakataka, 8},
+    {sText_Blacephalon, 9},
+    {sText_Necrozma, 10},
+};
+
 // Table of your multichoice sets.
 struct
 {
@@ -904,6 +1114,15 @@ struct
     {sSet1, ARRAY_COUNT(sSet1)},
     {sSet2, ARRAY_COUNT(sSet2)},
     {sSet3, ARRAY_COUNT(sSet3)},
+    {sSet4, ARRAY_COUNT(sSet4)},
+    {sSet5, ARRAY_COUNT(sSet5)},
+    {sSet6, ARRAY_COUNT(sSet6)},
+    {sSet7, ARRAY_COUNT(sSet7)},
+    {sSet8, ARRAY_COUNT(sSet8)},
+    {sSet9, ARRAY_COUNT(sSet9)},
+    {sSet10, ARRAY_COUNT(sSet10)},
+    {sSet11, ARRAY_COUNT(sSet11)},
+    {sSet12, ARRAY_COUNT(sSet12)},
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);
