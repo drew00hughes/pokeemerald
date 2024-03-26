@@ -8,6 +8,13 @@ AlteringCave_OnTransition:
 	call_if_unset FLAG_CAUGHT_GENESECT, AlteringCave_EventScript_CheckForGVisible
 	end
 
+AlteringCave_EventScript_GiveJawFossil::
+	giveitem ITEM_SAIL_FOSSIL
+	removeobject 2
+	setflag FLAG_HIDE_SAIL
+	release
+	end
+
 AlteringCave_EventScript_CheckForGVisible::
 	call_if_set FLAG_SYS_NATIONAL_DEX, AlteringCave_EventScript_GVisible
 	return

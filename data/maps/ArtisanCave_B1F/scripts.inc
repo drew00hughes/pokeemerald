@@ -6,3 +6,9 @@ ArtisanCave_B1F_OnTransition:
 	setflag FLAG_LANDMARK_ARTISAN_CAVE
 	end
 
+ArtisanCave_B1F_EventScript_GiveJawFossil::
+	giveitem ITEM_JAW_FOSSIL
+	removeobject 2
+	setflag FLAG_HIDE_JAW
+	release
+	end

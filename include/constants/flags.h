@@ -694,15 +694,15 @@
 #define FLAG_CAUGHT_TORNADUS              0x28A
 #define FLAG_CAUGHT_LANDORUS              0x28B
 #define FLAG_CAUGHT_STORM_ROAMERS         0x28C
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
+#define FLAG_HIDE_HELIX                   0x28D
+#define FLAG_HIDE_DOME                    0x28E
+#define FLAG_HIDE_AMBER                   0x28F
+#define FLAG_HIDE_ARMOR                   0x290
+#define FLAG_HIDE_SKULL                   0x291
+#define FLAG_HIDE_COVER                   0x292
+#define FLAG_HIDE_PLUME                   0x293
+#define FLAG_HIDE_JAW                     0x294
+#define FLAG_HIDE_SAIL                    0x295
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag

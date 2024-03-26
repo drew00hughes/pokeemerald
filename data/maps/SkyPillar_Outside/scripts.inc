@@ -11,6 +11,13 @@ SkyPillar_Outside_OnTransition:
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
 	end
 
+SkyPillar_Outside_EventScript_GivePlumeFossil::
+	giveitem ITEM_PLUME_FOSSIL
+	removeobject 2
+	setflag FLAG_HIDE_PLUME
+	release
+	end
+
 SkyPillar_Outside_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return

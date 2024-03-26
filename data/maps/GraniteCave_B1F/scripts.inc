@@ -9,3 +9,10 @@ GraniteCave_B1F_SetHoleWarp:
 	setholewarp MAP_GRANITE_CAVE_B2F
 	end
 
+GraniteCave_B1F_EventScript_GiveArmorFossil::
+	giveitem ITEM_ARMOR_FOSSIL
+	removeobject LOCALID_FOSSIL
+	setflag FLAG_HIDE_ARMOR
+	release
+	end
+
