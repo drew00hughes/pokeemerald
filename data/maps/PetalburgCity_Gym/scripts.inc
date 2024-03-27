@@ -399,6 +399,8 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	special DrawWholeMapView
 	call PetalburgCity_Gym_EventScript_GiveFacade
 	delay 30
+	msgbox PetalburgCity_Gym_Text_GiveYouMega, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
 	delay 40
@@ -1309,7 +1311,10 @@ PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "DAD: As the GYM LEADER, I can't\n"
 	.string "express how upset I am…\p"
 	.string "But as a father, it makes me both\n"
-	.string "happy and a little sad. It's odd…$"
+	.string "happy and a little sad. It's odd…\p"
+	.string "Anyways, put that mega ring to good\n"
+	.string "use. I know you'll be a star of the\l"
+	.string "big leagues one day.$"
 
 PetalburgCity_Gym_Text_PleaseComeWithMe:
 	.string "Ah, there you are, {PLAYER}{KUN}!\p"
@@ -1605,3 +1610,10 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two POKéMON.$"
 
+PetalburgCity_Gym_Text_GiveYouMega:
+	.string "DAD: Did you like that mega evolution?\p"
+	.string "When I heard that this phenomenon\n"
+	.string "was occurring in Hoenn, I knew we had\l"
+	.string "to move here.\p"
+	.string "Here, {PLAYER}. I want you to have\n"
+	.string "a mega ring, just like me.$"
