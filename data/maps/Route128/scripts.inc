@@ -15,6 +15,10 @@ Route128_OnFrame:
 	map_script_2 VAR_ROUTE128_STATE, 1, Route128_EventScript_KyogreAwakenedScene
 	.2byte 0
 
+Route128_EventScript_DDriveItem::
+	finditem ITEM_DOUSE_DRIVE
+	end
+
 Route128_EventScript_KyogreAwakenedScene::
 	lockall
 	delay 20

@@ -24,6 +24,14 @@ NewMauville_Inside_OnTransition:
 	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
 
+NewMauville_Inside_EventScripts_CDriveItem::
+	finditem ITEM_CHILL_DRIVE
+	end
+
+NewMauville_Inside_EventScripts_SDriveItem::
+	finditem ITEM_SHOCK_DRIVE
+	end
+
 NewMauville_Inside_EventScripts_CheckZapdos::
 	call_if_unset FLAG_CAUGHT_ZAPDOS, NewMauville_Inside_EventScripts_ShowZapdos
 	call_if_set FLAG_CAUGHT_ZAPDOS, NewMauville_Inside_EventScripts_HideZapdos
