@@ -1,6 +1,14 @@
 AquaHideout_UnusedRubyMap1_MapScripts::
 	.byte 0
 
+AquaHideout_UnusedRubyMap1_EventScript_MewTwoStoneOne::
+	finditem ITEM_MEWTWONITE_X
+	end
+
+AquaHideout_UnusedRubyMap1_EventScript_MewTwoStoneTwo::
+	finditem ITEM_MEWTWONITE_Y
+	end
+
 AquaHideout_UnusedRubyMap1_EventScript_MAG1::
 	trainerbattle_single TRAINER_MAG1_MEWTWO, AquaHideout_UnusedRubyMap1_Text_MAG1Intro, AquaHideout_UnusedRubyMap1_Text_MAG1Defeat
 	msgbox AquaHideout_UnusedRubyMap1_Text_MAG1PostBattle, MSGBOX_AUTOCLOSE

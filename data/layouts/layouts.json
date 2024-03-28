@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/IslandOfDreams/border.bin",
       "blockdata_filepath": "data/layouts/IslandOfDreams/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_DEPARTMENT_STORE_6F",
+      "name": "LilycoveCity_DepartmentStore_6F_Layout",
+      "width": 18,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/LilycoveCity_DepartmentStore_6F/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_DepartmentStore_6F/map.bin"
     }
   ]
 }

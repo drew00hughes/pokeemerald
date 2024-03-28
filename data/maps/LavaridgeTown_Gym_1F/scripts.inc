@@ -73,6 +73,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	setvar VAR_LAVARIDGE_TOWN_STATE, 1
 	call LavaridgeTown_Gym_1F_EventScript_GiveOverheat
 	closemessage
+	call LavaridgeTown_Gym_1F_EventScript_GiveZMove
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox LavaridgeTown_Gym_1F_Text_RegisteredFlannery, MSGBOX_DEFAULT
@@ -82,6 +83,13 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	setflag FLAG_ENABLE_FLANNERY_MATCH_CALL
 	release
 	end
+
+LavaridgeTown_Gym_1F_EventScript_GiveZMove::
+	msgbox LavaridgeTown_Gym_1F_Text_ZmoveGive, MSGBOX_DEFAULT
+	giveitem ITEM_Z_POWER_RING
+	giveitem ITEM_FIRIUM_Z
+	msgbox LavaridgeTown_Gym_1F_Text_ZmoveExplain, MSGBOX_DEFAULT
+	return
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 	giveitem ITEM_TM_OVERHEAT
@@ -402,3 +410,15 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two POKéMON.$"
+
+LavaridgeTown_Gym_1F_Text_ZmoveGive:
+	.string "FLANNERY: Those were some pretty\n"
+	.string "sweet moves dontcha think?!\p"
+	.string "I used the power of Z-Moves to make\n"
+	.string "my POKéMON's moves stronger.\p"
+	.string "Here, how about you take this:$"
+
+LavaridgeTown_Gym_1F_Text_ZmoveExplain:
+	.string "If your POKéMON has a special kind\n"
+	.string "of crystal, then you can power up\l"
+	.string "their moves with this ring!$"

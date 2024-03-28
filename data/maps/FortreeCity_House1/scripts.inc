@@ -47,7 +47,26 @@ FortreeCity_House1_EventScript_TradeCompleted::
 	end
 
 FortreeCity_House1_EventScript_ExpertF::
-	msgbox FortreeCity_House1_Text_TradingMemoriesWithOthers, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox FortreeCity_House1_Text_SpecialtyLady, MSGBOX_DEFAULT
+	waitmessage
+	pokemart FortreeCity_House1_Pokemart1
+	release
+	end
+
+	.align 2
+FortreeCity_House1_Pokemart1:
+	.2byte ITEM_PEWTER_CRUNCHIES
+	.2byte ITEM_RAGE_CANDY_BAR
+	.2byte ITEM_LAVA_COOKIE
+	.2byte ITEM_OLD_GATEAU
+	.2byte ITEM_CASTELIACONE
+	.2byte ITEM_LUMIOSE_GALETTE
+	.2byte ITEM_SHALOUR_SABLE
+	.2byte ITEM_BIG_MALASADA
+	.2byte ITEM_NONE
+	release
 	end
 
 FortreeCity_House1_EventScript_Zigzagoon::
@@ -88,10 +107,10 @@ FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
 	.string "strong from this moment on!\p"
 	.string "I hope you do the same with PLUSLE!$"
 
-FortreeCity_House1_Text_TradingMemoriesWithOthers:
-	.string "Trading POKéMON with others…\p"
-	.string "It's as if you're trading your own\n"
-	.string "memories with other people.$"
+FortreeCity_House1_Text_SpecialtyLady:
+	.string "I have home remedies for everything!\n"
+	.string "Different items from all over,\l"
+	.string "take a look!$"
 
 FortreeCity_House1_Text_Zigzagoon:
 	.string "ZIGZAGOON: Gumomoh?$"

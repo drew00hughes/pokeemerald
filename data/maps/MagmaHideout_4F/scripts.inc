@@ -9,6 +9,10 @@
 MagmaHideout_4F_MapScripts::
 	.byte 0
 
+MagmaHideout_4F_EventScripts_BDriveItem::
+	finditem ITEM_BURN_DRIVE
+	end
+
 MagmaHideout_4F_EventScript_Maxie::
 	lockall
 	playbgm MUS_ENCOUNTER_MAGMA, FALSE

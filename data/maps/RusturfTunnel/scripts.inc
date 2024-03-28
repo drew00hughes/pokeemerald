@@ -3,6 +3,7 @@
 .set LOCALID_GRUNT, 6
 .set LOCALID_PEEKO, 7
 .equ LOCALID_WANDA, 10
+.set LOCALID_FOSSIL, 12
 
 RusturfTunnel_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RusturfTunnel_OnTransition
@@ -18,6 +19,13 @@ RusturfTunnel_OnTransition:
 	setflag FLAG_HIDE_ZYGARDE
 	call_if_unset FLAG_CAUGHT_ZYGARDE, RusturfTunnel_EventScript_CheckForZVisible
 	call_if_eq VAR_RUSTURF_TUNNEL_STATE, 2, RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos
+	end
+
+RusturfTunnel_EventScript_GiveDomeFossil::
+	giveitem ITEM_DOME_FOSSIL
+	removeobject LOCALID_FOSSIL
+	setflag FLAG_HIDE_DOME
+	release
 	end
 
 RusturfTunnel_EventScript_CheckForZVisible::

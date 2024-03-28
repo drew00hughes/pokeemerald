@@ -1,6 +1,13 @@
 VictoryRoad_B1F_MapScripts::
 	.byte 0
 
+VictoryRoad_B1F_EventScript_GiveCoverFossil::
+	giveitem ITEM_COVER_FOSSIL
+	removeobject 22
+	setflag FLAG_HIDE_COVER
+	release
+	end
+
 VictoryRoad_B1F_EventScript_Samuel::
 	trainerbattle_single TRAINER_SAMUEL, VictoryRoad_B1F_Text_SamuelIntro, VictoryRoad_B1F_Text_SamuelDefeat
 	msgbox VictoryRoad_B1F_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE
