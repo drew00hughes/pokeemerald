@@ -40,7 +40,7 @@ PetalburgWoods_EventScript_CelebiBattle::
 	lockall
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CELEBI, 5, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_CELEBI, 5, ITEM_MIRACLE_SEED
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -61,7 +61,7 @@ PetalburgWoods_EventScript_ShayminBattle::
 	lockall
 	playmoncry SPECIES_SHAYMIN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_SHAYMIN, 5, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_SHAYMIN, 5, ITEM_SILK_SCARF
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

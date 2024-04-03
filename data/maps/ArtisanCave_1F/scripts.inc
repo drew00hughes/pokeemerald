@@ -38,7 +38,7 @@ ArtisanCave_1F_EventScript_ZekromBattle::
 	lockall
 	playmoncry SPECIES_ZEKROM, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZEKROM, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ZEKROM, 60, ITEM_BLACK_FLUTE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -60,7 +60,7 @@ ArtisanCave_1F_EventScript_ReshiramBattle::
 	lockall
 	playmoncry SPECIES_RESHIRAM, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_RESHIRAM, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_RESHIRAM, 60, ITEM_WHITE_FLUTE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -20,7 +20,7 @@ ScorchedSlab_EventScript_ZeraoraFight::
 	lockall
 	playmoncry SPECIES_ZERAORA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZERAORA, 45, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ZERAORA, 45, ITEM_MAGNET
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

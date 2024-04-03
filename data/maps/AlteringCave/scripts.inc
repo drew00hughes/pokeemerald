@@ -27,7 +27,7 @@ AlteringCave_EventScript_GenesectBattle::
 	lockall
 	playmoncry SPECIES_GENESECT, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_GENESECT, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_GENESECT, 50, ITEM_LINKING_CORD
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

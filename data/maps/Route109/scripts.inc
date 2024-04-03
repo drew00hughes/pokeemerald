@@ -22,7 +22,7 @@ Route109_EventScript_PoipoleBattle::
 	lockall
 	playmoncry SPECIES_POIPOLE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_POIPOLE, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_POIPOLE, 50, ITEM_POISON_BARB
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

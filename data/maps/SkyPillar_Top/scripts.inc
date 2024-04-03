@@ -39,7 +39,7 @@ SkyPillar_Top_EventScript_ArceusBattle::
 	lockall
 	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ARCEUS, 100, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ARCEUS, 100, ITEM_MASTER_BALL
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -31,7 +31,7 @@ SealedChamber_InnerRoom_EventScript_RegigigasFight::
 	lockall
 	playmoncry SPECIES_REGIGIGAS, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_REGIGIGAS, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_REGIGIGAS, 60, ITEM_EARTH_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

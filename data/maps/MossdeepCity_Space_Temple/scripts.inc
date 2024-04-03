@@ -21,7 +21,7 @@ MossdeepCity_Space_Temple_EventScript_PalkiaBattle::
 	lockall
 	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_PALKIA, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_PALKIA, 60, ITEM_CHOICE_BAND
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -42,7 +42,7 @@ MossdeepCity_Space_Temple_EventScript_DialgaBattle::
 	lockall
 	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_DIALGA, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_DIALGA, 60, ITEM_CHOICE_SPECS
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -63,7 +63,7 @@ MossdeepCity_Space_Temple_EventScript_GiritinaBattle::
 	lockall
 	playmoncry SPECIES_GIRATINA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_GIRATINA, 80, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_GIRATINA, 80, ITEM_CHOICE_SCARF
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

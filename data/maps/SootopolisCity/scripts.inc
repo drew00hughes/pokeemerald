@@ -44,7 +44,7 @@ SootopolisCity_EventScript_GuzzlordBattle::
 	lockall
 	playmoncry SPECIES_GUZZLORD, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_GUZZLORD, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_GUZZLORD, 50, ITEM_SPOOKY_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

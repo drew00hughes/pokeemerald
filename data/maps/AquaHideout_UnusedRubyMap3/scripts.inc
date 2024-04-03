@@ -27,7 +27,7 @@ AquaHideout_UnusedRubyMap3_EventScript_MewTwoBattle::
 	removeobject 3
 	removeobject 4
 	removeobject 5
-	setwildbattle SPECIES_MEWTWO, 75, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MEWTWO, 75, ITEM_PSYCHIUM_Z
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	goto AquaHideout_UnusedRubyMap3_EventScript_PostMewTwoBattle

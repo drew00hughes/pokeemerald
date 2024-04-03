@@ -19,7 +19,7 @@ Route132_EventScript_BlacephalonBattle::
 	lockall
 	playmoncry SPECIES_BLACEPHALON, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_BLACEPHALON, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_BLACEPHALON, 50, ITEM_DREAD_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

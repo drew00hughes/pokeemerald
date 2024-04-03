@@ -28,7 +28,7 @@ Route103_EventScript_BuzzwoleBattle::
 	lockall
 	playmoncry SPECIES_BUZZWOLE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_BUZZWOLE, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_BUZZWOLE, 50, ITEM_SILVER_POWDER
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

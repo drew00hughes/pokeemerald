@@ -21,7 +21,7 @@ GraniteCave_StevensRoom_EventScript_DiancieBattle::
 	lockall
 	playmoncry SPECIES_DIANCIE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_DIANCIE, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_DIANCIE, 50, ITEM_STONE_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -139,7 +139,7 @@ ShoalCave_LowTideInnerRoom_EventScript_KeldeoFight::
 	lockall
 	playmoncry SPECIES_KELDEO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_KELDEO, 36, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_KELDEO, 36, ITEM_BLACK_BELT
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

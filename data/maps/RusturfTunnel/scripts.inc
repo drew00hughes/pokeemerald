@@ -40,7 +40,7 @@ RusturfTunnel_EventScript_ZygardeBattle::
 	lockall
 	playmoncry SPECIES_ZYGARDE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZYGARDE, 70, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ZYGARDE, 70, ITEM_DRACO_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -34,7 +34,7 @@ ShoalCave_LowTideIceRoom_EventScript_ArticunoFight::
 	lockall
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ARTICUNO, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ARTICUNO, 60, ITEM_SKY_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -54,7 +54,7 @@ ShoalCave_LowTideIceRoom_EventScript_KyuremFight::
 	lockall
 	playmoncry SPECIES_KYUREM, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_KYUREM, 75, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_KYUREM, 75, ITEM_ICICLE_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

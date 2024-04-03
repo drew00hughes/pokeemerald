@@ -33,7 +33,7 @@ Route115_EventScript_StakatakaBattle::
 	lockall
 	playmoncry SPECIES_STAKATAKA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_STAKATAKA, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_STAKATAKA, 50, ITEM_SOFT_SAND
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

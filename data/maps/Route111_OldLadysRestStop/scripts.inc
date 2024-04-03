@@ -53,7 +53,7 @@ Route111_OldLadysRestStop_EventScript_RotomJump::
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_OldLadysRestStop_Movement_Player_Face_Up
 	waitmovement 0
 	msgbox Route111_OldLadysRestStop_Text_PokemonAppeared, MSGBOX_AUTOCLOSE
-	setwildbattle SPECIES_ROTOM, 30, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ROTOM, 30, ITEM_SPELL_TAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

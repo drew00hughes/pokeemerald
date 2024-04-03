@@ -31,7 +31,7 @@ FieryPath_EventScript_MoltresFight::
 	lockall
 	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MOLTRES, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MOLTRES, 60, ITEM_FLAME_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

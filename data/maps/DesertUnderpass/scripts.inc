@@ -22,7 +22,7 @@ DesertUnderpass_EventScript_MeltanFight::
 	lockall
 	playmoncry SPECIES_MELTAN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MELTAN, 5, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MELTAN, 5, ITEM_IRON_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
