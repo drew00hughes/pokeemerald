@@ -12,6 +12,7 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	setflag FLAG_HIDE_JIRACHI
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	call LittlerootTown_MaysHouse_2F_EventScript_CheckForJirachiEvent
 	end
 
