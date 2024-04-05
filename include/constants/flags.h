@@ -694,30 +694,30 @@
 #define FLAG_CAUGHT_TORNADUS              0x28A
 #define FLAG_CAUGHT_LANDORUS              0x28B
 #define FLAG_CAUGHT_STORM_ROAMERS         0x28C
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
-#define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
+#define FLAG_HIDE_HELIX                   0x28D
+#define FLAG_HIDE_DOME                    0x28E
+#define FLAG_HIDE_AMBER                   0x28F
+#define FLAG_HIDE_ARMOR                   0x290
+#define FLAG_HIDE_SKULL                   0x291
+#define FLAG_HIDE_COVER                   0x292
+#define FLAG_HIDE_PLUME                   0x293
+#define FLAG_HIDE_JAW                     0x294
+#define FLAG_HIDE_SAIL                    0x295
+#define FLAG_MEWTWOSTONEONE               0x296
+#define FLAG_MEWTWOSTONETWO               0x297
+#define FLAG_ADAMANT_ORB                  0x298
+#define FLAG_LUSTRUS_ORB                  0x299
+#define FLAG_GRISEOUS_ORB                 0x29A
+#define FLAG_DDRIVE                       0x29B
+#define FLAG_SDRIVE                       0x29C
+#define FLAG_BDRIVE                       0x29D
+#define FLAG_CDRIVE                       0x29E
+#define FLAG_GRACIDEA                     0x29F
+#define FLAG_REVEALGLASS                  0x2A0
+#define FLAG_DNASPLICER                   0x2A1
+#define FLAG_PRISONBOTTLE                 0x2A2
+#define FLAG_NSOLAR                       0x2A3
+#define FLAG_NLUNAR                       0x2A4
 #define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag

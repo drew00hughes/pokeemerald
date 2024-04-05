@@ -1,6 +1,18 @@
 AquaHideout_UnusedRubyMap3_MapScripts::
 	.byte 0
 
+AquaHideout_UnusedRubyMap3_EventScript_SplicerItem::
+	finditem ITEM_DNA_SPLICERS
+	end
+
+AquaHideout_UnusedRubyMap3_EventScript_NSolarItem::
+	finditem ITEM_N_SOLARIZER
+	end
+
+AquaHideout_UnusedRubyMap3_EventScript_NLunarItem::
+	finditem ITEM_N_LUNARIZER
+	end
+
 AquaHideout_UnusedRubyMap3_EventScript_MewTwoBattle::
 	lockall
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER

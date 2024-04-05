@@ -3,6 +3,7 @@
 .set LOCALID_ARCHIE, 7
 .set LOCALID_AQUA_GRUNT_1, 8
 .set LOCALID_AQUA_GRUNT_2, 9
+.set LOCALID_FOSSIL, 11
 
 MeteorFalls_1F_1R_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MeteorFalls_1F_1R_OnLoad
@@ -10,6 +11,13 @@ MeteorFalls_1F_1R_MapScripts::
 
 MeteorFalls_1F_1R_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_EventScript_OpenStevensCave
+	end
+
+MeteorFalls_1F_1R_EventScript_GiveHelixFossil::
+	giveitem ITEM_HELIX_FOSSIL
+	removeobject LOCALID_FOSSIL
+	setflag FLAG_HIDE_HELIX
+	release
 	end
 
 MeteorFalls_1F_1R_EventScript_OpenStevensCave::

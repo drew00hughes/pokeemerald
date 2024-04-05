@@ -1070,3 +1070,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/CaveOfTrials/scripts.inc"
 
 	.include "data/maps/IslandOfDreams/scripts.inc"
+
+	.include "data/maps/LilycoveCity_DepartmentStore_6F/scripts.inc"

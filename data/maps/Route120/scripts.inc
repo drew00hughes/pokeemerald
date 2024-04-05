@@ -220,6 +220,14 @@ Route120_EventScript_StevenGiveDeconScope::
 	msgbox Route120_Text_StevenGiveDevonScope, MSGBOX_DEFAULT
 	giveitem ITEM_DEVON_SCOPE
 	setflag FLAG_RECEIVED_DEVON_SCOPE
+	msgbox Route120_Text_StevenOneMoreThing, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, Route120_EventScript_GivePlayerSceptileStone @chose treeko
+	case 1, Route120_EventScript_GivePlayerBlazikenStone @chose torchic
+	case 2, Route120_EventScript_GivePlayerSwampertStone @chose mudkip
+	end
+
+Route120_EventScript_EndStevenLines::
 	msgbox Route120_Text_StevenGoodbye, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
@@ -237,6 +245,21 @@ Route120_EventScript_StevenGiveDeconScope::
 	special DrawWholeMapView
 	release
 	end
+
+Route120_EventScript_GivePlayerSwampertStone::
+	giveitem ITEM_SWAMPERTITE
+	goto Route120_EventScript_EndStevenLines
+	return
+
+Route120_EventScript_GivePlayerSceptileStone::
+	giveitem ITEM_SCEPTILITE
+	goto Route120_EventScript_EndStevenLines
+	return
+
+Route120_EventScript_GivePlayerBlazikenStone::
+	giveitem ITEM_BLAZIKENITE
+	goto Route120_EventScript_EndStevenLines
+	return
 
 Route120_EventScript_PlayerApproachKecleonNorth::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
@@ -403,10 +426,15 @@ Route120_Text_StevenGiveDevonScope:
 	.string "Who knows, there may be other\n"
 	.string "concealed POKéMON.$"
 
+Route120_Text_StevenOneMoreThing:
+	.string "Oh, and one more thing...$"
+
 Route120_Text_StevenGoodbye:
 	.string "STEVEN: {PLAYER}{KUN}.\p"
 	.string "I enjoy seeing POKéMON and TRAINERS\n"
 	.string "who strive together.\p"
+	.string "This item will help you on that\n"
+	.string "journey.\p"
 	.string "I think you're doing great.\p"
 	.string "Well, let's meet again somewhere.$"
 

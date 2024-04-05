@@ -1,6 +1,10 @@
 MtPyre_3F_MapScripts::
 	.byte 0
 
+MtPyre_3F_EventScript_GriseousItem::
+	finditem ITEM_GRISEOUS_ORB
+	end
+
 MtPyre_3F_EventScript_William::
 	trainerbattle_single TRAINER_WILLIAM, MtPyre_3F_Text_WilliamIntro, MtPyre_3F_Text_WilliamDefeat
 	msgbox MtPyre_3F_Text_WilliamPostBattle, MSGBOX_AUTOCLOSE

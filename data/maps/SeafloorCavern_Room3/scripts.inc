@@ -1,6 +1,13 @@
 SeafloorCavern_Room3_MapScripts::
 	.byte 0
 
+SeafloorCavern_Room3_EventScript_GiveSkullFossil::
+	giveitem ITEM_SKULL_FOSSIL
+	removeobject 10
+	setflag FLAG_HIDE_SKULL
+	release
+	end
+
 SeafloorCavern_Room3_EventScript_Shelly::
 	trainerbattle_single TRAINER_SHELLY_SEAFLOOR_CAVERN, SeafloorCavern_Room3_Text_ShellyIntro, SeafloorCavern_Room3_Text_ShellyDefeat
 	msgbox SeafloorCavern_Room3_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE

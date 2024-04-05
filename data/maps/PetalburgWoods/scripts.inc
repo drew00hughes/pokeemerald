@@ -12,6 +12,10 @@ PetalburgWoods_OnTransition:
 	goto_if_set FLAG_CAUGHT_SHAYMIN, PetalburgWoods_EventScript_CheckForCelebi
 	end
 
+PetalburgWoods_EventScript_GracideaItem::
+	finditem ITEM_GRACIDEA
+	end
+
 PetalburgWoods_EventScript_CheckForShaymin::
 	goto_if_set FLAG_SYS_NATIONAL_DEX, PetalburgWoods_EventScript_ShayminVisible
 	end

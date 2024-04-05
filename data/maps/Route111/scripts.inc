@@ -18,6 +18,14 @@ Route111_OnLoad:
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
 	end
 
+Route111_EventScript_PrisonItem::
+	finditem ITEM_PRISON_BOTTLE
+	end
+
+Route111_EventScript_RevealGlassItem::
+	finditem ITEM_REVEAL_GLASS
+	end
+
 Route111_EventScript_CloseDesertRuins::
 	setmetatile 29, 86, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 29, 87, METATILE_General_RockWall_SandBase, TRUE
