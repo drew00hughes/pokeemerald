@@ -23,7 +23,7 @@ Route119_HiddenForest_EventScript_MarshadowFight::
 	lockall
 	playmoncry SPECIES_MARSHADOW, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MARSHADOW, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MARSHADOW, 50, ITEM_MARSHADIUM_Z
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -52,7 +52,7 @@ Route119_HiddenForest_EventScript_XerneasFight::
 	lockall
 	playmoncry SPECIES_XERNEAS, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_XERNEAS, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_XERNEAS, 50, ITEM_GRASS_GEM
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

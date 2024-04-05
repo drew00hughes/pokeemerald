@@ -62,7 +62,7 @@ CaveOfTrials_EventScript_LeleApproach::
 	return
 
 CaveOfTrials_EventScript_KokoBattle::
-	setwildbattle SPECIES_TAPU_KOKO, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_TAPU_KOKO, 50, ITEM_FIST_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -85,7 +85,7 @@ CaveOfTrials_EventScript_PostKokoBattleRan::
 	return
 
 CaveOfTrials_EventScript_BuluBattle::
-	setwildbattle SPECIES_TAPU_BULU, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_TAPU_BULU, 50, ITEM_ZAP_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -108,7 +108,7 @@ CaveOfTrials_EventScript_PostBuluBattleRan::
 	return
 
 CaveOfTrials_EventScript_FiniBattle::
-	setwildbattle SPECIES_TAPU_FINI, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_TAPU_FINI, 50, ITEM_SPLASH_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -131,7 +131,7 @@ CaveOfTrials_EventScript_PostFiniBattleRan::
 	return
 
 CaveOfTrials_EventScript_LeleBattle::
-	setwildbattle SPECIES_TAPU_LELE, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_TAPU_LELE, 50, ITEM_PIXIE_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

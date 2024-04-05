@@ -33,7 +33,7 @@ Route114_EventScript_CelesteelaBattle::
 	lockall
 	playmoncry SPECIES_CELESTEELA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CELESTEELA, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_CELESTEELA, 50, ITEM_METAL_COAT
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

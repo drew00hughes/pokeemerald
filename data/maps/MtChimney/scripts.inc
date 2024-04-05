@@ -41,7 +41,7 @@ MtChimney_EventScript_VolcanionBattle::
 	lockall
 	playmoncry SPECIES_VOLCANION, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_VOLCANION, 75, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_VOLCANION, 75, ITEM_CHARCOAL
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -574,7 +574,7 @@ MtChimney_EventScript_HeatranBattle::
 	waitmovement 0
 	applymovement 31, MtChimney_Movement_Heatran_Approach
 	waitmovement 0
-	setwildbattle SPECIES_HEATRAN, 30, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_HEATRAN, 30, ITEM_FLAME_ORB
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

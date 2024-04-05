@@ -44,6 +44,7 @@ LilycoveCity_DepartmentStore_6F_Pokemart2:
 	.2byte ITEM_SHINY_STONE
 	.2byte ITEM_DUSK_STONE
 	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_UPGRADE
 	.2byte ITEM_PROTECTOR

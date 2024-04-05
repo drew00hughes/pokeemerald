@@ -5,7 +5,7 @@ MagmaHideout_3F_4R_EventScript_YveltalFight::
 	lockall
 	playmoncry SPECIES_YVELTAL, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_YVELTAL, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_YVELTAL, 50, ITEM_MEADOW_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

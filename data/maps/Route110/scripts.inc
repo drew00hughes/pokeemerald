@@ -41,7 +41,7 @@ Route110_EventScript_PheromosaBattle::
 	lockall
 	playmoncry SPECIES_PHEROMOSA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_PHEROMOSA, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_PHEROMOSA, 50, ITEM_LUCKY_EGG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

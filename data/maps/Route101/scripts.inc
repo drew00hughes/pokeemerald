@@ -18,7 +18,7 @@ Route101_EventScript_MeloettaFight::
 	lockall
 	playmoncry SPECIES_MELOETTA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MELOETTA, 10, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MELOETTA, 10, ITEM_FAIRY_GEM
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

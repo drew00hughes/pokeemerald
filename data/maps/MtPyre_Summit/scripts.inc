@@ -28,7 +28,7 @@ MtPyre_Summit_EventScript_NecrozmaBattle::
 	lockall
 	playmoncry SPECIES_NECROZMA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_NECROZMA, 75, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_NECROZMA, 75, ITEM_BLACK_GLASSES
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

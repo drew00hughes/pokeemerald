@@ -36,7 +36,7 @@ Route118_EventScript_KartanaBattle::
 	lockall
 	playmoncry SPECIES_KARTANA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_KARTANA, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_KARTANA, 50, ITEM_SHARP_BEAK
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

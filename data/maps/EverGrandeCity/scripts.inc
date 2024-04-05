@@ -20,7 +20,7 @@ EverGrandeCity_EventScript_XurkitreeBattle::
 	lockall
 	playmoncry SPECIES_XURKITREE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_XURKITREE, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_XURKITREE, 50, ITEM_MIND_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

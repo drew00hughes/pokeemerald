@@ -2042,10 +2042,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 		PartyLevelAdjust *= 4;
 		PartyLevelAdjust /= 5;
 	}
-    //Handling values to be always be in the range,
-    // ( minDynamiclevel-levelDifference , maxDynamiclevel+levelDifference )
-    if(dynamicLevel < minDynamicLevel) dynamicLevel = minDynamicLevel;
-    else if(dynamicLevel > maxDynamicLevel) dynamicLevel = maxDynamicLevel;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -2113,7 +2109,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
             //CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
-            
+                //Handling values to be always be in the range,
+            // ( minDynamiclevel-levelDifference , maxDynamiclevel+levelDifference )
+            if(dynamicLevel < minDynamicLevel) dynamicLevel = minDynamicLevel;
+            else if(dynamicLevel > maxDynamicLevel) dynamicLevel = maxDynamicLevel;
             if (partyData[i].lvl >= dynamicLevel) {
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
             }

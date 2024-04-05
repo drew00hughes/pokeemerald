@@ -19,7 +19,7 @@ MeteorFalls_1F_2R_EventScript_MagearnaBattle::
 	lockall
 	playmoncry SPECIES_MAGEARNA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MAGEARNA, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MAGEARNA, 50, ITEM_STEEL_GEM
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

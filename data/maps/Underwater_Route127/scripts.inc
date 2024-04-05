@@ -10,7 +10,7 @@ Underwater_Route127_EventScript_PhioneFight::
 	lockall
 	playmoncry SPECIES_PHIONE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_PHIONE, 35, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_PHIONE, 35, ITEM_TOXIC_PLATE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -38,17 +38,17 @@ EventScript_BufferPocketNameAndTryFanfare::
 
 EventScript_BufferItemsPocket::
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	call_if_ne VAR_0x8007, FALSE, EventScript_ObtainedItem
+	call_if_ne VAR_0x8007, FALSE, EventScript_PlayFanfareObtainedItem
 	return
 
 EventScript_BufferKeyItemsPocket::
 	bufferstdstring STR_VAR_3, STDSTRING_KEYITEMS
-	call_if_ne VAR_0x8007, FALSE, EventScript_ObtainedItem
+	call_if_ne VAR_0x8007, FALSE, EventScript_PlayFanfareObtainedItem
 	return
 
 EventScript_BufferPokeballsPocket::
 	bufferstdstring STR_VAR_3, STDSTRING_POKEBALLS
-	call_if_ne VAR_0x8007, FALSE, EventScript_ObtainedItem
+	call_if_ne VAR_0x8007, FALSE, EventScript_PlayFanfareObtainedItem
 	return
 
 EventScript_BufferTMHMsPocket::
@@ -58,7 +58,7 @@ EventScript_BufferTMHMsPocket::
 
 EventScript_BufferBerriesPocket::
 	bufferstdstring STR_VAR_3, STDSTRING_BERRIES
-	call_if_ne VAR_0x8007, FALSE, EventScript_ObtainedItem
+	call_if_ne VAR_0x8007, FALSE, EventScript_PlayFanfareObtainedItem
 	return
 
 EventScript_ObtainedItem::

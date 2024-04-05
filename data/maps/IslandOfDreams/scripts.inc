@@ -28,7 +28,7 @@ IslandOfDreams_EventScript_CresseliaBattle::
 	lockall
 	playmoncry SPECIES_CRESSELIA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CRESSELIA, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_CRESSELIA, 50, ITEM_FAIRY_GEM
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	goto IslandOfDreams_EventScript_PostCresseliaBattle
@@ -54,7 +54,7 @@ IslandOfDreams_EventScript_DarkraiBattle::
 	lockall
 	playmoncry SPECIES_DARKRAI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_DARKRAI, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_DARKRAI, 50, ITEM_DARK_GEM
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	goto IslandOfDreams_EventScript_PostDarkraiBattle

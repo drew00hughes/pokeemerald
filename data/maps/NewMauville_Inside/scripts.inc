@@ -49,7 +49,7 @@ NewMauville_Inside_EventScript_ZapdosFight::
 	lockall
 	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZAPDOS, 60, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_ZAPDOS, 60, ITEM_MAGNET
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

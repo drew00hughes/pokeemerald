@@ -30,7 +30,7 @@ Route129_EventScript_NihilegoBattle::
 	lockall
 	playmoncry SPECIES_NIHILEGO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_NIHILEGO, 50, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_NIHILEGO, 50, ITEM_MYSTIC_WATER
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

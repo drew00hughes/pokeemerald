@@ -5,7 +5,7 @@ Underwater_Route124_EventScript_ManaphyFight::
 	lockall
 	playmoncry SPECIES_MANAPHY, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MANAPHY, 35, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_MANAPHY, 35, ITEM_NEVER_MELT_ICE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

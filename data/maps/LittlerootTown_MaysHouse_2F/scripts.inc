@@ -12,6 +12,7 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	setflag FLAG_HIDE_JIRACHI
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	call LittlerootTown_MaysHouse_2F_EventScript_CheckForJirachiEvent
 	end
 
@@ -56,7 +57,7 @@ LittlerootTown_MaysHouse_2F_EventScript_JirachiFight::
 	lockall
 	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_JIRACHI, 75, ITEM_LAVA_COOKIE
+	setwildbattle SPECIES_JIRACHI, 75, ITEM_LIGHT_BALL
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	call LittlerootTown_MaysHouse_2F_EventScript_PostJirachiBattle
