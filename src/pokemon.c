@@ -4651,7 +4651,12 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = boxMon->species;
             break;
         case MON_DATA_HELD_ITEM:
-            retVal = boxMon->heldItem;
+            if (boxMon->species == boxMon->heldItem) {
+                break;
+            }
+            else {
+                retVal = boxMon->heldItem;
+            }
             break;
         case MON_DATA_EXP:
             retVal = boxMon->experience;
