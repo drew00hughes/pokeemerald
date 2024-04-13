@@ -5020,13 +5020,14 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
 
 void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 {
+    u16 test = 0;
     const u8 *data = dataArg;
         switch (field)
         {
         case MON_DATA_SPECIES:
             SET16(boxMon->species);
         case MON_DATA_HELD_ITEM:
-            SET16(boxMon->heldItem);
+            SET16(test);
             break;
         case MON_DATA_EXP:
             SET32(boxMon->experience);

@@ -111,7 +111,7 @@ struct BoxPokemon {
     u8 nickname[12];
 
     // Word 6: Species + Experience points (used to derive level)
-    u32 species:11;
+    u16 species:11;
     u32 experience:21;
 
     // Words 7 & 8: moves, language, gender, friendship, Pokérus, ppBonuses
@@ -144,7 +144,7 @@ struct BoxPokemon {
     /*0x0B*/ u8 sheen;
 
     // Word 12: miscellaneous data; item, formId, Egg and origin data
-    u32 heldItem:10;
+    u16 heldItem:10;
     u32 formId:5;
     u32 isEgg:1;
     u32 metLevel:7;
