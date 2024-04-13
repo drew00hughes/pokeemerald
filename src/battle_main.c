@@ -1967,7 +1967,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
     // Change stuff like this to get the levels you want
     static const u8 minDynamicLevel = 3;
-    static const u8 maxDynamicLevel = 98;
+    static const u8 maxDynamicLevel = 100;
 
     // Calculates Average of your party's levels
     for(i = 0; i < PARTY_SIZE; i++)
@@ -1991,9 +1991,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 	        else if(LevelCheck > LevelSpread[1])
 	    	    LevelSpread[1] = LevelCheck;
 	    }
-        if(i == PARTY_SIZE)
-		    dynamicLevel /= i;
     }
+    dynamicLevel /= PARTY_SIZE;
     /* The following is used to account for a player having one or two very weak Pokemon
 	   along with some very strong Pokemon. It weights the averaged level more towards the
 	   player's strongest Pokemon
@@ -2088,7 +2087,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 					rand_diff = -2;
 			}
             dynamicLevel -= rand_diff + PartyLevelAdjust;
-
+            dynamicLevel += 2;
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
             else if (trainer->encounterMusic_gender & F_TRAINER_FEMALE)
