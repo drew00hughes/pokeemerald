@@ -3437,6 +3437,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u8 i;
     u8 availableIVs[NUM_STATS];
     u8 selectedIvs[LEGENDARY_PERFECT_IV_COUNT];
+    u16 zeroItem = 0;
 
     ZeroBoxMonData(boxMon);
 
@@ -3612,6 +3613,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
 
     GiveBoxMonInitialMoveset(boxMon);
+    SetBoxMonData(boxMon, MON_DATA_HELD_ITEM, &zeroItem);
 }
 
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
@@ -4651,12 +4653,12 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = boxMon->species;
             break;
         case MON_DATA_HELD_ITEM:
-            if (boxMon->species == boxMon->heldItem) {
-                break;
-            }
-            else {
+            //if (boxMon->species == boxMon->heldItem) {
+            //    break;
+            //}
+            //else {
                 retVal = boxMon->heldItem;
-            }
+            //}
             break;
         case MON_DATA_EXP:
             retVal = boxMon->experience;
