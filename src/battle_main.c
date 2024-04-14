@@ -1991,8 +1991,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 	        else if(LevelCheck > LevelSpread[1])
 	    	    LevelSpread[1] = LevelCheck;
 	    }
+        if (i == (PARTY_SIZE - 1)) {
+            dynamicLevel /= (i + 1);
+        }
     }
-    dynamicLevel /= PARTY_SIZE;
     /* The following is used to account for a player having one or two very weak Pokemon
 	   along with some very strong Pokemon. It weights the averaged level more towards the
 	   player's strongest Pokemon
@@ -2087,7 +2089,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 					rand_diff = -2;
 			}
             dynamicLevel -= rand_diff + PartyLevelAdjust;
-            dynamicLevel += 2;
+            //dynamicLevel += 2;
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
             else if (trainer->encounterMusic_gender & F_TRAINER_FEMALE)
