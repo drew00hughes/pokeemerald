@@ -646,6 +646,8 @@ enum {
 static void Task_EvolutionScene(u8 taskId)
 {
     u32 var;
+    u16 *zeroOut = 0;
+    u32 prevMonHeldItem;
     struct Pokemon *mon = &gPlayerParty[gTasks[taskId].tPartyId];
 
     // check if B Button was held, so the evolution gets stopped
@@ -782,7 +784,14 @@ static void Task_EvolutionScene(u8 taskId)
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
             PlayBGM(MUS_EVOLVED);
             gTasks[taskId].tState++;
+            prevMonHeldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
             SetMonData(mon, MON_DATA_SPECIES, (void *)(&gTasks[taskId].tPostEvoSpecies));
+            //if (GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == prevMonHeldItem) {
+                //SetMonData(mon, MON_DATA_HELD_ITEM, &zeroOut);
+            //}
+            //else {
+                SetMonData(mon, MON_DATA_HELD_ITEM, &prevMonHeldItem);
+            //}
             CalculateMonStats(mon);
             EvolutionRenameMon(mon, gTasks[taskId].tPreEvoSpecies, gTasks[taskId].tPostEvoSpecies);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
