@@ -298,6 +298,8 @@ extern const u8 gText_TextSpeedMid[];
 extern const u8 gText_TextSpeedFast[];
 extern const u8 gText_BattleSceneOn[];
 extern const u8 gText_BattleSceneOff[];
+extern const u8 gText_ScaleOpponentsOn[];
+extern const u8 gText_ScaleOpponentsOff[];
 extern const u8 gText_BattleStyleShift[];
 extern const u8 gText_BattleStyleSet[];
 extern const u8 gText_SoundMono[];
@@ -314,6 +316,7 @@ extern const u8 gText_BattleScene[];
 extern const u8 gText_BattleStyle[];
 extern const u8 gText_Sound[];
 extern const u8 gText_Frame[];
+extern const u8 gText_ScaleOpponents[];
 extern const u8 gText_OptionMenuCancel[];
 extern const u8 gText_ButtonMode[];
 

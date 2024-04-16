@@ -2114,7 +2114,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             // ( minDynamiclevel-levelDifference , maxDynamiclevel+levelDifference )
             if(dynamicLevel < minDynamicLevel) dynamicLevel = minDynamicLevel;
             else if(dynamicLevel > maxDynamicLevel) dynamicLevel = maxDynamicLevel;
-            if (partyData[i].lvl >= dynamicLevel) {
+            if (!gSaveBlock2Ptr->optionsScaleOpponents) {
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            }
+            else if (partyData[i].lvl >= dynamicLevel) {
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
             }
             else {
