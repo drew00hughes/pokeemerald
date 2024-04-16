@@ -499,8 +499,8 @@ static void ScaleOpponents_DrawChoices(u8 selection)
     styles[1] = 0;
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_ScaleOpponentsOn, 104, YPOS_SCALEOPPONENTS, styles[0]);
-    DrawOptionMenuChoice(gText_ScaleOpponentsOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_ScaleOpponentsOff, 198), YPOS_SCALEOPPONENTS, styles[1]);
+    DrawOptionMenuChoice(gText_ScaleOpponentsOff, 104, YPOS_SCALEOPPONENTS, styles[0]);
+    DrawOptionMenuChoice(gText_ScaleOpponentsOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_ScaleOpponentsOn, 198), YPOS_SCALEOPPONENTS, styles[1]);
 }
 
 static u8 BattleStyle_ProcessInput(u8 selection)
